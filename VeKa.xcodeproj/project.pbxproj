@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8EB24E2F232C0A6E00CF3F9C /* FriendsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB24E2E232C0A6E00CF3F9C /* FriendsListViewController.swift */; };
+		8EB24E31232C0C3600CF3F9C /* FriendsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB24E30232C0C3600CF3F9C /* FriendsListTableViewCell.swift */; };
 		8EF1192E23297677000B30E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF1192D23297677000B30E3 /* AppDelegate.swift */; };
 		8EF1193323297677000B30E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EF1193123297677000B30E3 /* Main.storyboard */; };
 		8EF119352329767A000B30E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EF119342329767A000B30E3 /* Assets.xcassets */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8EB24E2E232C0A6E00CF3F9C /* FriendsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListViewController.swift; sourceTree = "<group>"; };
+		8EB24E30232C0C3600CF3F9C /* FriendsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListTableViewCell.swift; sourceTree = "<group>"; };
 		8EF1192A23297677000B30E3 /* VeKa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VeKa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EF1192D23297677000B30E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EF1193223297677000B30E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -60,6 +64,8 @@
 				8EF119342329767A000B30E3 /* Assets.xcassets */,
 				8EF119362329767A000B30E3 /* LaunchScreen.storyboard */,
 				8EF119392329767A000B30E3 /* Info.plist */,
+				8EB24E2E232C0A6E00CF3F9C /* FriendsListViewController.swift */,
+				8EB24E30232C0C3600CF3F9C /* FriendsListTableViewCell.swift */,
 			);
 			path = VeKa;
 			sourceTree = "<group>";
@@ -136,7 +142,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EF1192E23297677000B30E3 /* AppDelegate.swift in Sources */,
+				8EB24E2F232C0A6E00CF3F9C /* FriendsListViewController.swift in Sources */,
 				8EF93C282329883600EBEC86 /* LoginFormController.swift in Sources */,
+				8EB24E31232C0C3600CF3F9C /* FriendsListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

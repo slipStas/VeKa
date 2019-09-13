@@ -236,10 +236,10 @@
             </objects>
             <point key="canvasLocation" x="1219" y="61"/>
         </scene>
-        <!--View Controller-->
+        <!--Friends List View Controller-->
         <scene sceneID="Xbe-TE-Uqg">
             <objects>
-                <viewController id="2GK-yk-n5c" sceneMemberID="viewController">
+                <viewController id="2GK-yk-n5c" customClass="FriendsListViewController" customModule="VeKa" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LCM-O3-22r">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -248,14 +248,28 @@
                                 <rect key="frame" x="0.0" y="56" width="414" height="703"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="pDo-S0-91U">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="friendsListIdentifire" id="pDo-S0-91U" customClass="FriendsListTableViewCell" customModule="VeKa" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pDo-S0-91U" id="A2Y-4W-dnw">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w66-0f-TyG">
+                                                    <rect key="frame" x="20" y="11" width="42" height="21.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="w66-0f-TyG" secondAttribute="bottom" constant="0.5" id="HQ5-pL-V4p"/>
+                                                <constraint firstItem="w66-0f-TyG" firstAttribute="leading" secondItem="A2Y-4W-dnw" secondAttribute="leadingMargin" id="YYv-Qe-Ut5"/>
+                                                <constraint firstItem="w66-0f-TyG" firstAttribute="top" secondItem="A2Y-4W-dnw" secondAttribute="topMargin" id="jjc-W4-BBS"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="friendNameLabel" destination="w66-0f-TyG" id="vif-mU-FfH"/>
                                             <segue destination="YFh-7U-Onf" kind="show" id="1tg-ds-7oH"/>
                                         </connections>
                                     </tableViewCell>
@@ -272,6 +286,9 @@
                         <viewLayoutGuide key="safeArea" id="AXn-Kc-QKn"/>
                     </view>
                     <navigationItem key="navigationItem" id="DGN-l9-bgC"/>
+                    <connections>
+                        <outlet property="friendsListTableView" destination="YPb-R6-0fD" id="8Sm-5x-a9D"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XIS-Uq-z7f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
