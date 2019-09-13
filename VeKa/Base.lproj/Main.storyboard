@@ -86,7 +86,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="0.75141432876989522" green="0.98634837047292367" blue="0.99336069822311401" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.62180586151993811" green="0.81618929967966269" blue="0.82390479720788556" alpha="0.7986140839041096" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="Ip5-sv-Kr1" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Gzr-kx-053"/>
                             <constraint firstItem="LHt-PY-aam" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Nuo-i1-8EU"/>
