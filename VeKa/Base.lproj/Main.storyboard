@@ -71,7 +71,7 @@
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gqb-3E-ITw"/>
-                                            <segue destination="IIs-IH-TQs" kind="show" id="Hu6-O4-3PT"/>
+                                            <segue destination="IIs-IH-TQs" kind="show" identifier="" id="Hu6-O4-3PT"/>
                                         </connections>
                                     </button>
                                 </subviews>

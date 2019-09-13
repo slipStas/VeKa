@@ -10,8 +10,15 @@ import UIKit
 
 class LoginFormController: UIViewController {
 
-    let loginTrue = "admin"
-    let passwordTrue = "123456"
+    /**Устанавливаем логин для входа в приложение */
+    let trueLogin = ""
+    /**Устанавливаем пароль для входа в приложение */
+    let truePassword = ""
+    
+    /**Логин, который ввел пользователь */
+    var login : String = ""
+    /**Пароль, который ввел пользователь */
+    var password : String = ""
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -31,7 +38,7 @@ class LoginFormController: UIViewController {
         let password = passwordTextField.text!
         
         // Проверяем, верны ли они
-        if login == loginTrue && password == passwordTrue {
+        if login == trueLogin && password == truePassword {
             print("успешная авторизация")
         } else {
             print("неуспешная авторизация")
@@ -93,4 +100,5 @@ class LoginFormController: UIViewController {
     @objc func hideKeyboard() {
             self.scrollView?.endEditing(true)
         }
+    
 }

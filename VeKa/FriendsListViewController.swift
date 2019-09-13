@@ -25,6 +25,7 @@ class FriendsListViewController: UIViewController {
         friendsListTableView.dataSource = self
         friendsListTableView.delegate = self
     }
+    
 }
 
 extension FriendsListViewController: UITableViewDelegate {
