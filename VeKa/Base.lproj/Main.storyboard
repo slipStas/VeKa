@@ -119,7 +119,7 @@
         <!--View Controller-->
         <scene sceneID="wZx-ss-EBq">
             <objects>
-                <viewController id="zZD-gp-WKd" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="zZD-gp-WKd" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9zV-o8-MbV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -163,7 +163,7 @@
         <!--View Controller-->
         <scene sceneID="EuJ-Ie-Vio">
             <objects>
-                <viewController id="DXI-gW-A8r" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="DXI-gW-A8r" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XBv-AG-LPH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -201,7 +201,7 @@
         <!--Группы-->
         <scene sceneID="Hug-nY-O6O">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Udl-fH-LSl" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="Udl-fH-LSl" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Группы" id="Uqo-GO-tau"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OTF-At-145">
@@ -220,7 +220,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="jQ3-Lw-6WW">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="IIs-IH-TQs" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="IIs-IH-TQs" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="84a-E8-Y51"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OzN-gV-jBS">
