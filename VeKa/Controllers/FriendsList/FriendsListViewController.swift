@@ -12,10 +12,10 @@ class FriendsListViewController: UIViewController {
     
     let friendsArray = [
     (UIImage(named: "image_1") , "Valera"),
-    (UIImage(named: "image_1"), "Igor"),
-    (UIImage(named: "image_1"), "Elena"),
-    (UIImage(named: "image_1"), "Oleg"),
-    (UIImage(named: "image_1"), "Mikhail")]
+    (UIImage(named: "image_2"), "Igor"),
+    (UIImage(named: "image_3"), "Elena"),
+    (UIImage(named: "image_4"), "Oleg"),
+    (UIImage(named: "image_5"), "Mikhail")]
 
     @IBOutlet weak var friendsListTableView: UITableView!
     
