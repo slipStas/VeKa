@@ -26,10 +26,6 @@ class LoginFormController: UIViewController {
     
     @IBOutlet weak var loginButton: UIButton!
     
-    @IBAction func loginButtonPressed(_ sender: Any) {
-        
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -90,7 +86,7 @@ class LoginFormController: UIViewController {
         if identifier == "fromLoginController" {
             return checkUsersData()
         }
-        return true
+        return false
     }
     
     func checkUsersData() -> Bool {
@@ -105,7 +101,16 @@ class LoginFormController: UIViewController {
             return true
         } else {
             print("неуспешная авторизация")
+            showIdentificationError()
             return false
         }
     }
+    
+    func showIdentificationError() {
+        let alert = UIAlertController(title: "Error", message: "Invalid login or password", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ok", style: .default)
+        alert.addAction(action)
+        present(alert, animated: true)
+    }
+    
 }
