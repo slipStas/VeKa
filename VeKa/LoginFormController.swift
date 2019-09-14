@@ -11,9 +11,9 @@ import UIKit
 class LoginFormController: UIViewController {
     
     /**Устанавливаем логин для входа в приложение */
-    let trueLogin = "aa"
+    let trueLogin = ""
     /**Устанавливаем пароль для входа в приложение */
-    let truePassword = "11"
+    let truePassword = ""
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var titleLabel: UILabel!

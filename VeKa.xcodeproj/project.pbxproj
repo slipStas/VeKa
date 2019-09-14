@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E3EA79D232D668000F118DB /* FriendInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3EA79C232D668000F118DB /* FriendInfoViewController.swift */; };
+		8E3EA79F232D66BF00F118DB /* FriendInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3EA79E232D66BF00F118DB /* FriendInfoCollectionViewCell.swift */; };
 		8EB24E2F232C0A6E00CF3F9C /* FriendsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB24E2E232C0A6E00CF3F9C /* FriendsListViewController.swift */; };
 		8EB24E31232C0C3600CF3F9C /* FriendsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB24E30232C0C3600CF3F9C /* FriendsListTableViewCell.swift */; };
 		8EF1192E23297677000B30E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF1192D23297677000B30E3 /* AppDelegate.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8E3EA79C232D668000F118DB /* FriendInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendInfoViewController.swift; sourceTree = "<group>"; };
+		8E3EA79E232D66BF00F118DB /* FriendInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendInfoCollectionViewCell.swift; sourceTree = "<group>"; };
 		8EB24E2E232C0A6E00CF3F9C /* FriendsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListViewController.swift; sourceTree = "<group>"; };
 		8EB24E30232C0C3600CF3F9C /* FriendsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListTableViewCell.swift; sourceTree = "<group>"; };
 		8EF1192A23297677000B30E3 /* VeKa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VeKa.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,6 +43,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E3EA799232D65D500F118DB /* FriendsList */ = {
+			isa = PBXGroup;
+			children = (
+				8EB24E2E232C0A6E00CF3F9C /* FriendsListViewController.swift */,
+				8EB24E30232C0C3600CF3F9C /* FriendsListTableViewCell.swift */,
+			);
+			path = FriendsList;
+			sourceTree = "<group>";
+		};
+		8E3EA79A232D660000F118DB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8E3EA79B232D663A00F118DB /* FriendInfo */,
+				8E3EA799232D65D500F118DB /* FriendsList */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8E3EA79B232D663A00F118DB /* FriendInfo */ = {
+			isa = PBXGroup;
+			children = (
+				8E3EA79C232D668000F118DB /* FriendInfoViewController.swift */,
+				8E3EA79E232D66BF00F118DB /* FriendInfoCollectionViewCell.swift */,
+			);
+			path = FriendInfo;
+			sourceTree = "<group>";
+		};
 		8EF1192123297677000B30E3 = {
 			isa = PBXGroup;
 			children = (
@@ -58,14 +89,13 @@
 		8EF1192C23297677000B30E3 /* VeKa */ = {
 			isa = PBXGroup;
 			children = (
+				8E3EA79A232D660000F118DB /* Controllers */,
 				8EF1192D23297677000B30E3 /* AppDelegate.swift */,
 				8EF93C272329883600EBEC86 /* LoginFormController.swift */,
 				8EF1193123297677000B30E3 /* Main.storyboard */,
 				8EF119342329767A000B30E3 /* Assets.xcassets */,
 				8EF119362329767A000B30E3 /* LaunchScreen.storyboard */,
 				8EF119392329767A000B30E3 /* Info.plist */,
-				8EB24E2E232C0A6E00CF3F9C /* FriendsListViewController.swift */,
-				8EB24E30232C0C3600CF3F9C /* FriendsListTableViewCell.swift */,
 			);
 			path = VeKa;
 			sourceTree = "<group>";
@@ -143,6 +173,8 @@
 			files = (
 				8EF1192E23297677000B30E3 /* AppDelegate.swift in Sources */,
 				8EB24E2F232C0A6E00CF3F9C /* FriendsListViewController.swift in Sources */,
+				8E3EA79F232D66BF00F118DB /* FriendInfoCollectionViewCell.swift in Sources */,
+				8E3EA79D232D668000F118DB /* FriendInfoViewController.swift in Sources */,
 				8EF93C282329883600EBEC86 /* LoginFormController.swift in Sources */,
 				8EB24E31232C0C3600CF3F9C /* FriendsListTableViewCell.swift in Sources */,
 			);

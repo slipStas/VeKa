@@ -11,11 +11,11 @@ import UIKit
 class FriendsListViewController: UIViewController {
     
     let friendsArray = [
-    "Valera",
-    "Igor",
-    "Elena",
-    "Oleg",
-    "Mikhail"]
+    (UIImage(named: "image_1") , "Valera"),
+    (UIImage(named: "image_1"), "Igor"),
+    (UIImage(named: "image_1"), "Elena"),
+    (UIImage(named: "image_1"), "Oleg"),
+    (UIImage(named: "image_1"), "Mikhail")]
 
     @IBOutlet weak var friendsListTableView: UITableView!
     
@@ -41,10 +41,22 @@ extension FriendsListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = friendsListTableView.dequeueReusableCell(withIdentifier: "friendsListIdentifire", for: indexPath) as! FriendsListTableViewCell
         
-        cell.friendNameLabel.text = friendsArray[indexPath.row]
+        cell.friendNameLabel.text = friendsArray[indexPath.row].1
+        cell.friendsPhotoImageView.image = friendsArray[indexPath.row].0
         
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let identifier = segue.identifier, identifier == "showFriendInfo" {
+            if let indexPath = friendsListTableView.indexPathForSelectedRow {
+                if let destinationVC = segue.destination  as? FriendInfoViewController {
+                    
+                    destinationVC.friendInfoList = [(friendsArray[(indexPath as NSIndexPath).row].0!, friendsArray[(indexPath as NSIndexPath).row].1)]
+                }
+            }
+        }
+    }
     
 }
