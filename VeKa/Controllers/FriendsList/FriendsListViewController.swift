@@ -44,6 +44,7 @@ extension FriendsListViewController: UITableViewDataSource {
         cell.friendNameLabel.text = friendsArray[indexPath.row].1
         cell.friendsPhotoImageView.image = friendsArray[indexPath.row].0
         
+        
         return cell
     }
     
@@ -57,6 +58,10 @@ extension FriendsListViewController: UITableViewDataSource {
                 }
             }
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44
     }
     
 }
