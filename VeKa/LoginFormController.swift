@@ -9,16 +9,11 @@
 import UIKit
 
 class LoginFormController: UIViewController {
-
-    /**Устанавливаем логин для входа в приложение */
-    let trueLogin = ""
-    /**Устанавливаем пароль для входа в приложение */
-    let truePassword = ""
     
-    /**Логин, который ввел пользователь */
-    var login : String = ""
-    /**Пароль, который ввел пользователь */
-    var password : String = ""
+    /**Устанавливаем логин для входа в приложение */
+    let trueLogin = "aa"
+    /**Устанавливаем пароль для входа в приложение */
+    let truePassword = "11"
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -32,17 +27,7 @@ class LoginFormController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     
     @IBAction func loginButtonPressed(_ sender: Any) {
-        // Получаем текст логина
-        let login = loginTextField.text!
-        // Получаем текст-пароль
-        let password = passwordTextField.text!
         
-        // Проверяем, верны ли они
-        if login == trueLogin && password == truePassword {
-            print("успешная авторизация")
-        } else {
-            print("неуспешная авторизация")
-        }
     }
     
     override func viewDidLoad() {
@@ -101,4 +86,26 @@ class LoginFormController: UIViewController {
             self.scrollView?.endEditing(true)
         }
     
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "fromLoginController" {
+            return checkUsersData()
+        }
+        return true
+    }
+    
+    func checkUsersData() -> Bool {
+        // Получаем текст логина
+        let login = loginTextField.text!
+        // Получаем текст-пароль
+        let password = passwordTextField.text!
+        
+        // Проверяем, верны ли они
+        if login == trueLogin && password == truePassword {
+            print("успешная авторизация")
+            return true
+        } else {
+            print("неуспешная авторизация")
+            return false
+        }
+    }
 }
