@@ -22,6 +22,8 @@ class FriendsListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        friendsListTableView.rowHeight = 66
+        
         friendsListTableView.dataSource = self
         friendsListTableView.delegate = self
     }
@@ -60,8 +62,8 @@ extension FriendsListViewController: UITableViewDataSource {
         }
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 44
-    }
-    
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 44
+//    }
+//
 }
