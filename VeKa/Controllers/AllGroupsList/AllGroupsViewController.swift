@@ -9,22 +9,33 @@
 import UIKit
 
 class AllGroupsViewController: UIViewController {
+    
+    let myGroupsArray: [(UIImage, String)] = []
 
+    @IBOutlet weak var allGroupsTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        allGroupsTableView.dataSource = self
     }
     
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension AllGroupsViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return myGroupsArray.count
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = allGroupsTableView.dequeueReusableCell(withIdentifier: "allGroupsIdentifier", for: indexPath) as! AllGroupsTableViewCell
+        
+        cell.allGroupImageView.image = myGroupsArray[indexPath.row].0
+        cell.allGroupLabel.text = myGroupsArray[indexPath.row].1
+        
+        return cell
+    }
+    
+    
 }
