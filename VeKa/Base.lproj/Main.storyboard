@@ -70,7 +70,9 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="9Wz-fH-lJo"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <segue destination="IIs-IH-TQs" kind="show" identifier="fromLoginController" id="Hu6-O4-3PT"/>
                                         </connections>
@@ -369,7 +371,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQh-Ex-gOf">
-                                                    <rect key="frame" x="184.5" y="421" width="42" height="21"/>
+                                                    <rect key="frame" x="184.5" y="371" width="42" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="4tL-DB-877"/>
                                                     </constraints>
@@ -378,18 +380,18 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nZu-TW-CVL">
-                                                    <rect key="frame" x="0.0" y="0.0" width="411" height="411"/>
+                                                    <rect key="frame" x="50" y="50" width="311" height="311"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="nZu-TW-CVL" secondAttribute="height" multiplier="1:1" id="IiM-I1-gTP"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="nZu-TW-CVL" firstAttribute="leading" secondItem="bK7-7h-66C" secondAttribute="leading" id="3NK-6h-y9P"/>
-                                                <constraint firstItem="BQh-Ex-gOf" firstAttribute="centerX" secondItem="bK7-7h-66C" secondAttribute="centerX" id="4Oe-yk-QiK"/>
                                                 <constraint firstItem="BQh-Ex-gOf" firstAttribute="top" secondItem="nZu-TW-CVL" secondAttribute="bottom" constant="10" id="9cz-BP-WmI"/>
                                                 <constraint firstItem="nZu-TW-CVL" firstAttribute="centerX" secondItem="BQh-Ex-gOf" secondAttribute="centerX" id="IBr-cG-adz"/>
-                                                <constraint firstItem="nZu-TW-CVL" firstAttribute="top" secondItem="bK7-7h-66C" secondAttribute="top" id="N7X-TB-WIl"/>
+                                                <constraint firstItem="nZu-TW-CVL" firstAttribute="centerX" secondItem="bK7-7h-66C" secondAttribute="centerX" id="R9j-Q6-eco"/>
+                                                <constraint firstItem="nZu-TW-CVL" firstAttribute="leading" secondItem="bK7-7h-66C" secondAttribute="leading" constant="50" id="cF2-C4-QtE"/>
+                                                <constraint firstItem="nZu-TW-CVL" firstAttribute="top" secondItem="bK7-7h-66C" secondAttribute="top" constant="50" id="cmt-JU-8Fw"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="411" height="485"/>
