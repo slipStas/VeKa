@@ -181,7 +181,7 @@
                         <viewLayoutGuide key="safeArea" id="vpu-FL-1Sv"/>
                     </view>
                     <navigationItem key="navigationItem" id="QGj-TV-xPa">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Nmj-0l-Z3d">
+                        <barButtonItem key="rightBarButtonItem" image="text.badge.plus" catalog="system" id="Nmj-0l-Z3d">
                             <connections>
                                 <segue destination="DXI-gW-A8r" kind="show" id="boe-xA-V5F"/>
                             </connections>
@@ -268,11 +268,11 @@
             </objects>
             <point key="canvasLocation" x="3786.9565217391309" y="-269.19642857142856"/>
         </scene>
-        <!--Группы-->
+        <!--Navigation Controller-->
         <scene sceneID="Hug-nY-O6O">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="Udl-fH-LSl" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Группы" id="Uqo-GO-tau"/>
+                    <tabBarItem key="tabBarItem" image="person.3.fill" catalog="system" id="Uqo-GO-tau"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OTF-At-145">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
@@ -455,11 +455,11 @@
             </objects>
             <point key="canvasLocation" x="3786.9565217391309" y="414.50892857142856"/>
         </scene>
-        <!--Друзья-->
+        <!--Navigation Controller-->
         <scene sceneID="Tnn-qo-Lil">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IeB-Lv-DMf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Друзья" id="au4-9s-vcm"/>
+                    <tabBarItem key="tabBarItem" image="person.crop.square" catalog="system" id="au4-9s-vcm"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AI0-oe-T8O">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
@@ -475,4 +475,9 @@
             <point key="canvasLocation" x="1986.9565217391305" y="414.50892857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="person.3.fill" catalog="system" width="72" height="35"/>
+        <image name="person.crop.square" catalog="system" width="64" height="56"/>
+        <image name="text.badge.plus" catalog="system" width="64" height="56"/>
+    </resources>
 </document>
