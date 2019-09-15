@@ -92,8 +92,8 @@
 		8E3EA7A5232D806800F118DB /* AllGroupsList */ = {
 			isa = PBXGroup;
 			children = (
-				8E3EA7A6232D808D00F118DB /* AllGroupsTableViewCell.swift */,
 				8E3EA7A8232D80A900F118DB /* AllGroupsViewController.swift */,
+				8E3EA7A6232D808D00F118DB /* AllGroupsTableViewCell.swift */,
 			);
 			path = AllGroupsList;
 			sourceTree = "<group>";

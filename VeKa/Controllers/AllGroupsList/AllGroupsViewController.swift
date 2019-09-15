@@ -10,7 +10,7 @@ import UIKit
 
 class AllGroupsViewController: UIViewController {
     
-    let myGroupsArray: [(UIImage, String)] = [
+    let allGroupsArray: [(UIImage, String)] = [
         (UIImage(named: "icon_1")!, "AppStores"),
         (UIImage(named: "icon_2")!, "Safaries"),
         (UIImage(named: "icon_3")!, "Mails"),
@@ -37,14 +37,14 @@ class AllGroupsViewController: UIViewController {
 extension AllGroupsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myGroupsArray.count
+        return allGroupsArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = allGroupsTableView.dequeueReusableCell(withIdentifier: "allGroupsIdentifier", for: indexPath) as! AllGroupsTableViewCell
         
-        cell.allGroupImageView.image = myGroupsArray[indexPath.row].0
-        cell.allGroupLabel.text = myGroupsArray[indexPath.row].1
+        cell.allGroupImageView.image = allGroupsArray[indexPath.row].0
+        cell.allGroupLabel.text = allGroupsArray[indexPath.row].1
         
         return cell
     }

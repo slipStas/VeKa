@@ -131,13 +131,42 @@
                                 <rect key="frame" x="0.0" y="56" width="414" height="703"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myGroupsIdentifire" id="JSe-Qx-dyS" customClass="MyGroupsTableViewCell" customModule="VeKa" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myGroupsIdentifire" rowHeight="88" id="JSe-Qx-dyS" customClass="MyGroupsTableViewCell" customModule="VeKa" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JSe-Qx-dyS" id="Axc-XU-kxO">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iCp-K0-AM2">
+                                                    <rect key="frame" x="20" y="10" width="68" height="68"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="iCp-K0-AM2" secondAttribute="height" multiplier="1:1" id="wsV-iO-vSy"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YOI-jC-Ng3">
+                                                    <rect key="frame" x="108" y="33.5" width="42" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="jsk-HW-qS3"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="YOI-jC-Ng3" firstAttribute="leading" secondItem="iCp-K0-AM2" secondAttribute="trailing" constant="20" id="FWt-6t-Vx1"/>
+                                                <constraint firstItem="YOI-jC-Ng3" firstAttribute="centerY" secondItem="iCp-K0-AM2" secondAttribute="centerY" id="SnV-hX-cJI"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YOI-jC-Ng3" secondAttribute="trailing" constant="20" symbolic="YES" id="TKe-Mm-dl1"/>
+                                                <constraint firstItem="iCp-K0-AM2" firstAttribute="leading" secondItem="Axc-XU-kxO" secondAttribute="leading" constant="20" id="UkK-w9-YVC"/>
+                                                <constraint firstAttribute="bottom" secondItem="iCp-K0-AM2" secondAttribute="bottom" constant="10" id="wcN-r2-u40"/>
+                                                <constraint firstItem="iCp-K0-AM2" firstAttribute="top" secondItem="Axc-XU-kxO" secondAttribute="top" constant="10" id="zdd-u5-j6O"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="myGroupsImageView" destination="iCp-K0-AM2" id="WrE-kE-4Hd"/>
+                                            <outlet property="myGroupsNameLabel" destination="YOI-jC-Ng3" id="efF-GP-FZy"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -158,10 +187,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="myGroupsTableView" destination="3BN-M9-wFs" id="BUz-5g-cae"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i8S-YZ-r3m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2897" y="-269"/>
+            <point key="canvasLocation" x="2894.202898550725" y="-269.19642857142856"/>
         </scene>
         <!--All Groups View Controller-->
         <scene sceneID="EuJ-Ie-Vio">
@@ -211,6 +243,7 @@
                                         <connections>
                                             <outlet property="allGroupImageView" destination="56v-sl-P4z" id="iQX-wd-1n3"/>
                                             <outlet property="allGroupLabel" destination="f3a-Co-3wU" id="Qda-X7-cEh"/>
+                                            <segue destination="K2C-c9-f6y" kind="unwind" unwindAction="unwindToMyGroups:" id="LQB-da-hbL"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -231,6 +264,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P1T-ZT-y4H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="K2C-c9-f6y" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3786.9565217391309" y="-269.19642857142856"/>
         </scene>
