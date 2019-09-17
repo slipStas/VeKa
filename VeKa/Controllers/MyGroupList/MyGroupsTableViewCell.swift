@@ -14,4 +14,11 @@ class MyGroupsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var myGroupsNameLabel: UILabel!
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        myGroupsImageView = nil
+        myGroupsNameLabel = nil
+    }
+    
 }
