@@ -13,4 +13,12 @@ class FriendInfoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var friendInfoImageView: UIImageView!
     
     @IBOutlet weak var nameFriendInfoLabel: UILabel!
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        friendInfoImageView = nil
+        nameFriendInfoLabel = nil
+    }
+    
 }

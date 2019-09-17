@@ -400,7 +400,7 @@
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="friendInfoIdentifire" id="cvx-Xz-ReT" customClass="FriendInfoCollectionViewCell" customModule="VeKa" customModuleProvider="target">
                                         <rect key="frame" x="1.5" y="0.0" width="411" height="485"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="bK7-7h-66C">
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="b1h-Qp-huf">
                                             <rect key="frame" x="0.0" y="0.0" width="411" height="485"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -422,13 +422,12 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="BQh-Ex-gOf" firstAttribute="top" secondItem="nZu-TW-CVL" secondAttribute="bottom" constant="10" id="9cz-BP-WmI"/>
-                                                <constraint firstItem="nZu-TW-CVL" firstAttribute="centerX" secondItem="BQh-Ex-gOf" secondAttribute="centerX" id="IBr-cG-adz"/>
-                                                <constraint firstItem="nZu-TW-CVL" firstAttribute="centerX" secondItem="bK7-7h-66C" secondAttribute="centerX" id="R9j-Q6-eco"/>
-                                                <constraint firstItem="nZu-TW-CVL" firstAttribute="leading" secondItem="bK7-7h-66C" secondAttribute="leading" constant="50" id="cF2-C4-QtE"/>
-                                                <constraint firstItem="nZu-TW-CVL" firstAttribute="top" secondItem="bK7-7h-66C" secondAttribute="top" constant="50" id="cmt-JU-8Fw"/>
+                                                <constraint firstItem="nZu-TW-CVL" firstAttribute="leading" secondItem="b1h-Qp-huf" secondAttribute="leading" constant="50" id="cF2-C4-QtE"/>
+                                                <constraint firstItem="nZu-TW-CVL" firstAttribute="top" secondItem="b1h-Qp-huf" secondAttribute="top" constant="50" id="cmt-JU-8Fw"/>
+                                                <constraint firstItem="nZu-TW-CVL" firstAttribute="centerX" secondItem="b1h-Qp-huf" secondAttribute="centerX" id="d0b-tH-WG2"/>
+                                                <constraint firstItem="BQh-Ex-gOf" firstAttribute="centerX" secondItem="nZu-TW-CVL" secondAttribute="centerX" id="enn-sg-cvc"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="411" height="485"/>
                                         <connections>
                                             <outlet property="friendInfoImageView" destination="nZu-TW-CVL" id="Qrq-QT-dqO"/>
                                             <outlet property="nameFriendInfoLabel" destination="BQh-Ex-gOf" id="HSg-SG-shN"/>

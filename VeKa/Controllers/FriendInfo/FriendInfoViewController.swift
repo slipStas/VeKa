@@ -18,12 +18,18 @@ class FriendInfoViewController: UIViewController {
         super.viewDidLoad()
 
         friendInfoCollectionView.dataSource = self
+        friendInfoCollectionView.delegate = self
+
+
+        let width = view.frame.width
+        let layout = friendInfoCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        layout.itemSize = CGSize(width: width, height: width)
         
     }
     
 }
 
-extension FriendInfoViewController : UICollectionViewDataSource {
+extension FriendInfoViewController : UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 1
