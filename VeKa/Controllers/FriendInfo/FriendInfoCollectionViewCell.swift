@@ -17,8 +17,8 @@ class FriendInfoCollectionViewCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         
-        friendInfoImageView = nil
-        nameFriendInfoLabel = nil
+        friendInfoImageView.image = nil
+        nameFriendInfoLabel.text = nil
     }
     
 }

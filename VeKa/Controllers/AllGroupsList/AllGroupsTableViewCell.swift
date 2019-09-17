@@ -17,8 +17,8 @@ class AllGroupsTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         
-        allGroupImageView = nil
-        allGroupLabel = nil
+        allGroupImageView.image = nil
+        allGroupLabel.text = nil
     }
     
 }

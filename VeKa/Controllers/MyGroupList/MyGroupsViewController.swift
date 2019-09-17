@@ -16,14 +16,11 @@ class MyGroupsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        myGroupsTableView.rowHeight = 66
+        
         myGroupsTableView.dataSource = self
-        myGroupsTableView.delegate = self
     }
-    
-}
-
-extension MyGroupsViewController: UITableViewDelegate {
     
 }
 
@@ -43,8 +40,25 @@ extension MyGroupsViewController: UITableViewDataSource {
     }
     
     @IBAction func unwindToMyGroups(_ unwindSegue: UIStoryboardSegue) {
-        //let sourceViewController = unwindSegue.source
-        // Use data from the view controller which initiated the unwind segue
+        if unwindSegue.identifier == "addGroupSegueIdentifier" {
+            guard let allGroupController = unwindSegue.source as? AllGroupsViewController else {return}
+            guard let indexPath = allGroupController.allGroupsTableView.indexPathForSelectedRow else {return}
+            
+            myGroupsArray.append(allGroupController.allGroupsArray[indexPath.row])
+//            myGroupsTableView.insertRows(at: [IndexPath(row: myGroupsArray.count - 1, section: 0)], with: .fade)
+            myGroupsTableView.reloadData()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            myGroupsArray.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.middle)
+        }
     }
     
 }

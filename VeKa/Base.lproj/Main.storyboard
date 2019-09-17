@@ -128,24 +128,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3BN-M9-wFs">
-                                <rect key="frame" x="0.0" y="56" width="414" height="703"/>
+                                <rect key="frame" x="0.0" y="56" width="414" height="786"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myGroupsIdentifire" rowHeight="88" id="JSe-Qx-dyS" customClass="MyGroupsTableViewCell" customModule="VeKa" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="88"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myGroupsIdentifire" rowHeight="66" id="JSe-Qx-dyS" customClass="MyGroupsTableViewCell" customModule="VeKa" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JSe-Qx-dyS" id="Axc-XU-kxO">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="66"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iCp-K0-AM2">
-                                                    <rect key="frame" x="20" y="10" width="68" height="68"/>
+                                                    <rect key="frame" x="20" y="10" width="46" height="46"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="width" secondItem="iCp-K0-AM2" secondAttribute="height" multiplier="1:1" id="mHH-Z6-GdM"/>
                                                         <constraint firstAttribute="width" secondItem="iCp-K0-AM2" secondAttribute="height" multiplier="1:1" id="wsV-iO-vSy"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YOI-jC-Ng3">
-                                                    <rect key="frame" x="108" y="33.5" width="42" height="21"/>
+                                                    <rect key="frame" x="86" y="22.5" width="42" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="jsk-HW-qS3"/>
                                                     </constraints>
@@ -155,12 +156,12 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="YOI-jC-Ng3" firstAttribute="leading" secondItem="iCp-K0-AM2" secondAttribute="trailing" constant="20" id="FWt-6t-Vx1"/>
-                                                <constraint firstItem="YOI-jC-Ng3" firstAttribute="centerY" secondItem="iCp-K0-AM2" secondAttribute="centerY" id="SnV-hX-cJI"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YOI-jC-Ng3" secondAttribute="trailing" constant="20" symbolic="YES" id="TKe-Mm-dl1"/>
-                                                <constraint firstItem="iCp-K0-AM2" firstAttribute="leading" secondItem="Axc-XU-kxO" secondAttribute="leading" constant="20" id="UkK-w9-YVC"/>
-                                                <constraint firstAttribute="bottom" secondItem="iCp-K0-AM2" secondAttribute="bottom" constant="10" id="wcN-r2-u40"/>
-                                                <constraint firstItem="iCp-K0-AM2" firstAttribute="top" secondItem="Axc-XU-kxO" secondAttribute="top" constant="10" id="zdd-u5-j6O"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YOI-jC-Ng3" secondAttribute="trailing" priority="750" constant="20" symbolic="YES" id="5bI-O0-MEh"/>
+                                                <constraint firstItem="iCp-K0-AM2" firstAttribute="top" secondItem="Axc-XU-kxO" secondAttribute="top" constant="10" id="BYN-fQ-JeZ"/>
+                                                <constraint firstItem="YOI-jC-Ng3" firstAttribute="centerY" secondItem="iCp-K0-AM2" secondAttribute="centerY" id="Ga7-PS-tyU"/>
+                                                <constraint firstItem="YOI-jC-Ng3" firstAttribute="leading" secondItem="iCp-K0-AM2" secondAttribute="trailing" constant="20" id="b1F-Po-g0Y"/>
+                                                <constraint firstAttribute="bottom" secondItem="iCp-K0-AM2" secondAttribute="bottom" constant="10" id="bIH-Aa-RAD"/>
+                                                <constraint firstItem="iCp-K0-AM2" firstAttribute="leading" secondItem="Axc-XU-kxO" secondAttribute="leading" constant="20" id="zNw-eD-hc0"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -173,10 +174,10 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="3BN-M9-wFs" firstAttribute="top" secondItem="vpu-FL-1Sv" secondAttribute="top" id="F5m-fE-kM8"/>
-                            <constraint firstItem="3BN-M9-wFs" firstAttribute="leading" secondItem="vpu-FL-1Sv" secondAttribute="leading" id="IUX-TV-5gK"/>
-                            <constraint firstItem="vpu-FL-1Sv" firstAttribute="bottom" secondItem="3BN-M9-wFs" secondAttribute="bottom" id="Wdr-Zs-tTF"/>
-                            <constraint firstItem="vpu-FL-1Sv" firstAttribute="trailing" secondItem="3BN-M9-wFs" secondAttribute="trailing" id="pZW-1f-kA7"/>
+                            <constraint firstItem="3BN-M9-wFs" firstAttribute="top" secondItem="9zV-o8-MbV" secondAttribute="top" constant="56" id="F5m-fE-kM8"/>
+                            <constraint firstItem="3BN-M9-wFs" firstAttribute="leading" secondItem="9zV-o8-MbV" secondAttribute="leading" id="IUX-TV-5gK"/>
+                            <constraint firstAttribute="bottom" secondItem="3BN-M9-wFs" secondAttribute="bottom" id="Wdr-Zs-tTF"/>
+                            <constraint firstAttribute="trailing" secondItem="3BN-M9-wFs" secondAttribute="trailing" id="pZW-1f-kA7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vpu-FL-1Sv"/>
                     </view>
@@ -207,21 +208,21 @@
                                 <rect key="frame" x="0.0" y="56" width="414" height="703"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="allGroupsIdentifier" rowHeight="76" id="gRb-hg-RGm" customClass="AllGroupsTableViewCell" customModule="VeKa" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="76"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="allGroupsIdentifier" rowHeight="66" id="gRb-hg-RGm" customClass="AllGroupsTableViewCell" customModule="VeKa" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gRb-hg-RGm" id="57R-oL-4p7">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="76"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="66"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="56v-sl-P4z">
-                                                    <rect key="frame" x="20" y="10" width="60" height="56"/>
+                                                    <rect key="frame" x="20" y="10" width="49" height="46"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="56v-sl-P4z" secondAttribute="height" multiplier="47:44" id="Fkf-IS-77F"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3a-Co-3wU">
-                                                    <rect key="frame" x="100" y="27.5" width="42" height="21"/>
+                                                    <rect key="frame" x="89" y="22.5" width="42" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="51I-vT-G38"/>
                                                     </constraints>
@@ -235,7 +236,7 @@
                                                 <constraint firstItem="56v-sl-P4z" firstAttribute="leading" secondItem="57R-oL-4p7" secondAttribute="leading" constant="20" id="Uhb-Uz-Hyd"/>
                                                 <constraint firstAttribute="bottom" secondItem="56v-sl-P4z" secondAttribute="bottom" constant="10" id="WW9-aV-H0D"/>
                                                 <constraint firstItem="56v-sl-P4z" firstAttribute="centerY" secondItem="57R-oL-4p7" secondAttribute="centerY" id="YMz-NT-AFb"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="f3a-Co-3wU" secondAttribute="trailing" constant="20" symbolic="YES" id="hSS-Yy-Tps"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="f3a-Co-3wU" secondAttribute="trailing" constant="10" id="hSS-Yy-Tps"/>
                                                 <constraint firstItem="f3a-Co-3wU" firstAttribute="leading" secondItem="56v-sl-P4z" secondAttribute="trailing" constant="20" id="lnH-IB-3oq"/>
                                                 <constraint firstItem="f3a-Co-3wU" firstAttribute="centerY" secondItem="56v-sl-P4z" secondAttribute="centerY" id="sWj-FE-UtJ"/>
                                             </constraints>
@@ -243,7 +244,7 @@
                                         <connections>
                                             <outlet property="allGroupImageView" destination="56v-sl-P4z" id="iQX-wd-1n3"/>
                                             <outlet property="allGroupLabel" destination="f3a-Co-3wU" id="Qda-X7-cEh"/>
-                                            <segue destination="K2C-c9-f6y" kind="unwind" unwindAction="unwindToMyGroups:" id="LQB-da-hbL"/>
+                                            <segue destination="K2C-c9-f6y" kind="unwind" identifier="addGroupSegueIdentifier" unwindAction="unwindToMyGroups:" id="LQB-da-hbL"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
