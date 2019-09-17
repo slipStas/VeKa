@@ -26,7 +26,6 @@ class FriendInfoViewController: UIViewController {
         layout.itemSize = CGSize(width: width, height: width)
         
     }
-    
 }
 
 extension FriendInfoViewController : UICollectionViewDataSource, UICollectionViewDelegate {
@@ -44,8 +43,6 @@ extension FriendInfoViewController : UICollectionViewDataSource, UICollectionVie
         
         return cell
     }
-    
-    
 }
 
 

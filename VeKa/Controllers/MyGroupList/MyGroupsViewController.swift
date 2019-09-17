@@ -21,7 +21,6 @@ class MyGroupsViewController: UIViewController {
         
         myGroupsTableView.dataSource = self
     }
-    
 }
 
 extension MyGroupsViewController: UITableViewDataSource {
@@ -48,7 +47,6 @@ extension MyGroupsViewController: UITableViewDataSource {
             
             if !myGroupsArray.contains(where: {$0.name == group.name}) {
                  myGroupsArray.append(allGroupController.allGroupsArray[indexPath.row])
-//                 myGroupsTableView.insertRows(at: [IndexPath(row: myGroupsArray.count - 1, section: 0)], with: .fade)
                  myGroupsTableView.reloadData()
             }
         }

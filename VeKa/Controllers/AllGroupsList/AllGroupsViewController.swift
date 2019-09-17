@@ -31,7 +31,6 @@ class AllGroupsViewController: UIViewController {
         allGroupsTableView.rowHeight = 66
         allGroupsTableView.dataSource = self
     }
-    
 }
 
 extension AllGroupsViewController: UITableViewDataSource {
@@ -49,5 +48,7 @@ extension AllGroupsViewController: UITableViewDataSource {
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
