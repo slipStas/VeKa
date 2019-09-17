@@ -20,6 +20,7 @@
 		8EF119352329767A000B30E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EF119342329767A000B30E3 /* Assets.xcassets */; };
 		8EF119382329767A000B30E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EF119362329767A000B30E3 /* LaunchScreen.storyboard */; };
 		8EF1A3032331641700D81510 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF1A3022331641700D81510 /* User.swift */; };
+		8EF1A305233166B100D81510 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF1A304233166B100D81510 /* Group.swift */; };
 		8EF93C282329883600EBEC86 /* LoginFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF93C272329883600EBEC86 /* LoginFormController.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		8EF119372329767A000B30E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8EF119392329767A000B30E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EF1A3022331641700D81510 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8EF1A304233166B100D81510 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		8EF93C272329883600EBEC86 /* LoginFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				8EF1A3022331641700D81510 /* User.swift */,
+				8EF1A304233166B100D81510 /* Group.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 				8EF1192E23297677000B30E3 /* AppDelegate.swift in Sources */,
 				8E3EA7A2232D800600F118DB /* MyGroupsViewController.swift in Sources */,
 				8EB24E2F232C0A6E00CF3F9C /* FriendsListViewController.swift in Sources */,
+				8EF1A305233166B100D81510 /* Group.swift in Sources */,
 				8E3EA79F232D66BF00F118DB /* FriendInfoCollectionViewCell.swift in Sources */,
 				8E3EA79D232D668000F118DB /* FriendInfoViewController.swift in Sources */,
 				8EF93C282329883600EBEC86 /* LoginFormController.swift in Sources */,

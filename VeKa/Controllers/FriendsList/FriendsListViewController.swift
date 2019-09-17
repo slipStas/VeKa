@@ -10,13 +10,6 @@ import UIKit
 
 class FriendsListViewController: UIViewController {
     
-//    let friendsArray = [
-//    (UIImage(named: "image_1") , "Valera"),
-//    (UIImage(named: "image_2"), "Igor"),
-//    (UIImage(named: "image_3"), "Elena"),
-//    (UIImage(named: "image_4"), "Oleg"),
-//    (UIImage(named: "image_5"), "Mikhail")]
-    
     let friendsArray = [
         User(name: "Valera", avatar: (UIImage(named: "image_1")!)),
         User(name: "Igor", avatar: (UIImage(named: "image_2")!)),

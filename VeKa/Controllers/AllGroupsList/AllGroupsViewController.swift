@@ -10,17 +10,17 @@ import UIKit
 
 class AllGroupsViewController: UIViewController {
     
-    let allGroupsArray: [(UIImage, String)] = [
-        (UIImage(named: "icon_1")!, "AppStores"),
-        (UIImage(named: "icon_2")!, "Safaries"),
-        (UIImage(named: "icon_3")!, "Mails"),
-        (UIImage(named: "icon_4")!, "ApleTVs"),
-        (UIImage(named: "icon_5")!, "Homes"),
-        (UIImage(named: "icon_6")!, "Siries"),
-        (UIImage(named: "icon_7")!, "Locators"),
-        (UIImage(named: "icon_8")!, "Photo Boothes"),
-        (UIImage(named: "icon_9")!, "Shares"),
-        (UIImage(named: "icon_10")!, "Maps"),
+    let allGroupsArray = [
+        Group(name: "AppStores", icon: UIImage(named: "icon_1")!),
+        Group(name: "Safaries", icon: UIImage(named: "icon_2")!),
+        Group(name: "Mails", icon: UIImage(named: "icon_3")!),
+        Group(name: "ApleTVs", icon: UIImage(named: "icon_4")!),
+        Group(name: "Homes", icon: UIImage(named: "icon_5")!),
+        Group(name: "Siries", icon: UIImage(named: "icon_6")!),
+        Group(name: "Locators", icon: UIImage(named: "icon_7")!),
+        Group(name: "Photo Boothes", icon: UIImage(named: "icon_8")!),
+        Group(name: "Shares", icon: UIImage(named: "icon_9")!),
+        Group(name: "Maps", icon: UIImage(named: "icon_10")!),
     ]
 
     @IBOutlet weak var allGroupsTableView: UITableView!
@@ -43,8 +43,8 @@ extension AllGroupsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = allGroupsTableView.dequeueReusableCell(withIdentifier: "allGroupsIdentifier", for: indexPath) as! AllGroupsTableViewCell
         
-        cell.allGroupImageView.image = allGroupsArray[indexPath.row].0
-        cell.allGroupLabel.text = allGroupsArray[indexPath.row].1
+        cell.allGroupImageView.image = allGroupsArray[indexPath.row].icon
+        cell.allGroupLabel.text = allGroupsArray[indexPath.row].name
         
         return cell
     }

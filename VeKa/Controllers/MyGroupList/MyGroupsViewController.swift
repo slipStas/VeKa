@@ -10,7 +10,7 @@ import UIKit
 
 class MyGroupsViewController: UIViewController {
     
-    var myGroupsArray: [(UIImage, String)] = []
+    var myGroupsArray: [Group] = []
 
     @IBOutlet weak var myGroupsTableView: UITableView!
     
@@ -33,8 +33,8 @@ extension MyGroupsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = myGroupsTableView.dequeueReusableCell(withIdentifier: "myGroupsIdentifire", for: indexPath) as! MyGroupsTableViewCell
         
-        cell.myGroupsImageView.image = myGroupsArray[indexPath.row].0
-        cell.myGroupsNameLabel.text = myGroupsArray[indexPath.row].1
+        cell.myGroupsImageView.image = myGroupsArray[indexPath.row].icon
+        cell.myGroupsNameLabel.text = myGroupsArray[indexPath.row].name
         
         return cell
     }
@@ -46,7 +46,7 @@ extension MyGroupsViewController: UITableViewDataSource {
             
             let group = allGroupController.allGroupsArray[indexPath.row]
             
-            if !myGroupsArray.contains(where: {$0.1 == group.1}) {
+            if !myGroupsArray.contains(where: {$0.name == group.name}) {
                  myGroupsArray.append(allGroupController.allGroupsArray[indexPath.row])
 //                 myGroupsTableView.insertRows(at: [IndexPath(row: myGroupsArray.count - 1, section: 0)], with: .fade)
                  myGroupsTableView.reloadData()
