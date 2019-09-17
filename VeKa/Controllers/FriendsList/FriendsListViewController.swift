@@ -10,12 +10,20 @@ import UIKit
 
 class FriendsListViewController: UIViewController {
     
+//    let friendsArray = [
+//    (UIImage(named: "image_1") , "Valera"),
+//    (UIImage(named: "image_2"), "Igor"),
+//    (UIImage(named: "image_3"), "Elena"),
+//    (UIImage(named: "image_4"), "Oleg"),
+//    (UIImage(named: "image_5"), "Mikhail")]
+    
     let friendsArray = [
-    (UIImage(named: "image_1") , "Valera"),
-    (UIImage(named: "image_2"), "Igor"),
-    (UIImage(named: "image_3"), "Elena"),
-    (UIImage(named: "image_4"), "Oleg"),
-    (UIImage(named: "image_5"), "Mikhail")]
+        User(name: "Valera", avatar: (UIImage(named: "image_1")!)),
+        User(name: "Igor", avatar: (UIImage(named: "image_2")!)),
+        User(name: "Elena", avatar: (UIImage(named: "image_3")!)),
+        User(name: "Oleg", avatar: (UIImage(named: "image_4")!)),
+        User(name: "Mikhail", avatar: (UIImage(named: "image_5")!)),
+    ]
 
     @IBOutlet weak var friendsListTableView: UITableView!
     
@@ -43,8 +51,8 @@ extension FriendsListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = friendsListTableView.dequeueReusableCell(withIdentifier: "friendsListIdentifire", for: indexPath) as! FriendsListTableViewCell
         
-        cell.friendNameLabel.text = friendsArray[indexPath.row].1
-        cell.friendsPhotoImageView.image = friendsArray[indexPath.row].0
+        cell.friendNameLabel.text = friendsArray[indexPath.row].name
+        cell.friendsPhotoImageView.image = friendsArray[indexPath.row].avatar
         
         
         return cell
@@ -56,7 +64,7 @@ extension FriendsListViewController: UITableViewDataSource {
             if let indexPath = friendsListTableView.indexPathForSelectedRow {
                 if let destinationVC = segue.destination  as? FriendInfoViewController {
                     
-                    destinationVC.friendInfoList = [(friendsArray[(indexPath as NSIndexPath).row].0!, friendsArray[(indexPath as NSIndexPath).row].1)]
+                    destinationVC.friendInfoList = [(friendsArray[(indexPath as NSIndexPath).row])]
                 }
             }
         }

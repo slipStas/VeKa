@@ -10,7 +10,7 @@ import UIKit
 
 class FriendInfoViewController: UIViewController {
     
-    var friendInfoList : [(UIImage, String)] = []
+    var friendInfoList : [User] = []
     
     @IBOutlet weak var friendInfoCollectionView: UICollectionView!
     
@@ -39,8 +39,8 @@ extension FriendInfoViewController : UICollectionViewDataSource, UICollectionVie
         
         let cell = friendInfoCollectionView.dequeueReusableCell(withReuseIdentifier: "friendInfoIdentifire", for: indexPath) as! FriendInfoCollectionViewCell
         
-        cell.friendInfoImageView.image = friendInfoList[indexPath.row].0
-        cell.nameFriendInfoLabel.text = friendInfoList[indexPath.row].1
+        cell.friendInfoImageView.image = friendInfoList[indexPath.row].avatar
+        cell.nameFriendInfoLabel.text = friendInfoList[indexPath.row].name
         
         return cell
     }

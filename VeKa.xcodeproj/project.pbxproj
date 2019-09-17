@@ -19,6 +19,7 @@
 		8EF1193323297677000B30E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EF1193123297677000B30E3 /* Main.storyboard */; };
 		8EF119352329767A000B30E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EF119342329767A000B30E3 /* Assets.xcassets */; };
 		8EF119382329767A000B30E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EF119362329767A000B30E3 /* LaunchScreen.storyboard */; };
+		8EF1A3032331641700D81510 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF1A3022331641700D81510 /* User.swift */; };
 		8EF93C282329883600EBEC86 /* LoginFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF93C272329883600EBEC86 /* LoginFormController.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		8EF119342329767A000B30E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8EF119372329767A000B30E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8EF119392329767A000B30E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8EF1A3022331641700D81510 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8EF93C272329883600EBEC86 /* LoginFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,6 +119,7 @@
 		8EF1192C23297677000B30E3 /* VeKa */ = {
 			isa = PBXGroup;
 			children = (
+				8EF1A301233163CC00D81510 /* Model */,
 				8E3EA79A232D660000F118DB /* Controllers */,
 				8EF1192D23297677000B30E3 /* AppDelegate.swift */,
 				8EF93C272329883600EBEC86 /* LoginFormController.swift */,
@@ -126,6 +129,14 @@
 				8EF119392329767A000B30E3 /* Info.plist */,
 			);
 			path = VeKa;
+			sourceTree = "<group>";
+		};
+		8EF1A301233163CC00D81510 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8EF1A3022331641700D81510 /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +220,7 @@
 				8EB24E31232C0C3600CF3F9C /* FriendsListTableViewCell.swift in Sources */,
 				8E3EA7A4232D802C00F118DB /* MyGroupsTableViewCell.swift in Sources */,
 				8E3EA7A7232D808D00F118DB /* AllGroupsTableViewCell.swift in Sources */,
+				8EF1A3032331641700D81510 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
