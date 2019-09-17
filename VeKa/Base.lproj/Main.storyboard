@@ -141,8 +141,8 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iCp-K0-AM2">
                                                     <rect key="frame" x="20" y="10" width="46" height="46"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="height" constant="46" id="RUg-ZI-PnU"/>
                                                         <constraint firstAttribute="width" secondItem="iCp-K0-AM2" secondAttribute="height" multiplier="1:1" id="mHH-Z6-GdM"/>
-                                                        <constraint firstAttribute="width" secondItem="iCp-K0-AM2" secondAttribute="height" multiplier="1:1" id="wsV-iO-vSy"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YOI-jC-Ng3">
@@ -160,7 +160,6 @@
                                                 <constraint firstItem="iCp-K0-AM2" firstAttribute="top" secondItem="Axc-XU-kxO" secondAttribute="top" constant="10" id="BYN-fQ-JeZ"/>
                                                 <constraint firstItem="YOI-jC-Ng3" firstAttribute="centerY" secondItem="iCp-K0-AM2" secondAttribute="centerY" id="Ga7-PS-tyU"/>
                                                 <constraint firstItem="YOI-jC-Ng3" firstAttribute="leading" secondItem="iCp-K0-AM2" secondAttribute="trailing" constant="20" id="b1F-Po-g0Y"/>
-                                                <constraint firstAttribute="bottom" secondItem="iCp-K0-AM2" secondAttribute="bottom" constant="10" id="bIH-Aa-RAD"/>
                                                 <constraint firstItem="iCp-K0-AM2" firstAttribute="leading" secondItem="Axc-XU-kxO" secondAttribute="leading" constant="20" id="zNw-eD-hc0"/>
                                             </constraints>
                                         </tableViewCellContentView>

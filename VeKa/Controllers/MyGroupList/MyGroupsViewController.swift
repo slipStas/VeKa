@@ -44,9 +44,13 @@ extension MyGroupsViewController: UITableViewDataSource {
             guard let allGroupController = unwindSegue.source as? AllGroupsViewController else {return}
             guard let indexPath = allGroupController.allGroupsTableView.indexPathForSelectedRow else {return}
             
-            myGroupsArray.append(allGroupController.allGroupsArray[indexPath.row])
-//            myGroupsTableView.insertRows(at: [IndexPath(row: myGroupsArray.count - 1, section: 0)], with: .fade)
-            myGroupsTableView.reloadData()
+            let group = allGroupController.allGroupsArray[indexPath.row]
+            
+            if !myGroupsArray.contains(where: {$0.1 == group.1}) {
+                 myGroupsArray.append(allGroupController.allGroupsArray[indexPath.row])
+//                 myGroupsTableView.insertRows(at: [IndexPath(row: myGroupsArray.count - 1, section: 0)], with: .fade)
+                 myGroupsTableView.reloadData()
+            }
         }
     }
     
@@ -54,11 +58,12 @@ extension MyGroupsViewController: UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
         if editingStyle == .delete {
             myGroupsArray.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.middle)
+            tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
-    
 }
