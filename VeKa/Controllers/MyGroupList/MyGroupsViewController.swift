@@ -27,7 +27,9 @@ class MyGroupsViewController: UIViewController {
 extension MyGroupsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("select my group")
+        print("""
+            select my group "\(myGroupsArray[indexPath.row].name)"
+            """)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     

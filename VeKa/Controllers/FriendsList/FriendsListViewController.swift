@@ -33,6 +33,12 @@ class FriendsListViewController: UIViewController {
 
 extension FriendsListViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("""
+            select friend "\(friendsArray[indexPath.row].name)"
+            """)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
 
 extension FriendsListViewController: UITableViewDataSource {
@@ -61,10 +67,5 @@ extension FriendsListViewController: UITableViewDataSource {
                 }
             }
         }
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("select friend")
-        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
