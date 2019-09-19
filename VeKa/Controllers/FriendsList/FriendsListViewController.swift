@@ -64,6 +64,7 @@ extension FriendsListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("select friend")
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

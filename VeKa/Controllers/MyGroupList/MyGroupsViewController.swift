@@ -20,7 +20,17 @@ class MyGroupsViewController: UIViewController {
         myGroupsTableView.rowHeight = 66
         
         myGroupsTableView.dataSource = self
+        myGroupsTableView.delegate = self
     }
+}
+
+extension MyGroupsViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("select my group")
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
 }
 
 extension MyGroupsViewController: UITableViewDataSource {
@@ -51,11 +61,6 @@ extension MyGroupsViewController: UITableViewDataSource {
             }
         }
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-    
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         

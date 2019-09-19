@@ -49,6 +49,7 @@ extension AllGroupsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("select all group")
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
