@@ -10,8 +10,16 @@ import UIKit
 
 struct User {
     
+    enum LikesStatus {
+        case like
+        case noLike
+    }
+    
     let name : String
     let avatar : UIImage
+    var likesCount : UInt
+    var likesStatus : LikesStatus
+    
 }
 
 

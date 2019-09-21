@@ -11,21 +11,21 @@ import UIKit
 class FriendsListViewController: UIViewController {
     
     let friendsArray = [
-        User(name: "Valera", avatar: (UIImage(named: "image_1")!)),
-        User(name: "Igor", avatar: (UIImage(named: "image_2")!)),
-        User(name: "Elena", avatar: (UIImage(named: "image_3")!)),
-        User(name: "Oleg", avatar: (UIImage(named: "image_4")!)),
-        User(name: "Mikhail", avatar: (UIImage(named: "image_5")!)),
-        User(name: "Valera1", avatar: (UIImage(named: "image_1")!)),
-        User(name: "Igor1", avatar: (UIImage(named: "image_2")!)),
-        User(name: "Elena1", avatar: (UIImage(named: "image_3")!)),
-        User(name: "Oleg1", avatar: (UIImage(named: "image_4")!)),
-        User(name: "Mikhail1", avatar: (UIImage(named: "image_5")!)),
-        User(name: "Valera2", avatar: (UIImage(named: "image_1")!)),
-        User(name: "Igor2", avatar: (UIImage(named: "image_2")!)),
-        User(name: "Elena2", avatar: (UIImage(named: "image_3")!)),
-        User(name: "Oleg2", avatar: (UIImage(named: "image_4")!)),
-        User(name: "Mikhail2", avatar: (UIImage(named: "image_5")!))
+        User(name: "Valera", avatar: (UIImage(named: "image_1")!), likesCount: 490, likesStatus: .noLike),
+        User(name: "Igor", avatar: (UIImage(named: "image_2")!), likesCount: 10, likesStatus: .noLike),
+        User(name: "Elena", avatar: (UIImage(named: "image_3")!), likesCount: 7653, likesStatus: .noLike),
+        User(name: "Oleg", avatar: (UIImage(named: "image_4")!), likesCount: 9719, likesStatus: .noLike),
+        User(name: "Mikhail", avatar: (UIImage(named: "image_5")!), likesCount: 54, likesStatus: .noLike),
+        User(name: "Valera1", avatar: (UIImage(named: "image_1")!), likesCount: 567, likesStatus: .noLike),
+        User(name: "Igor1", avatar: (UIImage(named: "image_2")!), likesCount: 4568, likesStatus: .noLike),
+        User(name: "Elena1", avatar: (UIImage(named: "image_3")!), likesCount: 1, likesStatus: .noLike),
+        User(name: "Oleg1", avatar: (UIImage(named: "image_4")!), likesCount: 423, likesStatus: .noLike),
+        User(name: "Mikhail1", avatar: (UIImage(named: "image_5")!), likesCount: 974, likesStatus: .noLike),
+        User(name: "Valera2", avatar: (UIImage(named: "image_1")!), likesCount: 1113, likesStatus: .noLike),
+        User(name: "Igor2", avatar: (UIImage(named: "image_2")!), likesCount: 96528, likesStatus: .noLike),
+        User(name: "Elena2", avatar: (UIImage(named: "image_3")!), likesCount: 100000, likesStatus: .noLike),
+        User(name: "Oleg2", avatar: (UIImage(named: "image_4")!), likesCount: 2, likesStatus: .noLike),
+        User(name: "Mikhail2", avatar: (UIImage(named: "image_5")!), likesCount: 89, likesStatus: .noLike)
     ]
 
     @IBOutlet weak var friendsListTableView: UITableView!
