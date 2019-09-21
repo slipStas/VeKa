@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E0971C12335884500BF2473 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0971C02335884500BF2473 /* AvatarView.swift */; };
+		8E0971C32336B27900BF2473 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0971C22336B27900BF2473 /* ShadowView.swift */; };
+		8E0971C52336B49300BF2473 /* AvatarSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0971C42336B49300BF2473 /* AvatarSettings.swift */; };
 		8E3EA79D232D668000F118DB /* FriendInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3EA79C232D668000F118DB /* FriendInfoViewController.swift */; };
 		8E3EA79F232D66BF00F118DB /* FriendInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3EA79E232D66BF00F118DB /* FriendInfoCollectionViewCell.swift */; };
 		8E3EA7A2232D800600F118DB /* MyGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3EA7A1232D800600F118DB /* MyGroupsViewController.swift */; };
@@ -25,6 +28,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8E0971C02335884500BF2473 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
+		8E0971C22336B27900BF2473 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
+		8E0971C42336B49300BF2473 /* AvatarSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSettings.swift; sourceTree = "<group>"; };
 		8E3EA79C232D668000F118DB /* FriendInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendInfoViewController.swift; sourceTree = "<group>"; };
 		8E3EA79E232D66BF00F118DB /* FriendInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendInfoCollectionViewCell.swift; sourceTree = "<group>"; };
 		8E3EA7A1232D800600F118DB /* MyGroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupsViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +61,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E0971BC233586AF00BF2473 /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				8EF119342329767A000B30E3 /* Assets.xcassets */,
+				8E0971BD233586B900BF2473 /* Storyboard */,
+			);
+			path = Resourses;
+			sourceTree = "<group>";
+		};
+		8E0971BD233586B900BF2473 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				8EF1193123297677000B30E3 /* Main.storyboard */,
+				8EF119362329767A000B30E3 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		8E0971BE2335874300BF2473 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				8EF1192D23297677000B30E3 /* AppDelegate.swift */,
+				8EF1A301233163CC00D81510 /* Model */,
+				8E3EA79A232D660000F118DB /* Controllers */,
+				8E0971BF233587A700BF2473 /* Views */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		8E0971BF233587A700BF2473 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8E0971C02335884500BF2473 /* AvatarView.swift */,
+				8E0971C22336B27900BF2473 /* ShadowView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		8E3EA799232D65D500F118DB /* FriendsList */ = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +111,7 @@
 		8E3EA79A232D660000F118DB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8EF93C272329883600EBEC86 /* LoginFormController.swift */,
 				8E3EA7A5232D806800F118DB /* AllGroupsList */,
 				8E3EA7A0232D7FD000F118DB /* MyGroupList */,
 				8E3EA79B232D663A00F118DB /* FriendInfo */,
@@ -121,13 +166,8 @@
 		8EF1192C23297677000B30E3 /* VeKa */ = {
 			isa = PBXGroup;
 			children = (
-				8EF1A301233163CC00D81510 /* Model */,
-				8E3EA79A232D660000F118DB /* Controllers */,
-				8EF1192D23297677000B30E3 /* AppDelegate.swift */,
-				8EF93C272329883600EBEC86 /* LoginFormController.swift */,
-				8EF1193123297677000B30E3 /* Main.storyboard */,
-				8EF119342329767A000B30E3 /* Assets.xcassets */,
-				8EF119362329767A000B30E3 /* LaunchScreen.storyboard */,
+				8E0971BC233586AF00BF2473 /* Resourses */,
+				8E0971BE2335874300BF2473 /* Source */,
 				8EF119392329767A000B30E3 /* Info.plist */,
 			);
 			path = VeKa;
@@ -138,6 +178,7 @@
 			children = (
 				8EF1A3022331641700D81510 /* User.swift */,
 				8EF1A304233166B100D81510 /* Group.swift */,
+				8E0971C42336B49300BF2473 /* AvatarSettings.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -217,7 +258,10 @@
 				8E3EA7A2232D800600F118DB /* MyGroupsViewController.swift in Sources */,
 				8EB24E2F232C0A6E00CF3F9C /* FriendsListViewController.swift in Sources */,
 				8EF1A305233166B100D81510 /* Group.swift in Sources */,
+				8E0971C12335884500BF2473 /* AvatarView.swift in Sources */,
+				8E0971C52336B49300BF2473 /* AvatarSettings.swift in Sources */,
 				8E3EA79F232D66BF00F118DB /* FriendInfoCollectionViewCell.swift in Sources */,
+				8E0971C32336B27900BF2473 /* ShadowView.swift in Sources */,
 				8E3EA79D232D668000F118DB /* FriendInfoViewController.swift in Sources */,
 				8EF93C282329883600EBEC86 /* LoginFormController.swift in Sources */,
 				8E3EA7A9232D80A900F118DB /* AllGroupsViewController.swift in Sources */,
@@ -373,7 +417,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GAPK9VY2U9;
 				INFOPLIST_FILE = VeKa/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -392,7 +436,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GAPK9VY2U9;
 				INFOPLIST_FILE = VeKa/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

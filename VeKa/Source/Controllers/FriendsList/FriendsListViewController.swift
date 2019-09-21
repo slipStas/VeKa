@@ -16,6 +16,16 @@ class FriendsListViewController: UIViewController {
         User(name: "Elena", avatar: (UIImage(named: "image_3")!)),
         User(name: "Oleg", avatar: (UIImage(named: "image_4")!)),
         User(name: "Mikhail", avatar: (UIImage(named: "image_5")!)),
+        User(name: "Valera1", avatar: (UIImage(named: "image_1")!)),
+        User(name: "Igor1", avatar: (UIImage(named: "image_2")!)),
+        User(name: "Elena1", avatar: (UIImage(named: "image_3")!)),
+        User(name: "Oleg1", avatar: (UIImage(named: "image_4")!)),
+        User(name: "Mikhail1", avatar: (UIImage(named: "image_5")!)),
+        User(name: "Valera2", avatar: (UIImage(named: "image_1")!)),
+        User(name: "Igor2", avatar: (UIImage(named: "image_2")!)),
+        User(name: "Elena2", avatar: (UIImage(named: "image_3")!)),
+        User(name: "Oleg2", avatar: (UIImage(named: "image_4")!)),
+        User(name: "Mikhail2", avatar: (UIImage(named: "image_5")!))
     ]
 
     @IBOutlet weak var friendsListTableView: UITableView!
