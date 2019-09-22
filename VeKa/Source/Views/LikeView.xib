@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LikeView" customModule="VeKa" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fm1-rd-pVb">
+                    <rect key="frame" x="0.0" y="1.5" width="44" height="42"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Fm1-rd-pVb" secondAttribute="height" multiplier="1:1" id="33b-bw-wyF"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="heart" catalog="system"/>
+                    <connections>
+                        <action selector="likeActionButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="nRa-ES-v2e"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUa-9y-SSC">
+                    <rect key="frame" x="54" y="11.5" width="42" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="xEm-hj-CcY"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Fm1-rd-pVb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Xtf-Bg-k4U"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="KUa-9y-SSC" secondAttribute="trailing" constant="10" id="c2w-yY-bBD"/>
+                <constraint firstItem="KUa-9y-SSC" firstAttribute="centerY" secondItem="Fm1-rd-pVb" secondAttribute="centerY" id="ihe-1n-v5X"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Fm1-rd-pVb" secondAttribute="bottom" id="j45-Kf-b5b"/>
+                <constraint firstItem="KUa-9y-SSC" firstAttribute="leading" secondItem="Fm1-rd-pVb" secondAttribute="trailing" constant="10" id="rQa-cJ-XWl"/>
+                <constraint firstItem="Fm1-rd-pVb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="vCr-0K-hjc"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="likeButton" destination="Fm1-rd-pVb" id="Lvm-KN-GSY"/>
+                <outlet property="likeLabel" destination="KUa-9y-SSC" id="zID-KK-pEu"/>
+            </connections>
+            <point key="canvasLocation" x="143.47826086956522" y="-131.91964285714286"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="heart" catalog="system" width="64" height="58"/>
+    </resources>
+</document>
