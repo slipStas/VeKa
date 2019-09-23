@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct User {
+class User {
     
     enum LikesStatus {
         case like
@@ -19,6 +19,13 @@ struct User {
     let avatar : UIImage
     var likesCount : UInt
     var likesStatus : LikesStatus
+    
+    init(name: String, avatar: UIImage, likesCount: UInt, likesStatus: LikesStatus) {
+        self.name = name
+        self.avatar = avatar
+        self.likesCount = likesCount
+        self.likesStatus = likesStatus
+    }
     
 }
 

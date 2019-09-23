@@ -18,6 +18,7 @@
 		8E3EA7A9232D80A900F118DB /* AllGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3EA7A8232D80A900F118DB /* AllGroupsViewController.swift */; };
 		8EB24E2F232C0A6E00CF3F9C /* FriendsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB24E2E232C0A6E00CF3F9C /* FriendsListViewController.swift */; };
 		8EB24E31232C0C3600CF3F9C /* FriendsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB24E30232C0C3600CF3F9C /* FriendsListTableViewCell.swift */; };
+		8EDB222D23386E8B00185A6C /* LikesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDB222C23386E8B00185A6C /* LikesView.swift */; };
 		8EF1192E23297677000B30E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF1192D23297677000B30E3 /* AppDelegate.swift */; };
 		8EF1193323297677000B30E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EF1193123297677000B30E3 /* Main.storyboard */; };
 		8EF119352329767A000B30E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EF119342329767A000B30E3 /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 		8E3EA7A8232D80A900F118DB /* AllGroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupsViewController.swift; sourceTree = "<group>"; };
 		8EB24E2E232C0A6E00CF3F9C /* FriendsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListViewController.swift; sourceTree = "<group>"; };
 		8EB24E30232C0C3600CF3F9C /* FriendsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListTableViewCell.swift; sourceTree = "<group>"; };
+		8EDB222C23386E8B00185A6C /* LikesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesView.swift; sourceTree = "<group>"; };
 		8EF1192A23297677000B30E3 /* VeKa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VeKa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EF1192D23297677000B30E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EF1193223297677000B30E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 			children = (
 				8E0971C02335884500BF2473 /* AvatarView.swift */,
 				8E0971C22336B27900BF2473 /* ShadowView.swift */,
+				8EDB222C23386E8B00185A6C /* LikesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				8E3EA7A9232D80A900F118DB /* AllGroupsViewController.swift in Sources */,
 				8EB24E31232C0C3600CF3F9C /* FriendsListTableViewCell.swift in Sources */,
 				8E3EA7A4232D802C00F118DB /* MyGroupsTableViewCell.swift in Sources */,
+				8EDB222D23386E8B00185A6C /* LikesView.swift in Sources */,
 				8E3EA7A7232D808D00F118DB /* AllGroupsTableViewCell.swift in Sources */,
 				8EF1A3032331641700D81510 /* User.swift in Sources */,
 			);

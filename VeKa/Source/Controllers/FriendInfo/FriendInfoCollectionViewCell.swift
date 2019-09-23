@@ -14,6 +14,8 @@ class FriendInfoCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var nameFriendInfoLabel: UILabel!
     
+    @IBOutlet weak var likesView: LikesView!
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         
