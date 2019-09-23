@@ -530,7 +530,11 @@
                                                     </constraints>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eTZ-0E-9XU" customClass="LikesView" customModule="VeKa" customModuleProvider="target">
-                                                    <rect key="frame" x="86" y="141" width="240" height="128"/>
+                                                    <rect key="frame" x="50" y="317" width="220" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="eTZ-0E-9XU" secondAttribute="height" multiplier="5:1" id="CR1-7G-0jC"/>
+                                                        <constraint firstAttribute="height" constant="44" id="gcf-NS-kzm"/>
+                                                    </constraints>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -538,11 +542,9 @@
                                                 <constraint firstItem="nZu-TW-CVL" firstAttribute="leading" secondItem="b1h-Qp-huf" secondAttribute="leading" constant="50" id="cF2-C4-QtE"/>
                                                 <constraint firstItem="nZu-TW-CVL" firstAttribute="top" secondItem="b1h-Qp-huf" secondAttribute="top" constant="50" id="cmt-JU-8Fw"/>
                                                 <constraint firstItem="nZu-TW-CVL" firstAttribute="centerX" secondItem="b1h-Qp-huf" secondAttribute="centerX" id="d0b-tH-WG2"/>
-                                                <constraint firstItem="eTZ-0E-9XU" firstAttribute="top" secondItem="b1h-Qp-huf" secondAttribute="top" constant="141" id="dQZ-Oa-1Fg"/>
                                                 <constraint firstItem="BQh-Ex-gOf" firstAttribute="centerX" secondItem="nZu-TW-CVL" secondAttribute="centerX" id="enn-sg-cvc"/>
-                                                <constraint firstItem="eTZ-0E-9XU" firstAttribute="leading" secondItem="b1h-Qp-huf" secondAttribute="leading" constant="86" id="nVO-fn-JaK"/>
-                                                <constraint firstItem="BQh-Ex-gOf" firstAttribute="top" secondItem="eTZ-0E-9XU" secondAttribute="bottom" constant="102" id="obf-vp-VR8"/>
-                                                <constraint firstAttribute="trailing" secondItem="eTZ-0E-9XU" secondAttribute="trailing" constant="85" id="rBy-so-bdE"/>
+                                                <constraint firstItem="eTZ-0E-9XU" firstAttribute="bottom" secondItem="nZu-TW-CVL" secondAttribute="bottom" id="lLr-TY-onU"/>
+                                                <constraint firstItem="eTZ-0E-9XU" firstAttribute="leading" secondItem="nZu-TW-CVL" secondAttribute="leading" id="wry-DD-b3T"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <connections>

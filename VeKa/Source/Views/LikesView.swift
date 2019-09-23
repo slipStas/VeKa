@@ -9,14 +9,26 @@
 import UIKit
 
 class LikesView: UIView {
-
-    let label = UILabel(frame: CGRect.zero)
-    //var image = UIImage(named: "heart_fill")
-    var likesCount = 0 {
+    
+    enum LikesStatus {
+        case like
+        case noLike
+    }
+    
+    var likesStatus: LikesStatus = .noLike {
         didSet {
-            label.text = String(likesCount)
+            switch likesStatus {
+            case .like:
+                likeIcon.image = UIImage(named: "heart_fill")
+            case .noLike:
+                likeIcon.image = UIImage(named: "heart")
+            }
         }
     }
+    let likeIcon = UIImageView(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
+
+    let label = UILabel(frame: CGRect(x: 44, y: 0, width: 100, height: 44))
+    
     
     var onTap: (() -> Void)?
     
@@ -24,6 +36,9 @@ class LikesView: UIView {
         super.awakeFromNib()
         
         addSubview(label)
+        addSubview(likeIcon)
+        
+        likeIcon.image = UIImage(named: "heart")
         
         let gr = UITapGestureRecognizer(target: self, action: #selector(tapOnLike(guestRecogniser:)))
         addGestureRecognizer(gr)
@@ -32,7 +47,7 @@ class LikesView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        label.frame = bounds
+        
     }
     
     @objc func tapOnLike(guestRecogniser: UITapGestureRecognizer) {
