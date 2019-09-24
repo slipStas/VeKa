@@ -118,7 +118,7 @@
             </objects>
             <point key="canvasLocation" x="472" y="61"/>
         </scene>
-        <!--My Groups View Controller-->
+        <!--Список моих групп-->
         <scene sceneID="wZx-ss-EBq">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="zZD-gp-WKd" customClass="MyGroupsViewController" customModule="VeKa" customModuleProvider="target" sceneMemberID="viewController">
@@ -175,7 +175,7 @@
                                                             <real key="value" value="0.80000000000000004"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                            <color key="value" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="value" systemColor="systemPurpleColor" red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
                                                             <size key="value" width="-1" height="0.0"/>
@@ -218,7 +218,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vpu-FL-1Sv"/>
                     </view>
-                    <navigationItem key="navigationItem" id="QGj-TV-xPa">
+                    <navigationItem key="navigationItem" title="Список моих групп" id="QGj-TV-xPa">
                         <barButtonItem key="rightBarButtonItem" image="text.badge.plus" catalog="system" id="Nmj-0l-Z3d">
                             <connections>
                                 <segue destination="DXI-gW-A8r" kind="show" id="boe-xA-V5F"/>
@@ -233,7 +233,7 @@
             </objects>
             <point key="canvasLocation" x="2894.202898550725" y="-269.19642857142856"/>
         </scene>
-        <!--All Groups View Controller-->
+        <!--Список достуных групп-->
         <scene sceneID="EuJ-Ie-Vio">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="DXI-gW-A8r" customClass="AllGroupsViewController" customModule="VeKa" customModuleProvider="target" sceneMemberID="viewController">
@@ -294,7 +294,7 @@
                                                             <real key="value" value="5"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                            <color key="value" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="value" systemColor="systemIndigoColor" red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
                                                             <size key="value" width="-1" height="0.0"/>
@@ -332,7 +332,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="G7B-Ic-4Yq"/>
                     </view>
-                    <navigationItem key="navigationItem" id="bvG-ri-se7"/>
+                    <navigationItem key="navigationItem" title="Список достуных групп" id="bvG-ri-se7"/>
                     <connections>
                         <outlet property="allGroupsTableView" destination="jur-Sf-7dw" id="x88-No-4ur"/>
                     </connections>
@@ -381,7 +381,7 @@
             </objects>
             <point key="canvasLocation" x="1219" y="61"/>
         </scene>
-        <!--Friends List View Controller-->
+        <!--Друзье-->
         <scene sceneID="Xbe-TE-Uqg">
             <objects>
                 <viewController id="2GK-yk-n5c" customClass="FriendsListViewController" customModule="VeKa" customModuleProvider="target" sceneMemberID="viewController">
@@ -445,7 +445,7 @@
                                                             <real key="value" value="0.5"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                            <color key="value" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="value" systemColor="systemGrayColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
                                                             <size key="value" width="1" height="0.0"/>
@@ -480,7 +480,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AXn-Kc-QKn"/>
                     </view>
-                    <navigationItem key="navigationItem" id="DGN-l9-bgC"/>
+                    <navigationItem key="navigationItem" title="Друзье" id="DGN-l9-bgC"/>
                     <connections>
                         <outlet property="friendsListTableView" destination="YPb-R6-0fD" id="8Sm-5x-a9D"/>
                     </connections>
@@ -489,7 +489,7 @@
             </objects>
             <point key="canvasLocation" x="2897.1014492753625" y="415.17857142857139"/>
         </scene>
-        <!--Friend Info View Controller-->
+        <!--Инфо-->
         <scene sceneID="fBj-A7-mjv">
             <objects>
                 <viewController id="YFh-7U-Onf" customClass="FriendInfoViewController" customModule="VeKa" customModuleProvider="target" sceneMemberID="viewController">
@@ -566,7 +566,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="04d-We-6BK"/>
                     </view>
-                    <navigationItem key="navigationItem" id="VpG-g1-vAk"/>
+                    <navigationItem key="navigationItem" title="Инфо" id="VpG-g1-vAk"/>
                     <connections>
                         <outlet property="friendInfoCollectionView" destination="dzb-xg-Pgq" id="u4H-8P-F1t"/>
                     </connections>
