@@ -47,12 +47,6 @@ class LikesView: UIView {
         addGestureRecognizer(gr)
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        
-    }
-    
     @objc func tapOnLike(guestRecogniser: UITapGestureRecognizer) {
         onTap?()
     }
