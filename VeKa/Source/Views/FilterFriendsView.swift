@@ -20,17 +20,19 @@ class FilterFriendsView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        addSubview(filterView)
         addCharViews()
-        
-        self.backgroundColor = .clear
+        addSubview(filterView)
         filterView.frame = bounds
-        filterView.axis = .vertical
         
+        backgroundColor = .clear
+        
+        filterView.axis = .vertical
+                
         let gr = UIPanGestureRecognizer(target: self, action: #selector(panOnScroll))
         addGestureRecognizer(gr)
         
     }
+    
     @objc func panOnScroll() {
         onScroll?()
     }
@@ -48,5 +50,4 @@ class FilterFriendsView: UIView {
             filterView.addArrangedSubview(i)
         }
     }
-
 }

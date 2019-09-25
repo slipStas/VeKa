@@ -49,17 +49,17 @@ class FriendsListViewController: UIViewController {
         
         filterFriendsControl.addView()
         filterFriendsControl.addCharViews()
-        
-        //filterFriendsControl.reloadInputViews()
+        filterFriendsControl.onScroll = {
+            print(self.filterFriendsControl.filterView.arrangedSubviews.endIndex)
+        }
     }
-    
 }
 
 extension FriendsListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("""
-            select friend "\(friendsArray[indexPath.row].name)"
+            select friend "\(filterdFriendsArray[indexPath.row].name)"
             """)
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -87,7 +87,7 @@ extension FriendsListViewController: UITableViewDataSource {
             if let indexPath = friendsListTableView.indexPathForSelectedRow {
                 if let destinationVC = segue.destination  as? FriendInfoViewController {
                     
-                    destinationVC.friendInfoList = [(friendsArray[(indexPath as NSIndexPath).row])]
+                    destinationVC.friendInfoList = [(filterdFriendsArray[(indexPath as NSIndexPath).row])]
                 }
             }
         }
@@ -100,7 +100,9 @@ extension FriendsListViewController: UITableViewDataSource {
     func charArray() -> [String] {
         var array : [String] = []
         for i in filterdFriendsArray {
-            array.append(String(i.name.first ?? "±"))
+            if !array.contains(String(i.name.first!)) {
+                array.append(String(i.name.first!))
+            }
         }
         return array
     }
