@@ -27,8 +27,12 @@ class FriendsListViewController: UIViewController {
         User(name: "Oleg2", avatar: (UIImage(named: "image_4")!), likesCount: 2, likesStatus: .noLike),
         User(name: "Mikhail2", avatar: (UIImage(named: "image_5")!), likesCount: 89, likesStatus: .noLike)
     ]
+    
+    var filterdFriendsArray: [User] = []
 
     @IBOutlet weak var friendsListTableView: UITableView!
+    
+    @IBOutlet weak var filterFriendsControl: FilterFriendsView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +41,16 @@ class FriendsListViewController: UIViewController {
         
         friendsListTableView.dataSource = self
         friendsListTableView.delegate = self
+        
+        filterdFriendsArray = filterArray()
+        
+        filterFriendsControl.charracterArray = charArray()
+        print(filterFriendsControl.charracterArray)
+        
+        filterFriendsControl.addView()
+        filterFriendsControl.addCharViews()
+        
+        //filterFriendsControl.reloadInputViews()
     }
     
 }
@@ -60,8 +74,8 @@ extension FriendsListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = friendsListTableView.dequeueReusableCell(withIdentifier: "friendsListIdentifire", for: indexPath) as! FriendsListTableViewCell
         
-        cell.friendNameLabel.text = friendsArray[indexPath.row].name
-        cell.friendsPhotoImageView.image = friendsArray[indexPath.row].avatar
+        cell.friendNameLabel.text = filterdFriendsArray[indexPath.row].name
+        cell.friendsPhotoImageView.image = filterdFriendsArray[indexPath.row].avatar
         
         
         return cell
@@ -78,4 +92,17 @@ extension FriendsListViewController: UITableViewDataSource {
             }
         }
     }
+    
+    func filterArray() -> [User] {
+        return friendsArray.sorted(by: {$0.name.first! < $1.name.first!})
+    }
+    
+    func charArray() -> [String] {
+        var array : [String] = []
+        for i in filterdFriendsArray {
+            array.append(String(i.name.first ?? "±"))
+        }
+        return array
+    }
+    
 }

@@ -14,6 +14,8 @@ class FriendsListTableViewCell: UITableViewCell {
     
     @IBOutlet weak var friendsPhotoImageView: UIImageView!
     
+    
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         
