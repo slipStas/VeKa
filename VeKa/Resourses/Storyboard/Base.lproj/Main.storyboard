@@ -471,7 +471,7 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GlX-da-Xgv" customClass="FilterFriendsView" customModule="VeKa" customModuleProvider="target">
-                                <rect key="frame" x="379" y="116" width="20" height="583"/>
+                                <rect key="frame" x="324" y="116" width="20" height="583"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="1Cf-8s-W6h"/>
@@ -483,7 +483,7 @@
                             <constraint firstItem="AXn-Kc-QKn" firstAttribute="trailing" secondItem="YPb-R6-0fD" secondAttribute="trailing" id="8Pa-Bq-r8v"/>
                             <constraint firstItem="GlX-da-Xgv" firstAttribute="top" secondItem="AXn-Kc-QKn" secondAttribute="top" constant="60" id="I1f-1P-44w"/>
                             <constraint firstItem="YPb-R6-0fD" firstAttribute="top" secondItem="AXn-Kc-QKn" secondAttribute="top" id="e8A-UZ-0Yb"/>
-                            <constraint firstItem="AXn-Kc-QKn" firstAttribute="trailing" secondItem="GlX-da-Xgv" secondAttribute="trailing" constant="15" id="j1n-S5-ggj"/>
+                            <constraint firstItem="AXn-Kc-QKn" firstAttribute="trailing" secondItem="GlX-da-Xgv" secondAttribute="trailing" constant="70" id="j1n-S5-ggj"/>
                             <constraint firstItem="AXn-Kc-QKn" firstAttribute="bottom" secondItem="GlX-da-Xgv" secondAttribute="bottom" constant="60" id="v09-7W-nIE"/>
                             <constraint firstItem="AXn-Kc-QKn" firstAttribute="bottom" secondItem="YPb-R6-0fD" secondAttribute="bottom" id="vf2-K0-qhp"/>
                             <constraint firstItem="YPb-R6-0fD" firstAttribute="leading" secondItem="AXn-Kc-QKn" secondAttribute="leading" id="wqH-yH-YK2"/>

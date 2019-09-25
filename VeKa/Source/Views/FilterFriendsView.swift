@@ -25,6 +25,7 @@ class FilterFriendsView: UIView {
         
         self.backgroundColor = .clear
         filterView.frame = bounds
+        filterView.axis = .vertical
         
         let gr = UIPanGestureRecognizer(target: self, action: #selector(panOnScroll))
         addGestureRecognizer(gr)
@@ -44,7 +45,7 @@ class FilterFriendsView: UIView {
     
     func addCharViews() {
         for i in viewsArray {
-            filterView.addSubview(i)
+            filterView.addArrangedSubview(i)
         }
     }
 
