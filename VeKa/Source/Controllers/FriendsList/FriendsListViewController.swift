@@ -96,8 +96,11 @@ extension FriendsListViewController: UITableViewDataSource {
         if let identifier = segue.identifier, identifier == "showFriendInfo" {
             if let indexPath = friendsListTableView.indexPathForSelectedRow {
                 if let destinationVC = segue.destination  as? FriendInfoViewController {
-                    
-                    destinationVC.friendInfoList = [(friendsArray[(indexPath as NSIndexPath).row])]
+                    let sectionName: String = self.sections[indexPath.section]
+                    if let friendsInSection: [User] = self.friendsInSections[sectionName] {
+                        destinationVC.friendInfoList = [(friendsInSection[(indexPath as NSIndexPath).row])]
+
+                    }
                 }
             }
         }
