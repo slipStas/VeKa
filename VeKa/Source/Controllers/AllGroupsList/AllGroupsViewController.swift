@@ -31,6 +31,10 @@ class AllGroupsViewController: UIViewController {
         allGroupsTableView.rowHeight = 66
         allGroupsTableView.dataSource = self
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        animateHeightTable(tableView: allGroupsTableView)
+    }
 }
 
 extension AllGroupsViewController: UITableViewDataSource {

@@ -49,6 +49,12 @@ class FriendsListViewController: UIViewController {
         
         fillSections()
         fillSectionsWithFriends()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        animateWidthTable(tableView: friendsListTableView)
     }
 }
 
