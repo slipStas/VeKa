@@ -54,7 +54,7 @@ class FriendsListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         
-        animateWidthTable(tableView: friendsListTableView)
+        //animateWidthTable(tableView: friendsListTableView)
     }
 }
 

@@ -33,7 +33,7 @@ class AllGroupsViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        animateHeightTable(tableView: allGroupsTableView)
+        //animateHeightTable(tableView: allGroupsTableView)
     }
 }
 
