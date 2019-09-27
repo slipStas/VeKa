@@ -381,6 +381,7 @@
                     <connections>
                         <segue destination="Udl-fH-LSl" kind="relationship" relationship="viewControllers" id="gmu-ic-ul2"/>
                         <segue destination="IeB-Lv-DMf" kind="relationship" relationship="viewControllers" id="yUM-rZ-P32"/>
+                        <segue destination="UaS-Fn-k7D" kind="relationship" relationship="viewControllers" id="PHP-Fg-jlt"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5u7-Wb-GFD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -493,7 +494,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XIS-Uq-z7f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2897.1014492753625" y="415.17857142857139"/>
+            <point key="canvasLocation" x="2894" y="415"/>
         </scene>
         <!--Инфо-->
         <scene sceneID="fBj-A7-mjv">
@@ -579,7 +580,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nlx-Pl-FGq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3786.9565217391309" y="414.50892857142856"/>
+            <point key="canvasLocation" x="3787" y="415"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="r1p-Wr-mLL">
+            <objects>
+                <viewController id="B6C-Zf-gL6" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Rzg-1f-rXz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Y6I-uQ-KIi"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="URR-3T-sDg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G9Q-Pw-SIB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1219" y="1475"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Tnn-qo-Lil">
@@ -598,10 +615,30 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aMQ-of-kxB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1986.9565217391305" y="414.50892857142856"/>
+            <point key="canvasLocation" x="1987" y="415"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="EVs-hq-dvP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UaS-Fn-k7D" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" image="news" id="c7P-wi-Yrl"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="H8x-FI-aph">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="B6C-Zf-gL6" kind="relationship" relationship="rootViewController" id="aH6-F4-ek8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xsw-7W-zbv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1218.840579710145" y="762.72321428571422"/>
         </scene>
     </scenes>
     <resources>
+        <image name="news" width="100" height="100"/>
         <image name="person.3.fill" catalog="system" width="72" height="35"/>
         <image name="person.crop.square" catalog="system" width="64" height="56"/>
         <image name="text.badge.plus" catalog="system" width="64" height="56"/>
