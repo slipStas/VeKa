@@ -19,6 +19,8 @@
 		8E4DABB7233C8EF00091BE70 /* HelperExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4DABB6233C8EF00091BE70 /* HelperExtensions.swift */; };
 		8EB24E2F232C0A6E00CF3F9C /* FriendsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB24E2E232C0A6E00CF3F9C /* FriendsListViewController.swift */; };
 		8EB24E31232C0C3600CF3F9C /* FriendsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB24E30232C0C3600CF3F9C /* FriendsListTableViewCell.swift */; };
+		8ED7DB3B233ECEC400DCD205 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED7DB3A233ECEC400DCD205 /* NewsTableViewCell.swift */; };
+		8ED7DB3D233ECEE000DCD205 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED7DB3C233ECEE000DCD205 /* NewsViewController.swift */; };
 		8EDB222D23386E8B00185A6C /* LikesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDB222C23386E8B00185A6C /* LikesView.swift */; };
 		8EE7A34E233D9AD5008CDE46 /* Header.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EE7A34D233D9AD5008CDE46 /* Header.xib */; };
 		8EE7A350233D9C73008CDE46 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE7A34F233D9C73008CDE46 /* Header.swift */; };
@@ -44,6 +46,8 @@
 		8E4DABB6233C8EF00091BE70 /* HelperExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperExtensions.swift; sourceTree = "<group>"; };
 		8EB24E2E232C0A6E00CF3F9C /* FriendsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListViewController.swift; sourceTree = "<group>"; };
 		8EB24E30232C0C3600CF3F9C /* FriendsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListTableViewCell.swift; sourceTree = "<group>"; };
+		8ED7DB3A233ECEC400DCD205 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		8ED7DB3C233ECEE000DCD205 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		8EDB222C23386E8B00185A6C /* LikesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesView.swift; sourceTree = "<group>"; };
 		8EE7A34D233D9AD5008CDE46 /* Header.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Header.xib; sourceTree = "<group>"; };
 		8EE7A34F233D9C73008CDE46 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
@@ -123,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				8EF93C272329883600EBEC86 /* LoginFormController.swift */,
+				8ED7DB39233ECE8800DCD205 /* News */,
 				8E3EA7A5232D806800F118DB /* AllGroupsList */,
 				8E3EA7A0232D7FD000F118DB /* MyGroupList */,
 				8E3EA79B232D663A00F118DB /* FriendInfo */,
@@ -156,6 +161,15 @@
 				8E3EA7A6232D808D00F118DB /* AllGroupsTableViewCell.swift */,
 			);
 			path = AllGroupsList;
+			sourceTree = "<group>";
+		};
+		8ED7DB39233ECE8800DCD205 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				8ED7DB3C233ECEE000DCD205 /* NewsViewController.swift */,
+				8ED7DB3A233ECEC400DCD205 /* NewsTableViewCell.swift */,
+			);
+			path = News;
 			sourceTree = "<group>";
 		};
 		8EE7A34C233D9ABA008CDE46 /* Xib files */ = {
@@ -278,6 +292,7 @@
 				8EF1192E23297677000B30E3 /* AppDelegate.swift in Sources */,
 				8E3EA7A2232D800600F118DB /* MyGroupsViewController.swift in Sources */,
 				8EB24E2F232C0A6E00CF3F9C /* FriendsListViewController.swift in Sources */,
+				8ED7DB3D233ECEE000DCD205 /* NewsViewController.swift in Sources */,
 				8EF1A305233166B100D81510 /* Group.swift in Sources */,
 				8E0971C12335884500BF2473 /* AvatarView.swift in Sources */,
 				8E0971C52336B49300BF2473 /* AvatarSettings.swift in Sources */,
@@ -293,6 +308,7 @@
 				8EDB222D23386E8B00185A6C /* LikesView.swift in Sources */,
 				8E3EA7A7232D808D00F118DB /* AllGroupsTableViewCell.swift in Sources */,
 				8EF1A3032331641700D81510 /* User.swift in Sources */,
+				8ED7DB3B233ECEC400DCD205 /* NewsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
