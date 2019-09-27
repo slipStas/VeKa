@@ -45,6 +45,8 @@ class FriendsListViewController: UIViewController {
         friendsListTableView.dataSource = self
         friendsListTableView.delegate = self
         
+        friendsListTableView.register(UINib(nibName: "Header", bundle: nil), forHeaderFooterViewReuseIdentifier: "Header")
+        
         self.friendsFiltered = self.friendsArray
         
         fillSections()
@@ -52,13 +54,26 @@ class FriendsListViewController: UIViewController {
         
     }
     
+    
+}
+
+extension FriendsListViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = friendsListTableView.dequeueReusableHeaderFooterView(withIdentifier: "Header") as! Header
+        header.backgroundView = UIView(frame: header.bounds)
+        header.backgroundView?.backgroundColor = .red
+        header.backgroundView?.alpha = 0.1
+        header.headerLabel.alpha = 0.6
+        header.headerLabel.text = sections[section]
+    
+        return header
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         
         //animateWidthTable(tableView: friendsListTableView)
     }
-}
-
-extension FriendsListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let sectionName: String = self.sections[indexPath.section]
