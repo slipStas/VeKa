@@ -61,15 +61,10 @@ extension AllGroupsViewController: UISearchBarDelegate {
             allGroupsTableView.reloadData()
             return
         }
-        filteredGroups = allGroupsArray.filter({$0.name.contains(searchText)})
+        filteredGroups = allGroupsArray.filter({$0.name.lowercased().contains(searchText.lowercased())})
         
         allGroupsTableView.reloadData()
     }
-    
-    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
-        
-    }
-    
     
 }
 
