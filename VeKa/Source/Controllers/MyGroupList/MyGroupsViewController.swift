@@ -58,7 +58,7 @@ extension MyGroupsViewController: UITableViewDataSource {
             let group = allGroupController.allGroupsArray[indexPath.row]
             
             if !myGroupsArray.contains(where: {$0.name == group.name}) {
-                 myGroupsArray.append(allGroupController.allGroupsArray[indexPath.row])
+                 myGroupsArray.append(allGroupController.filteredGroups[indexPath.row])
                  myGroupsTableView.reloadData()
             }
         }
