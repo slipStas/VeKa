@@ -62,7 +62,7 @@ extension FriendsListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = friendsListTableView.dequeueReusableHeaderFooterView(withIdentifier: "Header") as! Header
         header.backgroundView = UIView(frame: header.bounds)
-        header.backgroundView?.backgroundColor = .red
+        header.backgroundView?.backgroundColor = #colorLiteral(red: 0, green: 0.9914394021, blue: 1, alpha: 1)
         header.backgroundView?.alpha = 0.1
         header.headerLabel.alpha = 0.6
         header.headerLabel.text = sections[section]
