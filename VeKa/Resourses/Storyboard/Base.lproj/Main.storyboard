@@ -601,41 +601,73 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="617"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vtt-8B-ojg">
-                                                    <rect key="frame" x="8" y="8" width="398" height="398"/>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CSE-zG-qfq">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="Vtt-8B-ojg" secondAttribute="height" multiplier="1:1" id="TOk-Fa-7jC"/>
+                                                        <constraint firstAttribute="width" secondItem="CSE-zG-qfq" secondAttribute="height" multiplier="1:1" id="cRy-Gr-kCD"/>
                                                     </constraints>
-                                                </imageView>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="32t-ou-U7W">
+                                                        <size key="itemSize" width="415" height="407"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="newsCollectionViewCell" id="lFJ-1j-csj" customClass="NewsCollectionViewCell" customModule="VeKa" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="3.5" width="415" height="407"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="M08-Kq-e9q">
+                                                                <rect key="frame" x="0.0" y="0.0" width="415" height="407"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="news_1" translatesAutoresizingMaskIntoConstraints="NO" id="hz8-zb-bCy">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="415" height="407"/>
+                                                                    </imageView>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="trailing" secondItem="hz8-zb-bCy" secondAttribute="trailing" id="2Nf-Zs-bLW"/>
+                                                                    <constraint firstItem="hz8-zb-bCy" firstAttribute="leading" secondItem="M08-Kq-e9q" secondAttribute="leading" id="Ayr-Fl-acq"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="hz8-zb-bCy" secondAttribute="bottom" id="Oxg-uF-VsW"/>
+                                                                    <constraint firstItem="hz8-zb-bCy" firstAttribute="top" secondItem="M08-Kq-e9q" secondAttribute="top" id="duE-lH-p11"/>
+                                                                </constraints>
+                                                            </collectionViewCellContentView>
+                                                            <size key="customSize" width="415" height="407"/>
+                                                            <connections>
+                                                                <outlet property="newsCollectionImage" destination="hz8-zb-bCy" id="158-gH-lOd"/>
+                                                            </connections>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                </collectionView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tjv-nK-wkf" customClass="LikesView" customModule="VeKa" customModuleProvider="target">
-                                                    <rect key="frame" x="147" y="446.5" width="120" height="30"/>
+                                                    <rect key="frame" x="147" y="454.5" width="120" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="tjv-nK-wkf" secondAttribute="height" multiplier="4:1" id="IUb-uo-2yx"/>
                                                         <constraint firstAttribute="height" constant="30" id="J8e-yR-s1y"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tX5-d5-T9O">
-                                                    <rect key="frame" x="186" y="416" width="42" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tX5-d5-T9O">
+                                                    <rect key="frame" x="186" y="424" width="42" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="CSE-zG-qfq" firstAttribute="top" secondItem="hbO-Ko-l4x" secondAttribute="top" id="0jh-0i-Vy3"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tX5-d5-T9O" secondAttribute="trailing" constant="8" id="4aW-uM-tMj"/>
                                                 <constraint firstItem="tX5-d5-T9O" firstAttribute="centerX" secondItem="hbO-Ko-l4x" secondAttribute="centerX" id="6hp-Sr-aqk"/>
                                                 <constraint firstItem="tjv-nK-wkf" firstAttribute="centerX" secondItem="hbO-Ko-l4x" secondAttribute="centerX" id="DTd-Gp-uAu"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="tjv-nK-wkf" secondAttribute="bottom" constant="10" id="IEs-X7-eMW"/>
                                                 <constraint firstItem="tX5-d5-T9O" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hbO-Ko-l4x" secondAttribute="leading" constant="8" id="K5W-0e-sS6"/>
                                                 <constraint firstItem="tjv-nK-wkf" firstAttribute="top" secondItem="tX5-d5-T9O" secondAttribute="bottom" constant="10" id="LCz-Ij-kqQ"/>
-                                                <constraint firstAttribute="trailing" secondItem="Vtt-8B-ojg" secondAttribute="trailing" constant="8" id="NY1-af-Jag"/>
-                                                <constraint firstItem="Vtt-8B-ojg" firstAttribute="leading" secondItem="hbO-Ko-l4x" secondAttribute="leading" constant="8" id="NaD-Wm-jbQ"/>
-                                                <constraint firstItem="tX5-d5-T9O" firstAttribute="top" secondItem="Vtt-8B-ojg" secondAttribute="bottom" constant="10" id="kpU-e8-JC9"/>
-                                                <constraint firstItem="Vtt-8B-ojg" firstAttribute="top" secondItem="hbO-Ko-l4x" secondAttribute="top" constant="8" id="zJK-Kp-qaa"/>
+                                                <constraint firstItem="CSE-zG-qfq" firstAttribute="leading" secondItem="hbO-Ko-l4x" secondAttribute="leading" id="amn-0J-lYK"/>
+                                                <constraint firstAttribute="trailing" secondItem="CSE-zG-qfq" secondAttribute="trailing" id="nQ2-Cs-sB3"/>
+                                                <constraint firstItem="tX5-d5-T9O" firstAttribute="top" secondItem="CSE-zG-qfq" secondAttribute="bottom" constant="10" id="v6O-ak-hzi"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="newsImage" destination="Vtt-8B-ojg" id="XtA-jf-9Xw"/>
+                                            <outlet property="newsCollectionView" destination="CSE-zG-qfq" id="zdZ-zR-9VI"/>
                                             <outlet property="newsLikeView" destination="tjv-nK-wkf" id="gXi-o6-2KC"/>
                                             <outlet property="newsText" destination="tX5-d5-T9O" id="7fJ-cn-Iui"/>
                                         </connections>
@@ -702,6 +734,7 @@
     </scenes>
     <resources>
         <image name="news" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="news_1" width="839" height="839"/>
         <image name="person.3.fill" catalog="system" width="72" height="35"/>
         <image name="person.crop.square" catalog="system" width="64" height="56"/>
         <image name="text.badge.plus" catalog="system" width="64" height="56"/>

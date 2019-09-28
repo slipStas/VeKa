@@ -32,6 +32,7 @@
 		8EF119382329767A000B30E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EF119362329767A000B30E3 /* LaunchScreen.storyboard */; };
 		8EF1A3032331641700D81510 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF1A3022331641700D81510 /* User.swift */; };
 		8EF1A305233166B100D81510 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF1A304233166B100D81510 /* Group.swift */; };
+		8EF62776233F4A2D00AF1144 /* NewsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF62775233F4A2D00AF1144 /* NewsCollectionViewCell.swift */; };
 		8EF93C282329883600EBEC86 /* LoginFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF93C272329883600EBEC86 /* LoginFormController.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		8EF119392329767A000B30E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EF1A3022331641700D81510 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8EF1A304233166B100D81510 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		8EF62775233F4A2D00AF1144 /* NewsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCollectionViewCell.swift; sourceTree = "<group>"; };
 		8EF93C272329883600EBEC86 /* LoginFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -172,6 +174,7 @@
 			children = (
 				8ED7DB3C233ECEE000DCD205 /* NewsViewController.swift */,
 				8ED7DB3A233ECEC400DCD205 /* NewsTableViewCell.swift */,
+				8EF62775233F4A2D00AF1144 /* NewsCollectionViewCell.swift */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				8EB24E31232C0C3600CF3F9C /* FriendsListTableViewCell.swift in Sources */,
 				8E3EA7A4232D802C00F118DB /* MyGroupsTableViewCell.swift in Sources */,
 				8EDB222D23386E8B00185A6C /* LikesView.swift in Sources */,
+				8EF62776233F4A2D00AF1144 /* NewsCollectionViewCell.swift in Sources */,
 				8E3EA7A7232D808D00F118DB /* AllGroupsTableViewCell.swift in Sources */,
 				8ED7DB41233EE70D00DCD205 /* News.swift in Sources */,
 				8EF1A3032331641700D81510 /* User.swift in Sources */,

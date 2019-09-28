@@ -10,19 +10,24 @@ import UIKit
 
 class NewsTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var newsImage: UIImageView!
     
     @IBOutlet weak var newsText: UILabel!
     
     @IBOutlet weak var newsLikeView: LikesView!
     
+    @IBOutlet weak var newsCollectionView: UICollectionView!
+    
+    override func awakeFromNib() {
+        
+    }
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         
-        newsImage.image = nil
         newsText.text = nil
         newsLikeView.likeIcon.image = nil
         newsLikeView.likesCount.text = nil
     }
-
+    
 }
+
