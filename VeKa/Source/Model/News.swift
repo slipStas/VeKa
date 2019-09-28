@@ -10,9 +10,17 @@ import UIKit
 
 class News {
     
-    let images: [UIImage] = []
-    let newsText = ""
-    var likeCounts: UInt = 0
-    var likeStatus: Likes.LikesStatus = .noLike
+    var images: [UIImage] = []
+    var newsText = ""
+    var likes : Likes = Likes(likesCounts: 0, likeStatus: .noLike)
+    
+    init(images: [UIImage], newsText: String) {
+        self.images = images
+        self.newsText = newsText
+    }
+    
+    private func addImage(image: [UIImage]) {
+        images.append(contentsOf: image)
+    }
     
 }
