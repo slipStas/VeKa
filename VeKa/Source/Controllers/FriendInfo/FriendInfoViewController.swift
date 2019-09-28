@@ -35,7 +35,7 @@ extension FriendInfoViewController : UICollectionViewDataSource, UICollectionVie
         
         cell.friendInfoImageView.image = friendInfoList[indexPath.row].avatar
         cell.nameFriendInfoLabel.text = friendInfoList[indexPath.row].name
-        cell.likesView.label.text = String(friendInfoList[indexPath.row].likes.likesCounts)
+        cell.likesView.likesCount.text = String(friendInfoList[indexPath.row].likes.likesCounts)
        
         
         switch self.friendInfoList[indexPath.row].likes.likeStatus {

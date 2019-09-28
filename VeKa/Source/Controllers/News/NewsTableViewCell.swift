@@ -12,7 +12,7 @@ class NewsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var newsImage: UIImageView!
     
-    @IBOutlet weak var newsText: UITextField!
+    @IBOutlet weak var newsText: UILabel!
     
     @IBOutlet weak var newsLikeView: LikesView!
     
@@ -21,7 +21,8 @@ class NewsTableViewCell: UITableViewCell {
         
         newsImage.image = nil
         newsText.text = nil
-        newsLikeView = nil
+        newsLikeView.likeIcon.image = nil
+        newsLikeView.likesCount.text = nil
     }
 
 }
