@@ -10,22 +10,26 @@ import UIKit
 
 class FriendsListViewController: UIViewController {
     
+//    let friendsArray = [
+//        User(name: "Valera", avatar: UIImage(named: "image_1")!, likes: Likes(likesCounts: 0, likeStatus: .noLike))
+//    ]
     let friendsArray = [
-        User(name: "Valera", avatar: (UIImage(named: "image_1")!), likesCount: 490, likesStatus: .noLike),
-        User(name: "Igor", avatar: (UIImage(named: "image_2")!), likesCount: 10, likesStatus: .noLike),
-        User(name: "Elena", avatar: (UIImage(named: "image_3")!), likesCount: 7653, likesStatus: .noLike),
-        User(name: "Oleg", avatar: (UIImage(named: "image_4")!), likesCount: 9719, likesStatus: .noLike),
-        User(name: "Mikhail", avatar: (UIImage(named: "image_5")!), likesCount: 54, likesStatus: .noLike),
-        User(name: "John", avatar: (UIImage(named: "image_1")!), likesCount: 567, likesStatus: .noLike),
-        User(name: "Stanislav", avatar: (UIImage(named: "image_2")!), likesCount: 4568, likesStatus: .noLike),
-        User(name: "Olga", avatar: (UIImage(named: "image_3")!), likesCount: 1, likesStatus: .noLike),
-        User(name: "Viktor", avatar: (UIImage(named: "image_4")!), likesCount: 423, likesStatus: .noLike),
-        User(name: "Denis", avatar: (UIImage(named: "image_5")!), likesCount: 974, likesStatus: .noLike),
-        User(name: "Alex", avatar: (UIImage(named: "image_1")!), likesCount: 1113, likesStatus: .noLike),
-        User(name: "Alexander", avatar: (UIImage(named: "image_2")!), likesCount: 96528, likesStatus: .noLike),
-        User(name: "Julia", avatar: (UIImage(named: "image_3")!), likesCount: 100000, likesStatus: .noLike),
-        User(name: "Pavel", avatar: (UIImage(named: "image_4")!), likesCount: 2, likesStatus: .noLike),
-        User(name: "Anton", avatar: (UIImage(named: "image_5")!), likesCount: 89, likesStatus: .noLike)
+        User(name: "Valera", avatar: (UIImage(named: "image_1")!), likes: Likes(likesCounts: 490, likeStatus: .noLike)),
+        User(name: "Valera", avatar: (UIImage(named: "image_1")!), likes: Likes(likesCounts: 8, likeStatus: .noLike)),
+        User(name: "Igor", avatar: (UIImage(named: "image_2")!), likes: Likes(likesCounts: 10, likeStatus: .noLike)),
+        User(name: "Elena", avatar: (UIImage(named: "image_3")!), likes: Likes(likesCounts: 7653, likeStatus: .noLike)),
+        User(name: "Oleg", avatar: (UIImage(named: "image_4")!), likes: Likes(likesCounts: 9719, likeStatus: .noLike)),
+        User(name: "Mikhail", avatar: (UIImage(named: "image_5")!), likes: Likes(likesCounts: 54, likeStatus: .noLike)),
+        User(name: "John", avatar: (UIImage(named: "image_1")!), likes: Likes(likesCounts: 567, likeStatus: .noLike)),
+        User(name: "Stanislav", avatar: (UIImage(named: "image_2")!), likes: Likes(likesCounts: 4568, likeStatus: .noLike)),
+        User(name: "Olga", avatar: (UIImage(named: "image_3")!), likes: Likes(likesCounts: 1, likeStatus: .noLike)),
+        User(name: "Viktor", avatar: (UIImage(named: "image_4")!), likes: Likes(likesCounts: 423, likeStatus: .noLike)),
+        User(name: "Denis", avatar: (UIImage(named: "image_5")!), likes: Likes(likesCounts: 974, likeStatus: .noLike)),
+        User(name: "Alex", avatar: (UIImage(named: "image_1")!), likes: Likes(likesCounts: 1113, likeStatus: .noLike)),
+        User(name: "Alexander", avatar: (UIImage(named: "image_2")!), likes: Likes(likesCounts: 96528, likeStatus: .noLike)),
+        User(name: "Julia", avatar: (UIImage(named: "image_3")!), likes: Likes(likesCounts: 100000, likeStatus: .noLike)),
+        User(name: "Pavel", avatar: (UIImage(named: "image_4")!), likes: Likes(likesCounts: 2, likeStatus: .noLike)),
+        User(name: "Anton", avatar: (UIImage(named: "image_5")!), likes: Likes(likesCounts: 89, likeStatus: .noLike))
     ]
     
     var friendsFiltered: [User] = []

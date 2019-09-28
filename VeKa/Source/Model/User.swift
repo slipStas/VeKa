@@ -10,21 +10,14 @@ import UIKit
 
 class User {
     
-    enum LikesStatus {
-        case like
-        case noLike
-    }
+    var name = ""
+    var avatar = UIImage()
+    var likes = Likes(likesCounts: 0, likeStatus: .noLike)
     
-    let name : String
-    let avatar : UIImage
-    var likesCount : UInt
-    var likesStatus : LikesStatus
-    
-    init(name: String, avatar: UIImage, likesCount: UInt, likesStatus: LikesStatus) {
+    init(name: String, avatar: UIImage, likes: Likes) {
         self.name = name
         self.avatar = avatar
-        self.likesCount = likesCount
-        self.likesStatus = likesStatus
+        self.likes = likes
     }
     
 }
