@@ -14,9 +14,10 @@ class News {
     var newsText = ""
     var likes : Likes = Likes(likesCounts: 0, likeStatus: .noLike)
     
-    init(images: [UIImage], newsText: String) {
+    init(images: [UIImage], newsText: String, likesCount: UInt) {
         self.images = images
         self.newsText = newsText
+        self.likes.likesCounts = likesCount
     }
     
     private func addImage(image: [UIImage]) {

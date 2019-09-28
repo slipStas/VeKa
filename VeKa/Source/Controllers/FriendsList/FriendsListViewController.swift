@@ -10,9 +10,6 @@ import UIKit
 
 class FriendsListViewController: UIViewController {
     
-//    let friendsArray = [
-//        User(name: "Valera", avatar: UIImage(named: "image_1")!, likes: Likes(likesCounts: 0, likeStatus: .noLike))
-//    ]
     let friendsArray = [
         User(name: "Valera", avatar: (UIImage(named: "image_1")!), likes: Likes(likesCounts: 490, likeStatus: .noLike)),
         User(name: "Valera", avatar: (UIImage(named: "image_1")!), likes: Likes(likesCounts: 8, likeStatus: .noLike)),

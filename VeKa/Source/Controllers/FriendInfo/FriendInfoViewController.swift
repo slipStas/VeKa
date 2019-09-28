@@ -44,6 +44,7 @@ extension FriendInfoViewController : UICollectionViewDataSource, UICollectionVie
         case .noLike:
             cell.likesView.likesStatus = .noLike
         }
+        
         cell.likesView.onTap = {
             if cell.likesView.likesStatus == .noLike {
                 self.friendInfoList[indexPath.row].likes.likesCounts += 1
