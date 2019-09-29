@@ -12,4 +12,10 @@ class NewsCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var newsCollectionImage: UIImageView!
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        newsCollectionImage.image = nil
+    }
+    
 }

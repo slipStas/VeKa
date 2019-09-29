@@ -27,6 +27,7 @@ class NewsTableViewCell: UITableViewCell {
         newsText.text = nil
         newsLikeView.likeIcon.image = nil
         newsLikeView.likesCount.text = nil
+        
     }
     
 }
