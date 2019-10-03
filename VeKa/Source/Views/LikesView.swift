@@ -17,7 +17,7 @@ class LikesView: UIView {
                 UIView.animate(withDuration: 0.4, delay: 0.15, usingSpringWithDamping: 0.35, initialSpringVelocity: 0, options: [], animations: {
                     self.likeIcon.image = UIImage(named: "heart_fill")
                     self.likesCount.textColor = UIColor.red
-                    self.likeIcon.transform = CGAffineTransform.identity.scaledBy(x: 1.1, y: 1.1)
+                    self.likeIcon.transform = CGAffineTransform.identity.scaledBy(x: 1.2, y: 1.2)
                 })
                 UIView.transition(with: likeIcon, duration: 0.3, options: .transitionCrossDissolve, animations: {})
                 UIView.transition(with: likesCount, duration: 0.3, options: .transitionCrossDissolve, animations: {})
@@ -34,7 +34,7 @@ class LikesView: UIView {
     }
     let likeIcon = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
 
-    let likesCount = UILabel(frame: CGRect(x: 40, y: 0, width: (30 * 3), height: 30))
+    let likesCount = UILabel(frame: CGRect(x: 35, y: 0, width: (30 * 3), height: 30))
     
     
     var onTap: (() -> Void)?
@@ -56,5 +56,4 @@ class LikesView: UIView {
     @objc func tapOnLike(guestRecogniser: UITapGestureRecognizer) {
         onTap?()
     }
-
 }

@@ -71,15 +71,14 @@ extension NewsViewController: UITableViewDataSource {
         }
         
         cell.newsLikeView.onTap = {
+            
             if cell.newsLikeView.likesStatus == .noLike {
                 self.newsArray[indexPath.section].likes.likesCounts += 1
                 self.newsArray[indexPath.section].likes.likeStatus = .like
-                cell.newsLikeView.likesStatus = .like
                 self.newsTableView.reloadData()
             } else {
                 self.newsArray[indexPath.section].likes.likesCounts -= 1
                 self.newsArray[indexPath.section].likes.likeStatus = .noLike
-                cell.newsLikeView.likesStatus = .noLike
                 self.newsTableView.reloadData()
             }
         }
