@@ -77,24 +77,26 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SMb-eg-yzY" customClass="LoadingView" customModule="VeKa" customModuleProvider="target">
-                                        <rect key="frame" x="172" y="517.5" width="70" height="10"/>
+                                        <rect key="frame" x="16" y="517.5" width="382" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="70" id="PCh-15-PJX"/>
-                                            <constraint firstAttribute="height" constant="10" id="nVL-za-Ncq"/>
+                                            <constraint firstAttribute="height" constant="30" id="nVL-za-Ncq"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="32b-L2-MWN" firstAttribute="centerX" secondItem="LHt-PY-aam" secondAttribute="centerX" id="019-Y9-wOu"/>
                                     <constraint firstItem="SMb-eg-yzY" firstAttribute="centerX" secondItem="LHt-PY-aam" secondAttribute="centerX" id="ADr-Xz-1sB"/>
+                                    <constraint firstItem="Q94-nZ-UBl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="LHt-PY-aam" secondAttribute="leading" constant="16" id="U9S-gK-kK7"/>
                                     <constraint firstItem="Q94-nZ-UBl" firstAttribute="top" secondItem="LHt-PY-aam" secondAttribute="top" constant="45" id="Uow-C1-r46"/>
-                                    <constraint firstAttribute="trailing" secondItem="Q94-nZ-UBl" secondAttribute="trailing" constant="16" id="WWL-qi-scr"/>
                                     <constraint firstItem="32b-L2-MWN" firstAttribute="centerY" secondItem="LHt-PY-aam" secondAttribute="centerY" id="h8q-RZ-5bS"/>
                                     <constraint firstItem="32b-L2-MWN" firstAttribute="top" secondItem="XrP-qC-oOc" secondAttribute="bottom" constant="25" id="iFI-So-bH9"/>
+                                    <constraint firstItem="SMb-eg-yzY" firstAttribute="leading" secondItem="LHt-PY-aam" secondAttribute="leading" constant="16" id="ikY-XR-gGb"/>
                                     <constraint firstItem="kHA-uI-pJW" firstAttribute="top" secondItem="tWt-VD-DgO" secondAttribute="bottom" constant="50" id="j5a-cn-63k"/>
+                                    <constraint firstAttribute="trailing" secondItem="SMb-eg-yzY" secondAttribute="trailing" constant="16" id="lPA-VY-BmL"/>
                                     <constraint firstItem="tWt-VD-DgO" firstAttribute="top" secondItem="32b-L2-MWN" secondAttribute="bottom" constant="20" id="pG1-ve-aem"/>
                                     <constraint firstAttribute="bottom" secondItem="kHA-uI-pJW" secondAttribute="bottom" constant="30" id="r8b-Fh-1dn"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Q94-nZ-UBl" secondAttribute="trailing" constant="16" id="sqN-mE-Erf"/>
                                     <constraint firstItem="SMb-eg-yzY" firstAttribute="top" secondItem="tWt-VD-DgO" secondAttribute="bottom" constant="5" id="vXb-eZ-Xeq"/>
                                     <constraint firstItem="XrP-qC-oOc" firstAttribute="top" secondItem="Ip5-sv-Kr1" secondAttribute="bottom" constant="20" id="wnB-EO-JgN"/>
                                 </constraints>

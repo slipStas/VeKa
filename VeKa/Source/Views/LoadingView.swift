@@ -17,10 +17,13 @@ class Circle: UIView {
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         
+        let colorStroke = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)
+        let colorFill = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
         var path = UIBezierPath()
         path = UIBezierPath(ovalIn: CGRect(x: heightWidthOfSubViews / 2, y: heightWidthOfSubViews / 2, width: heightWidthOfSubViews, height: heightWidthOfSubViews))
-        UIColor.yellow.setStroke()
-        UIColor.red.setFill()
+        guard let context = UIGraphicsGetCurrentContext() else { return }
+        context.setFillColor(colorFill.cgColor)
+        context.setStrokeColor(colorStroke.cgColor)
         path.lineWidth = 2
         path.stroke()
         path.fill()
