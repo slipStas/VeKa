@@ -36,7 +36,6 @@ class LoadingView: UIView {
         
         for _ in 0..<circlesCount {
             let view = Circle(frame: CGRect(x: lastCoordinateX + (heightWidthOfSubViews / 2), y: heightWidthOfSubViews / 2, width: heightWidthOfSubViews + 10, height: heightWidthOfSubViews + 10))
-            
             view.tintColor = .black
             view.backgroundColor = .clear
             view.alpha = 0.1
@@ -56,20 +55,6 @@ class LoadingView: UIView {
                 count += 1
             })
         }
-        
-//        UIView.animate(withDuration: 0.55, delay: 0, options: [.repeat, .autoreverse], animations: {
-//            self.secondLoadingView.alpha = 0.7
-//            self.secondLoadingView.transform = CGAffineTransform.identity.scaledBy(x: 3, y: 3)
-//        })
-//        UIView.animate(withDuration: 0.55, delay: 1/3, options: [.repeat, .autoreverse], animations: {
-//            self.firstLoadingView.alpha = 0.7
-//            self.firstLoadingView.transform = CGAffineTransform.identity.scaledBy(x: 3, y: 3)
-//        })
-//        UIView.animate(withDuration: 0.55, delay: 2/3, options: [.repeat, .autoreverse], animations: {
-//            self.thirdLoadingView.alpha = 0.7
-//            self.thirdLoadingView.transform = CGAffineTransform.identity.scaledBy(x: 3, y: 3)
-//        })
-        
     }
     
     override func awakeFromNib() {
@@ -80,8 +65,6 @@ class LoadingView: UIView {
             addSubview(i)
         }
         
-        frame.size.height = CGFloat(heightWidthOfSubViews)
-        frame.size.width = CGFloat((heightWidthOfSubViews + distanceBeetwenSubViews) * circlesCount)
         backgroundColor = .clear
         animation()
     }
