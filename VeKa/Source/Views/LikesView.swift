@@ -32,6 +32,7 @@ class LikesView: UIView {
             }
         }
     }
+    
     let likeIcon = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
 
     let likesCount = UILabel(frame: CGRect(x: 35, y: 0, width: (30 * 3), height: 30))
