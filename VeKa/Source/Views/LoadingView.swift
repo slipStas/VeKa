@@ -67,6 +67,8 @@ class LoadingView: UIView {
         for i in views {
             addSubview(i)
         }
+        let newFrame = CGRect(x: 0, y: 0, width: 500, height: 60)
+        frame = newFrame
         
         backgroundColor = .clear
         animation()

@@ -19,6 +19,7 @@ class LoginFormController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var loginLabel: UILabel!
     @IBOutlet weak var passwordLabel: UILabel!
+    @IBOutlet weak var loadingView: LoadingView!
     
     
     @IBOutlet weak var loginTextField: UITextField!
