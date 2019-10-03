@@ -17,16 +17,18 @@ class LikesView: UIView {
                 UIView.animate(withDuration: 0.4, delay: 0.15, usingSpringWithDamping: 0.35, initialSpringVelocity: 0, options: [], animations: {
                     self.likeIcon.image = UIImage(named: "heart_fill")
                     self.likesCount.textColor = UIColor.red
-                    self.likeIcon.transform = CGAffineTransform.identity.scaledBy(x: 1.35, y: 1.35)
+                    self.likeIcon.transform = CGAffineTransform.identity.scaledBy(x: 1.1, y: 1.1)
                 })
-                UIView.transition(with: likesCount, duration: 0.3, options: .transitionFlipFromBottom, animations: {})
+                UIView.transition(with: likeIcon, duration: 0.3, options: .transitionCrossDissolve, animations: {})
+                UIView.transition(with: likesCount, duration: 0.3, options: .transitionCrossDissolve, animations: {})
             case .noLike:
                 UIView.animate(withDuration: 0.4, delay: 0.15, usingSpringWithDamping: 0.35, initialSpringVelocity: 0, options: [], animations: {
                     self.likeIcon.image = UIImage(named: "heart")
                     self.likesCount.textColor = UIColor.darkText
                     self.likeIcon.transform = CGAffineTransform.identity.scaledBy(x: 1, y: 1)
                 })
-                UIView.transition(with: likesCount, duration: 0.25, options: .transitionFlipFromTop, animations: {})
+                UIView.transition(with: likeIcon, duration: 0.3, options: .transitionCrossDissolve, animations: {})
+                UIView.transition(with: likesCount, duration: 0.25, options: .transitionCrossDissolve, animations: {})
             }
         }
     }
@@ -45,6 +47,7 @@ class LikesView: UIView {
         
         likeIcon.image = UIImage(named: "heart")
         likesCount.textColor = UIColor.darkText
+        likesCount.backgroundColor = .clear
         
         let gr = UITapGestureRecognizer(target: self, action: #selector(tapOnLike(guestRecogniser:)))
         addGestureRecognizer(gr)
