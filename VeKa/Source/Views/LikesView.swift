@@ -14,21 +14,19 @@ class LikesView: UIView {
         didSet {
             switch likesStatus {
             case .like:
-                UIView.animate(withDuration: 0.5, delay: 0.2, usingSpringWithDamping: 0.35, initialSpringVelocity: 0, options: [], animations: {
+                UIView.animate(withDuration: 0.4, delay: 0.15, usingSpringWithDamping: 0.35, initialSpringVelocity: 0, options: [], animations: {
                     self.likeIcon.image = UIImage(named: "heart_fill")
                     self.likesCount.textColor = UIColor.red
-                    self.likesCount.text = self.likesCount.text
-                    self.likeIcon.transform = CGAffineTransform.identity.scaledBy(x: 1.5, y: 1.5)
+                    self.likeIcon.transform = CGAffineTransform.identity.scaledBy(x: 1.35, y: 1.35)
                 })
-                UIView.transition(with: likesCount, duration: 0.5, options: .transitionFlipFromBottom, animations: {})
+                UIView.transition(with: likesCount, duration: 0.3, options: .transitionFlipFromBottom, animations: {})
             case .noLike:
-                UIView.animate(withDuration: 0.5, delay: 0.2, usingSpringWithDamping: 0.35, initialSpringVelocity: 0, options: [], animations: {
+                UIView.animate(withDuration: 0.4, delay: 0.15, usingSpringWithDamping: 0.35, initialSpringVelocity: 0, options: [], animations: {
                     self.likeIcon.image = UIImage(named: "heart")
                     self.likesCount.textColor = UIColor.darkText
-
                     self.likeIcon.transform = CGAffineTransform.identity.scaledBy(x: 1, y: 1)
                 })
-                UIView.transition(with: likesCount, duration: 0.5, options: .transitionFlipFromTop, animations: {})
+                UIView.transition(with: likesCount, duration: 0.25, options: .transitionFlipFromTop, animations: {})
             }
         }
     }
