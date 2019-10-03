@@ -52,7 +52,6 @@ class LoginFormController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShow), name: UIResponder.keyboardDidShowNotification, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHidden), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
     }
 
     override func viewWillDisappear(_ animated: Bool) {

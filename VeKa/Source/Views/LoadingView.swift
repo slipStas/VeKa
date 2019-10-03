@@ -8,7 +8,7 @@
 
 import UIKit
 
-let circlesCount = 10
+let circlesCount = 5
 let heightWidthOfSubViews = 10
 let distanceBeetwenSubViews = heightWidthOfSubViews * 3
 
