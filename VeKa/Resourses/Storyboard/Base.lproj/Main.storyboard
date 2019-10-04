@@ -171,12 +171,19 @@
                                                                 <constraint firstItem="iCp-K0-AM2" firstAttribute="width" secondItem="YTZ-xa-r7q" secondAttribute="width" id="p9H-it-oih"/>
                                                             </constraints>
                                                         </view>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zOz-6h-ygN">
+                                                            <rect key="frame" x="0.0" y="0.0" width="52" height="52"/>
+                                                        </view>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
                                                         <constraint firstItem="YTZ-xa-r7q" firstAttribute="width" secondItem="e6d-Jv-PPC" secondAttribute="width" id="K9m-J9-d1f"/>
                                                         <constraint firstItem="YTZ-xa-r7q" firstAttribute="height" secondItem="e6d-Jv-PPC" secondAttribute="height" id="c0g-lc-xyw"/>
+                                                        <constraint firstItem="zOz-6h-ygN" firstAttribute="centerY" secondItem="YTZ-xa-r7q" secondAttribute="centerY" id="dEa-Sn-Khs"/>
                                                         <constraint firstItem="YTZ-xa-r7q" firstAttribute="centerY" secondItem="e6d-Jv-PPC" secondAttribute="centerY" id="gLV-Ot-xl8"/>
+                                                        <constraint firstItem="zOz-6h-ygN" firstAttribute="centerX" secondItem="YTZ-xa-r7q" secondAttribute="centerX" id="h7a-Nt-36Z"/>
+                                                        <constraint firstItem="zOz-6h-ygN" firstAttribute="height" secondItem="iCp-K0-AM2" secondAttribute="height" id="h8i-Pb-ABn"/>
+                                                        <constraint firstItem="zOz-6h-ygN" firstAttribute="width" secondItem="iCp-K0-AM2" secondAttribute="width" id="wUA-RJ-YJN"/>
                                                         <constraint firstAttribute="width" secondItem="e6d-Jv-PPC" secondAttribute="height" multiplier="1:1" id="yue-Bf-LUm"/>
                                                         <constraint firstItem="YTZ-xa-r7q" firstAttribute="centerX" secondItem="e6d-Jv-PPC" secondAttribute="centerX" id="zRP-bj-SsU"/>
                                                     </constraints>
@@ -215,6 +222,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="animateView" destination="zOz-6h-ygN" id="1ci-wf-lRm"/>
+                                            <outlet property="avatarView" destination="YTZ-xa-r7q" id="ZTJ-b4-bEO"/>
                                             <outlet property="myGroupsImageView" destination="iCp-K0-AM2" id="WrE-kE-4Hd"/>
                                             <outlet property="myGroupsNameLabel" destination="YOI-jC-Ng3" id="efF-GP-FZy"/>
                                         </connections>

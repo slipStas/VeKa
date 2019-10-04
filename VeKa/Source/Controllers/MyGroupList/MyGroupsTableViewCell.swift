@@ -11,8 +11,9 @@ import UIKit
 class MyGroupsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var myGroupsImageView: UIImageView!
-    
     @IBOutlet weak var myGroupsNameLabel: UILabel!
+    @IBOutlet weak var animateView: UIView!
+    @IBOutlet weak var avatarView: AvatarView!
     
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -21,4 +22,25 @@ class MyGroupsTableViewCell: UITableViewCell {
         myGroupsNameLabel.text = nil
     }
     
+    override func awakeFromNib() {
+        
+        let tapOnIcon = UITapGestureRecognizer(target: self, action: #selector(tapOnIconView))
+        tapOnIcon.numberOfTapsRequired = 1
+        animateView.addGestureRecognizer(tapOnIcon)
+    }
+    
+    @objc func tapOnIconView(sender: UITapGestureRecognizer) {
+        UIView.animate(withDuration: 0.3,
+                       delay: 0,
+                       usingSpringWithDamping: 0.7,
+                       initialSpringVelocity: 0,
+                       options: [],
+                       animations: {
+                        self.avatarView.transform = CGAffineTransform.identity.scaledBy(x: 1.4, y: 1.4)
+                        self.avatarView.transform = CGAffineTransform.identity.scaledBy(x: 0.6, y: 0.6)
+                        self.avatarView.transform = CGAffineTransform.identity.scaledBy(x: 1, y: 1)
+
+                        print("tap on image")
+        })
+    }
 }
