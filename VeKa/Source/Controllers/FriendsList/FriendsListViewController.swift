@@ -10,25 +10,7 @@ import UIKit
 
 class FriendsListViewController: UIViewController {
     
-    let friendsArray = [
-        User(name: "Valera", avatar: (UIImage(named: "image_1")!), likes: Likes(likesCounts: 490, likeStatus: .noLike)),
-        User(name: "Valera", avatar: (UIImage(named: "image_1")!), likes: Likes(likesCounts: 8, likeStatus: .noLike)),
-        User(name: "Igor", avatar: (UIImage(named: "image_2")!), likes: Likes(likesCounts: 10, likeStatus: .noLike)),
-        User(name: "Elena", avatar: (UIImage(named: "image_3")!), likes: Likes(likesCounts: 7653, likeStatus: .noLike)),
-        User(name: "Oleg", avatar: (UIImage(named: "image_4")!), likes: Likes(likesCounts: 9719, likeStatus: .noLike)),
-        User(name: "Mikhail", avatar: (UIImage(named: "image_5")!), likes: Likes(likesCounts: 54, likeStatus: .noLike)),
-        User(name: "John", avatar: (UIImage(named: "image_1")!), likes: Likes(likesCounts: 567, likeStatus: .noLike)),
-        User(name: "Stanislav", avatar: (UIImage(named: "image_2")!), likes: Likes(likesCounts: 4568, likeStatus: .noLike)),
-        User(name: "Olga", avatar: (UIImage(named: "image_3")!), likes: Likes(likesCounts: 1, likeStatus: .noLike)),
-        User(name: "Viktor", avatar: (UIImage(named: "image_4")!), likes: Likes(likesCounts: 423, likeStatus: .noLike)),
-        User(name: "Denis", avatar: (UIImage(named: "image_5")!), likes: Likes(likesCounts: 974, likeStatus: .noLike)),
-        User(name: "Alex", avatar: (UIImage(named: "image_1")!), likes: Likes(likesCounts: 1113, likeStatus: .noLike)),
-        User(name: "Alexander", avatar: (UIImage(named: "image_2")!), likes: Likes(likesCounts: 96528, likeStatus: .noLike)),
-        User(name: "Julia", avatar: (UIImage(named: "image_3")!), likes: Likes(likesCounts: 100000, likeStatus: .noLike)),
-        User(name: "Pavel", avatar: (UIImage(named: "image_4")!), likes: Likes(likesCounts: 2, likeStatus: .noLike)),
-        User(name: "Anton", avatar: (UIImage(named: "image_5")!), likes: Likes(likesCounts: 89, likeStatus: .noLike))
-    ]
-    
+    var friendsArray: [User] = []
     var friendsFiltered: [User] = []
     
     var sections: [String] = []
@@ -46,6 +28,9 @@ class FriendsListViewController: UIViewController {
         friendsListTableView.dataSource = self
         friendsListTableView.delegate = self
         
+        addUsers()
+        addPhotos()
+        
         friendsListTableView.register(UINib(nibName: "Header", bundle: nil), forHeaderFooterViewReuseIdentifier: "Header")
         
         self.friendsFiltered = self.friendsArray
@@ -55,7 +40,33 @@ class FriendsListViewController: UIViewController {
         
     }
     
+    func addUsers() {
+        friendsArray.append(User(name: "Valera", avatar: (UIImage(named: "image_1")!), likes: Likes(likesCounts: 490, likeStatus: .noLike), photos: []))
+        friendsArray.append(User(name: "Valera", avatar: (UIImage(named: "image_4")!), likes: Likes(likesCounts: 8, likeStatus: .noLike), photos: []))
+        friendsArray.append(User(name: "Igor", avatar: (UIImage(named: "image_2")!), likes: Likes(likesCounts: 10, likeStatus: .noLike), photos: []))
+        friendsArray.append(User(name: "Elena", avatar: (UIImage(named: "image_3")!), likes: Likes(likesCounts: 7653, likeStatus: .noLike), photos: []))
+        friendsArray.append(User(name: "Oleg", avatar: (UIImage(named: "image_4")!), likes: Likes(likesCounts: 9719, likeStatus: .noLike), photos: []))
+        friendsArray.append(User(name: "Mikhail", avatar: (UIImage(named: "image_5")!), likes: Likes(likesCounts: 54, likeStatus: .noLike), photos: []))
+        friendsArray.append(User(name: "John", avatar: (UIImage(named: "image_1")!), likes: Likes(likesCounts: 567, likeStatus: .noLike), photos: []))
+        friendsArray.append(User(name: "Stanislav", avatar: (UIImage(named: "image_2")!), likes: Likes(likesCounts: 4568, likeStatus: .noLike), photos: []))
+        friendsArray.append(User(name: "Olga", avatar: (UIImage(named: "image_3")!), likes: Likes(likesCounts: 1, likeStatus: .noLike), photos: []))
+        friendsArray.append(User(name: "Viktor", avatar: (UIImage(named: "image_4")!), likes: Likes(likesCounts: 423, likeStatus: .noLike), photos: []))
+        friendsArray.append(User(name: "Denis", avatar: (UIImage(named: "image_5")!), likes: Likes(likesCounts: 974, likeStatus: .noLike), photos: []))
+        friendsArray.append(User(name: "Alex", avatar: (UIImage(named: "image_1")!), likes: Likes(likesCounts: 1113, likeStatus: .noLike), photos: []))
+        friendsArray.append(User(name: "Alexander", avatar: (UIImage(named: "image_2")!), likes: Likes(likesCounts: 96528, likeStatus: .noLike), photos: []))
+        friendsArray.append(User(name: "Julia", avatar: (UIImage(named: "image_3")!), likes: Likes(likesCounts: 100000, likeStatus: .noLike), photos: []))
+        friendsArray.append(User(name: "Valera", avatar: (UIImage(named: "image_5")!), likes: Likes(likesCounts: 490, likeStatus: .noLike), photos: []))
+        friendsArray.append(User(name: "Pavel", avatar: (UIImage(named: "image_4")!), likes: Likes(likesCounts: 2, likeStatus: .noLike), photos: []))
+        friendsArray.append(User(name: "Anton", avatar: (UIImage(named: "image_5")!), likes: Likes(likesCounts: 89, likeStatus: .noLike), photos: []))
+    }
     
+    func addPhotos() {
+        for i in friendsArray {
+            let randomCount = Int(arc4random_uniform(7))
+            let array = Array(repeating: i.avatar, count: randomCount)
+            i.photos.append(contentsOf: array)
+        }
+    }
 }
 
 extension FriendsListViewController: UITableViewDelegate {
