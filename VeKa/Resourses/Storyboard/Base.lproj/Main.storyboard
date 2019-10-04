@@ -608,7 +608,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="04d-We-6BK"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Инфо" id="VpG-g1-vAk"/>
+                    <navigationItem key="navigationItem" title="Инфо" id="VpG-g1-vAk">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="photo.on.rectangle" catalog="system" id="bOK-uh-1l0">
+                            <connections>
+                                <segue destination="PVy-cf-yTZ" kind="show" id="GAa-mb-euL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="friendInfoCollectionView" destination="dzb-xg-Pgq" id="u4H-8P-F1t"/>
                     </connections>
@@ -616,6 +622,71 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nlx-Pl-FGq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3787" y="415"/>
+        </scene>
+        <!--Фотографии-->
+        <scene sceneID="Z3w-ca-Xkj">
+            <objects>
+                <viewController id="PVy-cf-yTZ" customClass="FriendsPhotosViewController" customModule="VeKa" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NDZ-uq-fGW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YuZ-RY-exp">
+                                <rect key="frame" x="0.0" y="56" width="414" height="703"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="of1-3z-JdX">
+                                    <size key="itemSize" width="414" height="475"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="friendsPhotosIdentifier" id="bTw-El-MTm" customClass="FriendsPhotosCollectionViewCell" customModule="VeKa" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="475"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="NYx-7q-Qec">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="475"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5VI-9E-FtY">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="5VI-9E-FtY" secondAttribute="height" multiplier="1:1" id="6pv-Yt-YtO"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="5VI-9E-FtY" firstAttribute="top" secondItem="NYx-7q-Qec" secondAttribute="top" id="9OK-9S-J3J"/>
+                                                <constraint firstItem="5VI-9E-FtY" firstAttribute="leading" secondItem="NYx-7q-Qec" secondAttribute="leading" id="KpS-od-Wrx"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="5VI-9E-FtY" secondAttribute="bottom" id="KpY-Ab-dwf"/>
+                                                <constraint firstAttribute="trailing" secondItem="5VI-9E-FtY" secondAttribute="trailing" id="PyZ-aB-bKZ"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="414" height="475"/>
+                                        <connections>
+                                            <outlet property="friendsPhotos" destination="5VI-9E-FtY" id="Ri8-sx-IUC"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="pJu-On-QRb" firstAttribute="bottom" secondItem="YuZ-RY-exp" secondAttribute="bottom" id="98l-aE-V1t"/>
+                            <constraint firstItem="YuZ-RY-exp" firstAttribute="top" secondItem="pJu-On-QRb" secondAttribute="top" id="BAf-ic-1ty"/>
+                            <constraint firstItem="pJu-On-QRb" firstAttribute="trailing" secondItem="YuZ-RY-exp" secondAttribute="trailing" id="NAD-I9-EFR"/>
+                            <constraint firstItem="YuZ-RY-exp" firstAttribute="leading" secondItem="pJu-On-QRb" secondAttribute="leading" id="iDe-C8-OAD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pJu-On-QRb"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Фотографии" id="ykk-Fm-wNO"/>
+                    <connections>
+                        <outlet property="friendsPhotosCollectionView" destination="YuZ-RY-exp" id="h08-OI-eho"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tg2-hB-C5d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4592.753623188406" y="414.50892857142856"/>
         </scene>
         <!--News View Controller-->
         <scene sceneID="r1p-Wr-mLL">
@@ -636,28 +707,31 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="617"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CSE-zG-qfq">
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CSE-zG-qfq">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="CSE-zG-qfq" secondAttribute="height" multiplier="1:1" id="cRy-Gr-kCD"/>
                                                     </constraints>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="32t-ou-U7W">
-                                                        <size key="itemSize" width="415" height="407"/>
+                                                        <size key="itemSize" width="413" height="410"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="newsCollectionViewCell" id="lFJ-1j-csj" customClass="NewsCollectionViewCell" customModule="VeKa" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="3.5" width="415" height="407"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <rect key="frame" x="0.0" y="2" width="413" height="410"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="M08-Kq-e9q">
-                                                                <rect key="frame" x="0.0" y="0.0" width="415" height="407"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="413" height="410"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="news_1" translatesAutoresizingMaskIntoConstraints="NO" id="hz8-zb-bCy">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="415" height="407"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="413" height="410"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" secondItem="hz8-zb-bCy" secondAttribute="height" multiplier="1:1" id="XMV-Lv-UUk"/>
+                                                                        </constraints>
                                                                     </imageView>
                                                                 </subviews>
                                                                 <constraints>
@@ -667,26 +741,26 @@
                                                                     <constraint firstItem="hz8-zb-bCy" firstAttribute="top" secondItem="M08-Kq-e9q" secondAttribute="top" id="duE-lH-p11"/>
                                                                 </constraints>
                                                             </collectionViewCellContentView>
-                                                            <size key="customSize" width="415" height="407"/>
+                                                            <size key="customSize" width="413" height="410"/>
                                                             <connections>
                                                                 <outlet property="newsCollectionImage" destination="hz8-zb-bCy" id="158-gH-lOd"/>
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>
                                                 </collectionView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tX5-d5-T9O">
+                                                    <rect key="frame" x="186" y="422" width="42" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tjv-nK-wkf" customClass="LikesView" customModule="VeKa" customModuleProvider="target">
-                                                    <rect key="frame" x="147" y="454.5" width="120" height="30"/>
+                                                    <rect key="frame" x="147" y="452.5" width="120" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="tjv-nK-wkf" secondAttribute="height" multiplier="4:1" id="IUb-uo-2yx"/>
                                                         <constraint firstAttribute="height" constant="30" id="J8e-yR-s1y"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tX5-d5-T9O">
-                                                    <rect key="frame" x="186" y="424" width="42" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="CSE-zG-qfq" firstAttribute="top" secondItem="hbO-Ko-l4x" secondAttribute="top" id="0jh-0i-Vy3"/>
@@ -698,7 +772,7 @@
                                                 <constraint firstItem="tjv-nK-wkf" firstAttribute="top" secondItem="tX5-d5-T9O" secondAttribute="bottom" constant="10" id="LCz-Ij-kqQ"/>
                                                 <constraint firstItem="CSE-zG-qfq" firstAttribute="leading" secondItem="hbO-Ko-l4x" secondAttribute="leading" id="amn-0J-lYK"/>
                                                 <constraint firstAttribute="trailing" secondItem="CSE-zG-qfq" secondAttribute="trailing" id="nQ2-Cs-sB3"/>
-                                                <constraint firstItem="tX5-d5-T9O" firstAttribute="top" secondItem="CSE-zG-qfq" secondAttribute="bottom" constant="10" id="v6O-ak-hzi"/>
+                                                <constraint firstItem="tX5-d5-T9O" firstAttribute="top" secondItem="CSE-zG-qfq" secondAttribute="bottom" constant="8" id="wif-74-5TD"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -772,6 +846,7 @@
         <image name="news_1" width="839" height="839"/>
         <image name="person.3.fill" catalog="system" width="72" height="35"/>
         <image name="person.crop.square" catalog="system" width="64" height="56"/>
+        <image name="photo.on.rectangle" catalog="system" width="64" height="48"/>
         <image name="text.badge.plus" catalog="system" width="64" height="56"/>
     </resources>
 </document>
