@@ -30,6 +30,20 @@ extension MyGroupsViewController: UITableViewDelegate {
         print("""
             select my group "\(myGroupsArray[indexPath.row].name)"
             """)
+        
+        UIView.animate(withDuration: 0.3,
+                       delay: 0,
+                       usingSpringWithDamping: 0.7,
+                       initialSpringVelocity: 0,
+                       options: [],
+                       animations: {
+                        tableView.cellForRow(at: indexPath)?.transform = CGAffineTransform.identity.scaledBy(x: 1.4, y: 1.4)
+                        tableView.cellForRow(at: indexPath)?.transform = CGAffineTransform.identity.scaledBy(x: 0.6, y: 0.6)
+                        tableView.cellForRow(at: indexPath)?.transform = CGAffineTransform.identity.scaledBy(x: 1, y: 1)
+
+                        print("tap on image")
+        })
+        
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
