@@ -62,6 +62,16 @@ extension FriendInfoViewController : UICollectionViewDataSource, UICollectionVie
         print(cell.likesView.likesStatus)
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let identifier = segue.identifier, identifier == "photoFriendsIdentifier" {
+            if let destinationVC = segue.destination  as? FriendsPhotosViewController {
+                let friendPhotos: [UIImage] = self.friendInfoList[0].photos
+                destinationVC.photoArray = friendPhotos
+            }
+        }
+    }
 }
 
 

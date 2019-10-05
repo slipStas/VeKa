@@ -611,7 +611,7 @@
                     <navigationItem key="navigationItem" title="Инфо" id="VpG-g1-vAk">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="photo.on.rectangle" catalog="system" id="bOK-uh-1l0">
                             <connections>
-                                <segue destination="PVy-cf-yTZ" kind="show" id="GAa-mb-euL"/>
+                                <segue destination="PVy-cf-yTZ" kind="show" identifier="photoFriendsIdentifier" id="GAa-mb-euL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

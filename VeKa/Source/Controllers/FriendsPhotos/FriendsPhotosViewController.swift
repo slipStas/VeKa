@@ -9,6 +9,8 @@
 import UIKit
 
 class FriendsPhotosViewController: UIViewController {
+    
+    var photoArray: [UIImage] = []
 
     @IBOutlet weak var friendsPhotosCollectionView: UICollectionView!
     
@@ -27,13 +29,13 @@ extension FriendsPhotosViewController: UICollectionViewDelegate {
 extension FriendsPhotosViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        3
+        return photoArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = friendsPhotosCollectionView.dequeueReusableCell(withReuseIdentifier: "friendsPhotosIdentifier", for: indexPath) as! FriendsPhotosCollectionViewCell
         
-        cell.friendsPhotos.image = UIImage(named: "icon_5")
+        cell.friendsPhotos.image = photoArray[indexPath.row]
         
         return cell
     }
