@@ -85,7 +85,7 @@ extension FriendsListViewController: UITableViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         
-        //animateWidthTable(tableView: friendsListTableView)
+        //animateAlphaTable(tableView: friendsListTableView)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -178,6 +178,23 @@ extension FriendsListViewController: UITableViewDataSource {
             
             friendsInSections[String(firstLetter)] = friends
         }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        cell.alpha = 0.1
+        UIView.animate(withDuration: 0.4, delay: 0,
+                       usingSpringWithDamping: 0.7,
+                       initialSpringVelocity: 0,
+                       options: [],
+                       animations: {
+                        cell.transform = CGAffineTransform.identity.scaledBy(x: 0.4, y: 0.4)
+                        cell.transform = CGAffineTransform.identity.scaledBy(x: 5, y: 5)
+                        cell.transform = CGAffineTransform.identity.scaledBy(x: 1, y: 1)
+        })
+        UIView.animate(withDuration: 0.6, animations: {
+            cell.alpha = 1
+        })
     }
 }
 

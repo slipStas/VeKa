@@ -15,11 +15,11 @@ class FriendsListTableViewCell: UITableViewCell {
     @IBOutlet weak var friendsPhotoImageView: UIImageView!
     
     
-    
     override func prepareForReuse() {
         super.prepareForReuse()
         
         friendsPhotoImageView.image = nil
         friendNameLabel.text = nil
     }
+    
 }

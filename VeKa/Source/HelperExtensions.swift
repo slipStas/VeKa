@@ -28,11 +28,10 @@ extension UIViewController {
         for a in cells {
             let cell: UITableViewCell = a as UITableViewCell
             UIView.animate(withDuration: 0.7, delay: 0.05 * Double(index), usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: [], animations: {
-                cell.transform = CGAffineTransform(translationX: 0, y: 0);
-            }, completion: nil)
+                cell.transform = CGAffineTransform(translationX: 0, y: 0)
+            })
             index += 1
         }
-        
     }
     
     func animateWidthTable(tableView : UITableView) {
@@ -53,11 +52,30 @@ extension UIViewController {
         for a in cells {
             let cell: UITableViewCell = a as UITableViewCell
             UIView.animate(withDuration: 0.5, delay: 0.05 * Double(index), usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: [], animations: {
-                cell.transform = CGAffineTransform(translationX: 0, y: 0);
-            }, completion: nil)
+                cell.transform = CGAffineTransform(translationX: 0, y: 0)
+            })
             index += 1
         }
-        
     }
     
+    func animateAlphaTable(tableView : UITableView) {
+        
+        tableView.reloadData()
+        
+        let cells = tableView.visibleCells
+        
+        for i in cells {
+            let cell: UITableViewCell = i as UITableViewCell
+            cell.alpha = 0.1
+        }
+        var index = 0
+        
+        for a in cells {
+            let cell: UITableViewCell = a as UITableViewCell
+            UIView.animate(withDuration: 0.5, delay: 0.05 * Double(index), options: [], animations: {
+                cell.alpha = 1
+            })
+            index += 1
+        }
+    }
 }
