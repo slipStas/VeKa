@@ -16,6 +16,7 @@ class FriendsPhotosViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         friendsPhotosCollectionView.dataSource = self
         friendsPhotosCollectionView.delegate = self
         
@@ -36,7 +37,7 @@ extension FriendsPhotosViewController: UICollectionViewDataSource {
         let cell = friendsPhotosCollectionView.dequeueReusableCell(withReuseIdentifier: "friendsPhotosIdentifier", for: indexPath) as! FriendsPhotosCollectionViewCell
         
         cell.friendsPhotos.image = photoArray[indexPath.row]
-        
+                
         return cell
     }
 }
@@ -44,6 +45,7 @@ extension FriendsPhotosViewController: UICollectionViewDataSource {
 extension FriendsPhotosViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
         return CGSize(width: view.frame.width, height: view.frame.width)
     }
 }
