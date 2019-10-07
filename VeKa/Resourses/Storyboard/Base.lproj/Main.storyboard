@@ -171,19 +171,12 @@
                                                                 <constraint firstItem="iCp-K0-AM2" firstAttribute="width" secondItem="YTZ-xa-r7q" secondAttribute="width" id="p9H-it-oih"/>
                                                             </constraints>
                                                         </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zOz-6h-ygN">
-                                                            <rect key="frame" x="0.0" y="0.0" width="52" height="52"/>
-                                                        </view>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
                                                         <constraint firstItem="YTZ-xa-r7q" firstAttribute="width" secondItem="e6d-Jv-PPC" secondAttribute="width" id="K9m-J9-d1f"/>
                                                         <constraint firstItem="YTZ-xa-r7q" firstAttribute="height" secondItem="e6d-Jv-PPC" secondAttribute="height" id="c0g-lc-xyw"/>
-                                                        <constraint firstItem="zOz-6h-ygN" firstAttribute="centerY" secondItem="YTZ-xa-r7q" secondAttribute="centerY" id="dEa-Sn-Khs"/>
                                                         <constraint firstItem="YTZ-xa-r7q" firstAttribute="centerY" secondItem="e6d-Jv-PPC" secondAttribute="centerY" id="gLV-Ot-xl8"/>
-                                                        <constraint firstItem="zOz-6h-ygN" firstAttribute="centerX" secondItem="YTZ-xa-r7q" secondAttribute="centerX" id="h7a-Nt-36Z"/>
-                                                        <constraint firstItem="zOz-6h-ygN" firstAttribute="height" secondItem="iCp-K0-AM2" secondAttribute="height" id="h8i-Pb-ABn"/>
-                                                        <constraint firstItem="zOz-6h-ygN" firstAttribute="width" secondItem="iCp-K0-AM2" secondAttribute="width" id="wUA-RJ-YJN"/>
                                                         <constraint firstAttribute="width" secondItem="e6d-Jv-PPC" secondAttribute="height" multiplier="1:1" id="yue-Bf-LUm"/>
                                                         <constraint firstItem="YTZ-xa-r7q" firstAttribute="centerX" secondItem="e6d-Jv-PPC" secondAttribute="centerX" id="zRP-bj-SsU"/>
                                                     </constraints>
@@ -222,7 +215,6 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="animateView" destination="zOz-6h-ygN" id="1ci-wf-lRm"/>
                                             <outlet property="avatarView" destination="YTZ-xa-r7q" id="ZTJ-b4-bEO"/>
                                             <outlet property="myGroupsImageView" destination="iCp-K0-AM2" id="WrE-kE-4Hd"/>
                                             <outlet property="myGroupsNameLabel" destination="YOI-jC-Ng3" id="efF-GP-FZy"/>
@@ -543,24 +535,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="290" height="434"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4wC-aa-xW1">
-                                                    <rect key="frame" x="-20" y="30" width="330" height="290"/>
-                                                    <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nZu-TW-CVL">
-                                                            <rect key="frame" x="20" y="0.0" width="290" height="290"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" secondItem="nZu-TW-CVL" secondAttribute="height" multiplier="1:1" id="xab-ou-2Bj"/>
-                                                            </constraints>
-                                                        </imageView>
-                                                    </subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nZu-TW-CVL">
+                                                    <rect key="frame" x="0.0" y="0.0" width="290" height="290"/>
                                                     <constraints>
-                                                        <constraint firstItem="nZu-TW-CVL" firstAttribute="width" secondItem="4wC-aa-xW1" secondAttribute="width" constant="-40" id="1oA-eg-h59"/>
-                                                        <constraint firstItem="nZu-TW-CVL" firstAttribute="height" secondItem="4wC-aa-xW1" secondAttribute="height" id="HKV-uE-AAA"/>
-                                                        <constraint firstItem="nZu-TW-CVL" firstAttribute="centerY" secondItem="4wC-aa-xW1" secondAttribute="centerY" id="ToY-ge-pUe"/>
-                                                        <constraint firstItem="nZu-TW-CVL" firstAttribute="centerX" secondItem="4wC-aa-xW1" secondAttribute="centerX" id="eME-Ho-hN8"/>
+                                                        <constraint firstAttribute="width" secondItem="nZu-TW-CVL" secondAttribute="height" multiplier="1:1" id="xab-ou-2Bj"/>
                                                     </constraints>
-                                                </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQh-Ex-gOf">
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQh-Ex-gOf">
                                                     <rect key="frame" x="124" y="310" width="42" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="4tL-DB-877"/>
@@ -579,18 +560,17 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="BQh-Ex-gOf" firstAttribute="centerX" secondItem="F0d-kg-mbe" secondAttribute="centerX" id="DHH-5g-Cat"/>
-                                                <constraint firstItem="4wC-aa-xW1" firstAttribute="centerX" secondItem="F0d-kg-mbe" secondAttribute="centerX" id="G6y-Ew-1LW"/>
-                                                <constraint firstItem="4wC-aa-xW1" firstAttribute="leading" secondItem="F0d-kg-mbe" secondAttribute="leading" constant="-20" id="KBv-n3-aXA"/>
-                                                <constraint firstItem="4wC-aa-xW1" firstAttribute="top" secondItem="F0d-kg-mbe" secondAttribute="top" constant="30" id="KaK-ck-tHF"/>
-                                                <constraint firstItem="eTZ-0E-9XU" firstAttribute="leading" secondItem="BQh-Ex-gOf" secondAttribute="leading" id="REv-xe-JwY"/>
-                                                <constraint firstItem="eTZ-0E-9XU" firstAttribute="top" secondItem="4wC-aa-xW1" secondAttribute="bottom" constant="31" id="cuP-ha-U5s"/>
-                                                <constraint firstItem="eTZ-0E-9XU" firstAttribute="top" secondItem="BQh-Ex-gOf" secondAttribute="bottom" constant="20" id="nHb-5i-9Cy"/>
-                                                <constraint firstAttribute="trailing" secondItem="4wC-aa-xW1" secondAttribute="trailing" constant="-20" id="uua-Gt-1PZ"/>
+                                                <constraint firstItem="BQh-Ex-gOf" firstAttribute="top" secondItem="nZu-TW-CVL" secondAttribute="bottom" constant="20" id="Dp1-tA-fJK"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="eTZ-0E-9XU" secondAttribute="bottom" constant="53" id="DwR-3y-lFi"/>
+                                                <constraint firstItem="eTZ-0E-9XU" firstAttribute="leading" secondItem="BQh-Ex-gOf" secondAttribute="leading" id="E8B-Y4-sii"/>
+                                                <constraint firstItem="nZu-TW-CVL" firstAttribute="top" secondItem="F0d-kg-mbe" secondAttribute="top" id="fCH-Wb-bG2"/>
+                                                <constraint firstAttribute="trailing" secondItem="nZu-TW-CVL" secondAttribute="trailing" id="l6Y-yn-tnF"/>
+                                                <constraint firstItem="nZu-TW-CVL" firstAttribute="leading" secondItem="F0d-kg-mbe" secondAttribute="leading" id="rTt-IE-scu"/>
+                                                <constraint firstItem="eTZ-0E-9XU" firstAttribute="top" secondItem="BQh-Ex-gOf" secondAttribute="bottom" constant="20" id="yD4-UN-AGg"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="290" height="434"/>
                                         <connections>
-                                            <outlet property="animateView" destination="4wC-aa-xW1" id="YWw-EB-6v5"/>
                                             <outlet property="friendInfoImageView" destination="nZu-TW-CVL" id="Qrq-QT-dqO"/>
                                             <outlet property="likesView" destination="eTZ-0E-9XU" id="G9q-dU-KIn"/>
                                             <outlet property="nameFriendInfoLabel" destination="BQh-Ex-gOf" id="HSg-SG-shN"/>

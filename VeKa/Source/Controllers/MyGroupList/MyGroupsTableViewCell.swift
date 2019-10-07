@@ -12,7 +12,6 @@ class MyGroupsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var myGroupsImageView: UIImageView!
     @IBOutlet weak var myGroupsNameLabel: UILabel!
-    @IBOutlet weak var animateView: UIView!
     @IBOutlet weak var avatarView: AvatarView!
     
     override func prepareForReuse() {
@@ -24,9 +23,10 @@ class MyGroupsTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         
+        myGroupsImageView.isUserInteractionEnabled = true
         let tapOnIcon = UITapGestureRecognizer(target: self, action: #selector(tapOnIconView))
         tapOnIcon.numberOfTapsRequired = 1
-        animateView.addGestureRecognizer(tapOnIcon)
+        myGroupsImageView.addGestureRecognizer(tapOnIcon)
     }
     
     @objc func tapOnIconView(sender: UITapGestureRecognizer) {

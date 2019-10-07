@@ -17,6 +17,7 @@ class MyGroupsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         myGroupsTableView.rowHeight = 66
         
         myGroupsTableView.dataSource = self
@@ -40,8 +41,6 @@ extension MyGroupsViewController: UITableViewDelegate {
                         tableView.cellForRow(at: indexPath)?.transform = CGAffineTransform.identity.scaledBy(x: 1.4, y: 1.4)
                         tableView.cellForRow(at: indexPath)?.transform = CGAffineTransform.identity.scaledBy(x: 0.6, y: 0.6)
                         tableView.cellForRow(at: indexPath)?.transform = CGAffineTransform.identity.scaledBy(x: 1, y: 1)
-
-                        print("tap on image")
         })
         
         tableView.deselectRow(at: indexPath, animated: true)

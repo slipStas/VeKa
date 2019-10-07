@@ -9,9 +9,7 @@
 import UIKit
 
 class FriendInfoCollectionViewCell: UICollectionViewCell {
-    
-    @IBOutlet weak var animateView: UIView!
-    
+        
     @IBOutlet weak var friendInfoImageView: UIImageView!
     
     @IBOutlet weak var nameFriendInfoLabel: UILabel!
@@ -22,9 +20,10 @@ class FriendInfoCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         
+        friendInfoImageView.isUserInteractionEnabled = true
         let tapOnIcon = UITapGestureRecognizer(target: self, action: #selector(tapOnIconView))
         tapOnIcon.numberOfTapsRequired = 1
-        animateView.addGestureRecognizer(tapOnIcon)
+        friendInfoImageView.addGestureRecognizer(tapOnIcon)
     }
     
     override func prepareForReuse() {
