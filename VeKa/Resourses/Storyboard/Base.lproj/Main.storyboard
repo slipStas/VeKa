@@ -83,12 +83,18 @@
                                             <constraint firstAttribute="height" constant="30" id="nVL-za-Ncq"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9C8-EK-UDN" customClass="Download" customModule="VeKa" customModuleProvider="target">
+                                        <rect key="frame" x="87" y="154" width="240" height="128"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="32b-L2-MWN" firstAttribute="centerX" secondItem="LHt-PY-aam" secondAttribute="centerX" id="019-Y9-wOu"/>
                                     <constraint firstItem="SMb-eg-yzY" firstAttribute="centerX" secondItem="LHt-PY-aam" secondAttribute="centerX" id="ADr-Xz-1sB"/>
+                                    <constraint firstItem="9C8-EK-UDN" firstAttribute="leading" secondItem="LHt-PY-aam" secondAttribute="leading" constant="87" id="BSi-vm-g0b"/>
                                     <constraint firstItem="Q94-nZ-UBl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="LHt-PY-aam" secondAttribute="leading" constant="16" id="U9S-gK-kK7"/>
                                     <constraint firstItem="Q94-nZ-UBl" firstAttribute="top" secondItem="LHt-PY-aam" secondAttribute="top" constant="45" id="Uow-C1-r46"/>
+                                    <constraint firstAttribute="trailing" secondItem="9C8-EK-UDN" secondAttribute="trailing" constant="87" id="WOV-1d-mhz"/>
                                     <constraint firstItem="32b-L2-MWN" firstAttribute="centerY" secondItem="LHt-PY-aam" secondAttribute="centerY" id="h8q-RZ-5bS"/>
                                     <constraint firstItem="32b-L2-MWN" firstAttribute="top" secondItem="XrP-qC-oOc" secondAttribute="bottom" constant="25" id="iFI-So-bH9"/>
                                     <constraint firstItem="SMb-eg-yzY" firstAttribute="leading" secondItem="LHt-PY-aam" secondAttribute="leading" constant="16" id="ikY-XR-gGb"/>
@@ -96,9 +102,11 @@
                                     <constraint firstAttribute="trailing" secondItem="SMb-eg-yzY" secondAttribute="trailing" constant="16" id="lPA-VY-BmL"/>
                                     <constraint firstItem="tWt-VD-DgO" firstAttribute="top" secondItem="32b-L2-MWN" secondAttribute="bottom" constant="20" id="pG1-ve-aem"/>
                                     <constraint firstAttribute="bottom" secondItem="kHA-uI-pJW" secondAttribute="bottom" constant="30" id="r8b-Fh-1dn"/>
+                                    <constraint firstItem="9C8-EK-UDN" firstAttribute="top" secondItem="Q94-nZ-UBl" secondAttribute="bottom" constant="88" id="rDh-9F-dOo"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Q94-nZ-UBl" secondAttribute="trailing" constant="16" id="sqN-mE-Erf"/>
                                     <constraint firstItem="SMb-eg-yzY" firstAttribute="top" secondItem="tWt-VD-DgO" secondAttribute="bottom" constant="5" id="vXb-eZ-Xeq"/>
                                     <constraint firstItem="XrP-qC-oOc" firstAttribute="top" secondItem="Ip5-sv-Kr1" secondAttribute="bottom" constant="20" id="wnB-EO-JgN"/>
+                                    <constraint firstItem="Ip5-sv-Kr1" firstAttribute="top" secondItem="9C8-EK-UDN" secondAttribute="bottom" constant="55.5" id="ziX-sW-CeV"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
