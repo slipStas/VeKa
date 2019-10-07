@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15508"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -84,17 +84,21 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9C8-EK-UDN" customClass="Download" customModule="VeKa" customModuleProvider="target">
-                                        <rect key="frame" x="87" y="154" width="240" height="128"/>
+                                        <rect key="frame" x="10" y="86" width="240" height="120"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="KSa-3Q-40G"/>
+                                            <constraint firstAttribute="height" constant="120" id="j00-JL-o62"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="32b-L2-MWN" firstAttribute="centerX" secondItem="LHt-PY-aam" secondAttribute="centerX" id="019-Y9-wOu"/>
                                     <constraint firstItem="SMb-eg-yzY" firstAttribute="centerX" secondItem="LHt-PY-aam" secondAttribute="centerX" id="ADr-Xz-1sB"/>
-                                    <constraint firstItem="9C8-EK-UDN" firstAttribute="leading" secondItem="LHt-PY-aam" secondAttribute="leading" constant="87" id="BSi-vm-g0b"/>
+                                    <constraint firstItem="9C8-EK-UDN" firstAttribute="leading" secondItem="LHt-PY-aam" secondAttribute="leading" constant="10" id="S9n-M1-q3A"/>
                                     <constraint firstItem="Q94-nZ-UBl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="LHt-PY-aam" secondAttribute="leading" constant="16" id="U9S-gK-kK7"/>
                                     <constraint firstItem="Q94-nZ-UBl" firstAttribute="top" secondItem="LHt-PY-aam" secondAttribute="top" constant="45" id="Uow-C1-r46"/>
-                                    <constraint firstAttribute="trailing" secondItem="9C8-EK-UDN" secondAttribute="trailing" constant="87" id="WOV-1d-mhz"/>
+                                    <constraint firstItem="9C8-EK-UDN" firstAttribute="top" secondItem="Q94-nZ-UBl" secondAttribute="bottom" constant="20" id="Wl2-1k-8YN"/>
                                     <constraint firstItem="32b-L2-MWN" firstAttribute="centerY" secondItem="LHt-PY-aam" secondAttribute="centerY" id="h8q-RZ-5bS"/>
                                     <constraint firstItem="32b-L2-MWN" firstAttribute="top" secondItem="XrP-qC-oOc" secondAttribute="bottom" constant="25" id="iFI-So-bH9"/>
                                     <constraint firstItem="SMb-eg-yzY" firstAttribute="leading" secondItem="LHt-PY-aam" secondAttribute="leading" constant="16" id="ikY-XR-gGb"/>
@@ -102,11 +106,9 @@
                                     <constraint firstAttribute="trailing" secondItem="SMb-eg-yzY" secondAttribute="trailing" constant="16" id="lPA-VY-BmL"/>
                                     <constraint firstItem="tWt-VD-DgO" firstAttribute="top" secondItem="32b-L2-MWN" secondAttribute="bottom" constant="20" id="pG1-ve-aem"/>
                                     <constraint firstAttribute="bottom" secondItem="kHA-uI-pJW" secondAttribute="bottom" constant="30" id="r8b-Fh-1dn"/>
-                                    <constraint firstItem="9C8-EK-UDN" firstAttribute="top" secondItem="Q94-nZ-UBl" secondAttribute="bottom" constant="88" id="rDh-9F-dOo"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Q94-nZ-UBl" secondAttribute="trailing" constant="16" id="sqN-mE-Erf"/>
                                     <constraint firstItem="SMb-eg-yzY" firstAttribute="top" secondItem="tWt-VD-DgO" secondAttribute="bottom" constant="5" id="vXb-eZ-Xeq"/>
                                     <constraint firstItem="XrP-qC-oOc" firstAttribute="top" secondItem="Ip5-sv-Kr1" secondAttribute="bottom" constant="20" id="wnB-EO-JgN"/>
-                                    <constraint firstItem="Ip5-sv-Kr1" firstAttribute="top" secondItem="9C8-EK-UDN" secondAttribute="bottom" constant="55.5" id="ziX-sW-CeV"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -832,9 +834,9 @@
     <resources>
         <image name="news" width="33.333332061767578" height="33.333332061767578"/>
         <image name="news_1" width="839" height="839"/>
-        <image name="person.3.fill" catalog="system" width="72" height="35"/>
+        <image name="person.3.fill" catalog="system" width="71" height="34"/>
         <image name="person.crop.square" catalog="system" width="64" height="56"/>
         <image name="photo.on.rectangle" catalog="system" width="64" height="48"/>
-        <image name="text.badge.plus" catalog="system" width="64" height="56"/>
+        <image name="text.badge.plus" catalog="system" width="64" height="54"/>
     </resources>
 </document>

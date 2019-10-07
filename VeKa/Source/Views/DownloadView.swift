@@ -13,15 +13,16 @@ class Download: UIView {
     let color = #colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1)
     let cloudPath = createBeziePath()
     
-    override func draw(_ rect: CGRect) {
-        super.draw(rect)
-        
-        
-    }
     override func awakeFromNib() {
         super.awakeFromNib()
         
         backgroundColor = .clear
+        
+        addLayerSnake()
+        addCircleLayer()
+    }
+ 
+    private func addLayerSnake() {
         
         let myLayer = CAShapeLayer()
         myLayer.position = CGPoint(x: 0, y: 0)
@@ -45,13 +46,32 @@ class Download: UIView {
         strokeEndAnimation.timingFunction = CAMediaTimingFunction.init(name: .easeOut)
 
         let animationGroup = CAAnimationGroup()
-        animationGroup.duration = 3.5
+        animationGroup.duration = 2.5
         animationGroup.repeatCount = .infinity
         animationGroup.animations = [strokeEndAnimation, strokeStartAnimation]
 
         myLayer.add(animationGroup, forKey: nil)
     }
     
+    private func addCircleLayer() {
+        
+        let circleColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
+        let circleLayer = CAShapeLayer()
+        circleLayer.bounds = CGRect(x: 0, y: 0, width: heightWidthOfSubViews, height: heightWidthOfSubViews)
+        circleLayer.position = CGPoint(x: 0, y: 0)
+        circleLayer.cornerRadius = CGFloat(heightWidthOfSubViews / 2)
+        circleLayer.backgroundColor = circleColor.cgColor
+        
+        self.layer.addSublayer(circleLayer)
+        
+        let animation = CAKeyframeAnimation(keyPath: #keyPath(CALayer.position))
+        animation.path = createBeziePath().cgPath
+        animation.duration = 2.5
+        animation.repeatCount = .infinity
+        animation.calculationMode = .cubicPaced
+        
+        circleLayer.add(animation, forKey: nil)
+    }
 }
 
 private func createBeziePath() -> UIBezierPath {
