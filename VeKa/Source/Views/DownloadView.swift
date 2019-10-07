@@ -38,17 +38,17 @@ class Download: UIView {
         strokeEndAnimation.fromValue = 0.001
         strokeEndAnimation.toValue = 1
         strokeEndAnimation.timingFunction = CAMediaTimingFunction.init(name: .easeIn)
-        
+
         let strokeStartAnimation = CABasicAnimation(keyPath: #keyPath(CAShapeLayer.strokeStart))
         strokeStartAnimation.fromValue = 0
         strokeStartAnimation.toValue = 1
         strokeEndAnimation.timingFunction = CAMediaTimingFunction.init(name: .easeOut)
-        
+
         let animationGroup = CAAnimationGroup()
-        animationGroup.duration = 4
+        animationGroup.duration = 3.5
         animationGroup.repeatCount = .infinity
         animationGroup.animations = [strokeEndAnimation, strokeStartAnimation]
-        
+
         myLayer.add(animationGroup, forKey: nil)
     }
     
@@ -58,6 +58,7 @@ private func createBeziePath() -> UIBezierPath {
     
     let bezierPath = UIBezierPath()
     bezierPath.move(to: CGPoint(x: 43.5, y: 74.5))
+    
     bezierPath.addCurve(to: CGPoint(x: 50.5, y: 74.5), controlPoint1: CGPoint(x: 44.36, y: 74.32), controlPoint2: CGPoint(x: 57.62, y: 83.57))
     bezierPath.addCurve(to: CGPoint(x: 59.5, y: 19.5), controlPoint1: CGPoint(x: 28.5, y: 46.5), controlPoint2: CGPoint(x: 37.5, y: 13.5))
     bezierPath.addCurve(to: CGPoint(x: 80.5, y: 36.5), controlPoint1: CGPoint(x: 81.5, y: 25.5), controlPoint2: CGPoint(x: 80.5, y: 36.5))
@@ -73,7 +74,9 @@ private func createBeziePath() -> UIBezierPath {
     bezierPath.addCurve(to: CGPoint(x: 38.81, y: 74.66), controlPoint1: CGPoint(x: 27.63, y: 75.62), controlPoint2: CGPoint(x: 34.27, y: 74.92))
     bezierPath.addCurve(to: CGPoint(x: 43.5, y: 74.5), controlPoint1: CGPoint(x: 41.53, y: 74.5), controlPoint2: CGPoint(x: 43.5, y: 74.5))
     bezierPath.addCurve(to: CGPoint(x: 43.5, y: 74.5), controlPoint1: CGPoint(x: 43.5, y: 74.5), controlPoint2: CGPoint(x: 41.71, y: 74.87))
+   
     bezierPath.close()
+
     
     return bezierPath
 }
