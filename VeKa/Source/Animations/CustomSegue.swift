@@ -10,18 +10,20 @@ import UIKit
 
 class CustomSegue: UIStoryboardSegue {
 
-    let duration: TimeInterval = 0.35
+    let duration: TimeInterval = 0.5
     
     override func perform() {
         
-        let width = source.view.bounds.width
         let height = source.view.frame.height
-        
+        let width = source.view.frame.width
+
         guard let containerView = source.view else {return}
         containerView.addSubview(destination.view)
         source.view.frame = containerView.frame
         destination.view.frame = containerView.frame
-        destination.view.transform = CGAffineTransform(translationX: 0, y: height)
+        let translation = CGAffineTransform(translationX: width * 1.5, y: -height)
+        let rotation = CGAffineTransform(rotationAngle: 90)
+        destination.view.transform = translation.concatenating(rotation)
         
         UIView.animate(withDuration: duration, animations: {
             self.destination.view.transform = .identity

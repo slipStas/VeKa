@@ -21,6 +21,7 @@ class CustomNavigationController: UINavigationController, UINavigationController
     //MARK - UINavigationControllerDelegate
     
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
         return transitionAnimator
     }
 }

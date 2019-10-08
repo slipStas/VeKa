@@ -20,7 +20,6 @@ class CustomTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning 
         
         guard let source = transitionContext.viewController(forKey: .from), let destination = transitionContext.viewController(forKey: .to) else {return}
         
-        let height = source.view.bounds.height
         let width = source.view.bounds.width
         
         transitionContext.containerView.addSubview(destination.view)
