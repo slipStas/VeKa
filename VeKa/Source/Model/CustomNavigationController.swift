@@ -10,7 +10,8 @@ import UIKit
 
 class CustomNavigationController: UINavigationController, UINavigationControllerDelegate {
     
-    let transitionAnimator = CustomTransitionAnimator()
+    let pushAnimator = CustomPushTransitionAnimator()
+    let popAnimator = CustomPopTransitionAnimator()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,15 @@ class CustomNavigationController: UINavigationController, UINavigationController
     
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
-        return transitionAnimator
+        switch operation {
+        case .push:
+            return pushAnimator
+        case .pop:
+            return popAnimator
+        case .none:
+            return nil
+        @unknown default:
+            fatalError()
+        }
     }
 }

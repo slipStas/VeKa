@@ -1,5 +1,5 @@
 //
-//  CustomTransitionAnimator.swift
+//  CustomPushTransitionAnimator.swift
 //  VeKa
 //
 //  Created by Stanislav Slipchenko on 08.10.2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
+class CustomPushTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     
     let duration: TimeInterval = 0.35
     
@@ -50,8 +50,4 @@ class CustomTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning 
             transitionContext.completeTransition(finished && !transitionContext.transitionWasCancelled)
         }
     }
-    
-    
-    
-    
 }
