@@ -21,7 +21,7 @@ class CustomSegue: UIStoryboardSegue {
         containerView.addSubview(destination.view)
         source.view.frame = containerView.frame
         destination.view.frame = containerView.frame
-        destination.view.transform = CGAffineTransform(translationX: width, y: height)
+        destination.view.transform = CGAffineTransform(translationX: 0, y: height)
         
         UIView.animate(withDuration: duration, animations: {
             self.destination.view.transform = .identity
