@@ -10,7 +10,7 @@ import UIKit
 
 class CustomSegue: UIStoryboardSegue {
 
-    let duration: TimeInterval = 1
+    let duration: TimeInterval = 0.35
     
     override func perform() {
         
