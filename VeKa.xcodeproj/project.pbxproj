@@ -108,9 +108,10 @@
 		8E0971BE2335874300BF2473 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				8EE7A34C233D9ABA008CDE46 /* Xib files */,
 				8EF1192D23297677000B30E3 /* AppDelegate.swift */,
 				8E4DABB6233C8EF00091BE70 /* HelperExtensions.swift */,
+				8E5C274B234C24B100898AAC /* Animations */,
+				8EE7A34C233D9ABA008CDE46 /* Xib files */,
 				8EF1A301233163CC00D81510 /* Model */,
 				8E3EA79A232D660000F118DB /* Controllers */,
 				8E0971BF233587A700BF2473 /* Views */,
@@ -178,6 +179,13 @@
 				8E3EA7A6232D808D00F118DB /* AllGroupsTableViewCell.swift */,
 			);
 			path = AllGroupsList;
+			sourceTree = "<group>";
+		};
+		8E5C274B234C24B100898AAC /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Animations;
 			sourceTree = "<group>";
 		};
 		8E5C69482348072E002C745A /* FriendsPhotos */ = {
