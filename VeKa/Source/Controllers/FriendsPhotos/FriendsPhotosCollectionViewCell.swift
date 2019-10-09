@@ -16,4 +16,20 @@ class FriendsPhotosCollectionViewCell: UICollectionViewCell {
         self.friendsPhotos.image = nil
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        friendsPhotos.isUserInteractionEnabled = true
+        
+        friendsPhotos.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(animate)))
+    }
+    
+    @objc func animate() {
+        
+        let view = UIView()
+        view.backgroundColor = .red
+        view.frame = friendsPhotos.frame
+        addSubview(view)
+        
+    }
 }
