@@ -62,7 +62,7 @@ class FriendsListViewController: UIViewController {
     
     func addPhotos() {
         for i in friendsArray {
-            let randomCount = Int(arc4random_uniform(7))
+            let randomCount = Int.random(in: 3...15)
             let array = Array(repeating: i.avatar, count: randomCount)
             i.photos.append(contentsOf: array)
         }

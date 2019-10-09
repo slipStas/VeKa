@@ -10,7 +10,7 @@ import UIKit
 
 class CustomPushTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     
-    let duration: TimeInterval = 2.35
+    let duration: TimeInterval = 0.5
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return duration
@@ -31,7 +31,7 @@ class CustomPushTransitionAnimator: NSObject, UIViewControllerAnimatedTransition
         destination.view.transform = translation.concatenating(rotation)
         
         UIView.animateKeyframes(withDuration: duration, delay: 0, options: [.calculationModePaced], animations: {
-            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: (1/3 * self.duration), animations: {
+            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: (1/2 * self.duration), animations: {
 
                 let translation = CGAffineTransform(translationX: -width, y: height)
                 let rotation = CGAffineTransform(rotationAngle: 90)

@@ -16,7 +16,12 @@ class FriendInfoCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var likesView: LikesView!
     
-    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        friendInfoImageView.image = nil
+        nameFriendInfoLabel.text = nil
+    }
     
     override func awakeFromNib() {
         
@@ -24,13 +29,6 @@ class FriendInfoCollectionViewCell: UICollectionViewCell {
         let tapOnIcon = UITapGestureRecognizer(target: self, action: #selector(tapOnIconView))
         tapOnIcon.numberOfTapsRequired = 1
         friendInfoImageView.addGestureRecognizer(tapOnIcon)
-    }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        
-        friendInfoImageView.image = nil
-        nameFriendInfoLabel.text = nil
     }
     
     @objc func tapOnIconView(sender: UITapGestureRecognizer) {

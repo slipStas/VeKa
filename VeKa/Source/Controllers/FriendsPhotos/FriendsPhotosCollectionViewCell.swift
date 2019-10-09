@@ -12,4 +12,8 @@ class FriendsPhotosCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var friendsPhotos: UIImageView!
     
+    override func prepareForReuse() {
+        self.friendsPhotos.image = nil
+    }
+    
 }
