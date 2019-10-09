@@ -33,6 +33,7 @@ class FriendsPhotosViewController: UIViewController {
     }
     
     func animateImageView(imageView: UIImageView) {
+        
         self.imageView = imageView
         if let startingFrame = imageView.superview?.convert(imageView.frame, to: nil) {
             
@@ -64,7 +65,20 @@ class FriendsPhotosViewController: UIViewController {
             viewNew.clipsToBounds = true
             view.addSubview(viewNew)
             
-            viewNew.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(zoomOut)))
+            let swipeGR = UISwipeGestureRecognizer(target: self, action: #selector(zoomOutSwipe))
+            swipeGR.direction = .down
+            
+            viewNew.addGestureRecognizer(swipeGR)
+            
+            UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
+                
+                let height = (self.view.frame.width / startingFrame.width) * startingFrame.height
+                let y = self.view.frame.height / 2 - height / 2
+                self.viewNew.frame = CGRect(x: 0, y: y, width: self.view.frame.width, height: height)
+                self.blackBackgroundView.alpha = 1
+                self.nawBar.alpha = 1
+                self.tabBar.alpha = 1
+            })
             
             UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
                 
@@ -78,7 +92,11 @@ class FriendsPhotosViewController: UIViewController {
         }
     }
     
-    @objc func zoomOut() {
+    @objc func zoomOutSwipe() {
+        UIView.animate(withDuration: 0.175) {
+                    self.viewNew.transform = CGAffineTransform(translationX: 0, y: 150)
+        }
+
         if let startingFrame = imageView!.superview?.convert(imageView!.frame, to: nil) {
             UIView.animate(withDuration: 0.75, animations: {
                 self.viewNew.frame = startingFrame
@@ -90,7 +108,8 @@ class FriendsPhotosViewController: UIViewController {
                 self.blackBackgroundView.removeFromSuperview()
                 self.nawBar.removeFromSuperview()
                 self.tabBar.removeFromSuperview()
-                
+                self.viewNew.transform = CGAffineTransform(translationX: 0, y: -100)
+
                 self.imageView?.alpha = 1
             }
         }
