@@ -19,9 +19,12 @@ class FriendsPhotosViewController: UIViewController {
         
         friendsPhotosCollectionView.dataSource = self
         
-        //friendsPhotosCollectionView.frame = view.bounds
-        
+        let width = view.frame.width
+        let layout = friendsPhotosCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        layout.itemSize = CGSize(width: width, height: width)
+                
     }
+    
 }
 
 extension FriendsPhotosViewController: UICollectionViewDataSource {
@@ -36,10 +39,8 @@ extension FriendsPhotosViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = friendsPhotosCollectionView.dequeueReusableCell(withReuseIdentifier: "friendsPhotosIdentifier", for: indexPath) as! FriendsPhotosCollectionViewCell
-        
+      
         cell.friendsPhotos.image = photoArray[indexPath.row]
-        
-        //cell.frame = view.frame
         
         return cell
     }
@@ -48,7 +49,7 @@ extension FriendsPhotosViewController: UICollectionViewDataSource {
 //extension FriendsPhotosViewController: UICollectionViewDelegateFlowLayout {
 //
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//
+//        print("33333")
 //        return CGSize(width: view.bounds.width, height: view.bounds.width)
 //    }
 //}

@@ -601,7 +601,7 @@
                     <navigationItem key="navigationItem" title="Инфо" id="VpG-g1-vAk">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="photo.on.rectangle" catalog="system" id="bOK-uh-1l0">
                             <connections>
-                                <segue destination="PVy-cf-yTZ" kind="show" identifier="photoFriendsIdentifier" id="GAa-mb-euL"/>
+                                <segue destination="aTF-vy-S7F" kind="show" identifier="photoFriendsIdentifier" id="bK3-zB-lAx"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -614,47 +614,47 @@
             <point key="canvasLocation" x="3787" y="415"/>
         </scene>
         <!--Фотографии-->
-        <scene sceneID="Z3w-ca-Xkj">
+        <scene sceneID="i81-wD-ogP">
             <objects>
-                <viewController id="PVy-cf-yTZ" customClass="FriendsPhotosViewController" customModule="VeKa" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="NDZ-uq-fGW">
+                <viewController id="aTF-vy-S7F" customClass="FriendsPhotosViewController" customModule="VeKa" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nIz-fL-C0k">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YuZ-RY-exp">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ukp-jH-Ie8">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="of1-3z-JdX">
-                                    <size key="itemSize" width="413" height="405"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7Xx-WO-vax">
+                                    <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" reuseIdentifier="friendsPhotosIdentifier" id="bTw-El-MTm" customClass="FriendsPhotosCollectionViewCell" customModule="VeKa" customModuleProvider="target">
-                                        <rect key="frame" x="0.5" y="0.0" width="413" height="405"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="NYx-7q-Qec">
-                                            <rect key="frame" x="0.0" y="0.0" width="413" height="405"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="friendsPhotosIdentifier" id="oPq-FT-Sba" customClass="FriendsPhotosCollectionViewCell" customModule="VeKa" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="146" width="393" height="433"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2XK-Ky-aqW">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="433"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5VI-9E-FtY">
-                                                    <rect key="frame" x="0.0" y="0.0" width="413" height="405"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="5VI-9E-FtY" secondAttribute="height" multiplier="1:1" id="TgS-dK-BRc"/>
-                                                    </constraints>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EHP-WP-wdK">
+                                                    <rect key="frame" x="0.0" y="0.0" width="433" height="433"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="5VI-9E-FtY" firstAttribute="leading" secondItem="NYx-7q-Qec" secondAttribute="leading" id="FNv-5M-wEc"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="5VI-9E-FtY" secondAttribute="bottom" id="cH6-gK-iog"/>
-                                                <constraint firstAttribute="trailing" secondItem="5VI-9E-FtY" secondAttribute="trailing" id="lvj-HP-Neo"/>
-                                                <constraint firstItem="5VI-9E-FtY" firstAttribute="top" secondItem="NYx-7q-Qec" secondAttribute="top" id="onp-nz-0wE"/>
+                                                <constraint firstItem="EHP-WP-wdK" firstAttribute="top" secondItem="2XK-Ky-aqW" secondAttribute="top" id="1eJ-IR-ua3"/>
+                                                <constraint firstItem="EHP-WP-wdK" firstAttribute="width" secondItem="2XK-Ky-aqW" secondAttribute="height" multiplier="1:1" id="52K-3P-b5R"/>
+                                                <constraint firstItem="EHP-WP-wdK" firstAttribute="leading" secondItem="2XK-Ky-aqW" secondAttribute="leading" id="7OM-TG-0t7"/>
+                                                <constraint firstItem="EHP-WP-wdK" firstAttribute="centerX" secondItem="2XK-Ky-aqW" secondAttribute="centerX" id="bGx-yt-Gv9"/>
+                                                <constraint firstAttribute="trailing" secondItem="EHP-WP-wdK" secondAttribute="trailing" id="cV1-Gz-TcZ"/>
+                                                <constraint firstAttribute="bottom" secondItem="EHP-WP-wdK" secondAttribute="bottom" id="gUJ-CZ-bNr"/>
+                                                <constraint firstItem="EHP-WP-wdK" firstAttribute="centerY" secondItem="2XK-Ky-aqW" secondAttribute="centerY" id="scM-BF-qSi"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="413" height="405"/>
+                                        <size key="customSize" width="393" height="433"/>
                                         <connections>
-                                            <outlet property="friendsPhotos" destination="5VI-9E-FtY" id="Ri8-sx-IUC"/>
+                                            <outlet property="friendsPhotos" destination="EHP-WP-wdK" id="PLO-U0-tzx"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -662,21 +662,21 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="YuZ-RY-exp" firstAttribute="top" secondItem="pJu-On-QRb" secondAttribute="top" id="BAf-ic-1ty"/>
-                            <constraint firstItem="pJu-On-QRb" firstAttribute="trailing" secondItem="YuZ-RY-exp" secondAttribute="trailing" id="NAD-I9-EFR"/>
-                            <constraint firstItem="YuZ-RY-exp" firstAttribute="leading" secondItem="pJu-On-QRb" secondAttribute="leading" id="iDe-C8-OAD"/>
-                            <constraint firstItem="pJu-On-QRb" firstAttribute="bottom" secondItem="YuZ-RY-exp" secondAttribute="bottom" id="qXb-C3-bBH"/>
+                            <constraint firstItem="Ukp-jH-Ie8" firstAttribute="leading" secondItem="PDp-ej-FyD" secondAttribute="leading" id="4pX-zr-OeP"/>
+                            <constraint firstItem="PDp-ej-FyD" firstAttribute="trailing" secondItem="Ukp-jH-Ie8" secondAttribute="trailing" id="BJG-t3-OrP"/>
+                            <constraint firstItem="Ukp-jH-Ie8" firstAttribute="top" secondItem="PDp-ej-FyD" secondAttribute="top" id="IAn-uk-pES"/>
+                            <constraint firstItem="PDp-ej-FyD" firstAttribute="bottom" secondItem="Ukp-jH-Ie8" secondAttribute="bottom" id="fEx-TL-7mW"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="pJu-On-QRb"/>
+                        <viewLayoutGuide key="safeArea" id="PDp-ej-FyD"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Фотографии" id="ykk-Fm-wNO"/>
+                    <navigationItem key="navigationItem" title="Фотографии" id="Fe5-2S-0cn"/>
                     <connections>
-                        <outlet property="friendsPhotosCollectionView" destination="YuZ-RY-exp" id="h08-OI-eho"/>
+                        <outlet property="friendsPhotosCollectionView" destination="Ukp-jH-Ie8" id="aMm-Qw-z52"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Tg2-hB-C5d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dWR-kj-ffL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4592.753623188406" y="414.50892857142856"/>
+            <point key="canvasLocation" x="4650.7246376811599" y="414.50892857142856"/>
         </scene>
         <!--News View Controller-->
         <scene sceneID="r1p-Wr-mLL">
@@ -717,7 +717,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="413" height="410"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="news_1" translatesAutoresizingMaskIntoConstraints="NO" id="hz8-zb-bCy">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hz8-zb-bCy">
                                                                         <rect key="frame" x="0.0" y="0.0" width="413" height="410"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="hz8-zb-bCy" secondAttribute="height" multiplier="1:1" id="XMV-Lv-UUk"/>
@@ -833,7 +833,6 @@
     </scenes>
     <resources>
         <image name="news" width="33.333332061767578" height="33.333332061767578"/>
-        <image name="news_1" width="839" height="839"/>
         <image name="person.3.fill" catalog="system" width="71" height="34"/>
         <image name="person.crop.square" catalog="system" width="64" height="56"/>
         <image name="photo.on.rectangle" catalog="system" width="64" height="48"/>

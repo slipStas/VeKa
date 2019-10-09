@@ -21,6 +21,7 @@ class NewsViewController: UIViewController {
         newsTableView.dataSource = self
         newsTableView.delegate = self
         
+        
         addNews()
         
     }

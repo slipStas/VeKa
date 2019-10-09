@@ -18,6 +18,8 @@ class NewsTableViewCell: UITableViewCell {
     @IBOutlet weak var newsCollectionView: UICollectionView!
     
     override func awakeFromNib() {
+        super.awakeFromNib()
+        
         
     }
     
