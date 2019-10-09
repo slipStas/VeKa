@@ -10,6 +10,7 @@ import UIKit
 
 class FriendsPhotosViewController: UIViewController {
     
+    let blackBackgroundView = UIView()
     var photoArray: [UIImage] = []
     
     @IBOutlet weak var friendsPhotosCollectionView: UICollectionView!
@@ -29,14 +30,27 @@ class FriendsPhotosViewController: UIViewController {
     func animateImageView(imageView: UIImageView) {
         
         if let startingFrame = imageView.superview?.convert(imageView.frame, to: nil) {
-            let viewNew = UIView()
-            viewNew.backgroundColor = .red
+            
+            blackBackgroundView.frame = self.view.frame
+            blackBackgroundView.backgroundColor = .black
+            view.addSubview(blackBackgroundView)
+            
+            let viewNew = UIImageView()
+            
+            imageView.alpha = 0
+            
+            viewNew.isUserInteractionEnabled = true
+            viewNew.image = imageView.image
             viewNew.frame = startingFrame
+            viewNew.contentMode = .scaleAspectFit
+            viewNew.clipsToBounds = true
             view.addSubview(viewNew)
             
             UIView.animate(withDuration: 0.75) {
                 
                 let height = (self.view.frame.width / startingFrame.width) * startingFrame.height
+                let y = self.view.frame.height / 2 - height / 2
+                viewNew.frame = CGRect(x: 0, y: y, width: self.view.frame.width, height: height)
             }
         }
        
