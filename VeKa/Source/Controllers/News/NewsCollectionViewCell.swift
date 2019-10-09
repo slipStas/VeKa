@@ -18,4 +18,9 @@ class NewsCollectionViewCell: UICollectionViewCell {
         newsCollectionImage.image = nil
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        newsCollectionImage.frame = frame
+    }
+    
 }

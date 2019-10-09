@@ -10,6 +10,8 @@ import UIKit
 
 class FriendsPhotosViewController: UIViewController {
     
+    let countImagesInLine: CGFloat = 3
+    var minimumLineSpacing: CGFloat = 1
     let viewNew = UIImageView()
     let blackBackgroundView = UIView()
     var imageView: UIImageView?
@@ -26,9 +28,11 @@ class FriendsPhotosViewController: UIViewController {
         friendsPhotosCollectionView.dataSource = self
         
         let backgroundColor = #colorLiteral(red: 0.5787474513, green: 0.3215198815, blue: 0, alpha: 0.5)
-        let width = (view.frame.width - 20) / 3
+        let width = (view.bounds.width - (minimumLineSpacing * countImagesInLine)) / countImagesInLine
         let layout = friendsPhotosCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: width, height: width)
+        layout.minimumLineSpacing = minimumLineSpacing
+        layout.minimumInteritemSpacing = minimumLineSpacing
         friendsPhotosCollectionView.backgroundColor = backgroundColor
     }
     

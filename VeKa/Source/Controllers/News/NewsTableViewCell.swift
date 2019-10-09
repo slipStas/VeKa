@@ -21,9 +21,11 @@ class NewsTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        let width = bounds.width
+        let width = frame.width
         let layout = newsCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: width, height: width)
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
     }
     
     override func prepareForReuse() {

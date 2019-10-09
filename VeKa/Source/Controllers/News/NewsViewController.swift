@@ -21,7 +21,7 @@ class NewsViewController: UIViewController {
         newsTableView.dataSource = self
         newsTableView.delegate = self
         
-        newsTableView.frame.size.width = view.bounds.width
+        newsTableView.frame.size.width = view.frame.width
                 
         addNews()
         
