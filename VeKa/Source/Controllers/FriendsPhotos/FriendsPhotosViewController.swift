@@ -66,7 +66,7 @@ class FriendsPhotosViewController: UIViewController {
             
             viewNew.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(zoomOut)))
             
-            UIView.animate(withDuration: 0.75) {
+            UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
                 
                 let height = (self.view.frame.width / startingFrame.width) * startingFrame.height
                 let y = self.view.frame.height / 2 - height / 2
@@ -74,7 +74,7 @@ class FriendsPhotosViewController: UIViewController {
                 self.blackBackgroundView.alpha = 1
                 self.nawBar.alpha = 1
                 self.tabBar.alpha = 1
-            }
+            })
         }
     }
     
