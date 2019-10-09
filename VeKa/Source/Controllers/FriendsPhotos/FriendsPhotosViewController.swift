@@ -10,12 +10,21 @@ import UIKit
 
 class FriendsPhotosViewController: UIViewController {
     
+    let zoomImageView = UIView()
+    let startingFrame = CGRect(x: 0, y: 0, width: 200, height: 100)
+    
     var photoArray: [UIImage] = []
-
+    
     @IBOutlet weak var friendsPhotosCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        zoomImageView.frame = startingFrame
+        zoomImageView.backgroundColor = .red
+        
+        zoomImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(animate)))
+        view.addSubview(zoomImageView)
         
         friendsPhotosCollectionView.dataSource = self
         
@@ -24,6 +33,15 @@ class FriendsPhotosViewController: UIViewController {
         let layout = friendsPhotosCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: width, height: width)
         friendsPhotosCollectionView.backgroundColor = backgroundColor
+    }
+    
+    @objc func animate() {
+        let height = (self.view.frame.width / startingFrame.width) * self.startingFrame.height
+        
+        UIView.animate(withDuration: 0.75) {
+            self.zoomImageView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: height)
+            self.zoomImageView.center = self.view.center
+        }
     }
     
 }
