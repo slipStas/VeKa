@@ -102,7 +102,7 @@ class FriendsPhotosViewController: UIViewController {
         }
 
         if let startingFrame = imageView!.superview?.convert(imageView!.frame, to: nil) {
-            UIView.animate(withDuration: 0.75, animations: {
+            UIView.animate(withDuration: 0.5, animations: {
                 self.viewNew.frame = startingFrame
                 self.blackBackgroundView.alpha = 0
                 self.nawBar.alpha = 0
