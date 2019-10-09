@@ -10,7 +10,10 @@ import UIKit
 
 class FriendsPhotosViewController: UIViewController {
     
+    let viewNew = UIImageView()
     let blackBackgroundView = UIView()
+    var imageView: UIImageView?
+    
     var photoArray: [UIImage] = []
     
     @IBOutlet weak var friendsPhotosCollectionView: UICollectionView!
@@ -28,14 +31,14 @@ class FriendsPhotosViewController: UIViewController {
     }
     
     func animateImageView(imageView: UIImageView) {
-        
+        self.imageView = imageView
         if let startingFrame = imageView.superview?.convert(imageView.frame, to: nil) {
             
             blackBackgroundView.frame = self.view.frame
             blackBackgroundView.backgroundColor = .black
-            view.addSubview(blackBackgroundView)
+            blackBackgroundView.alpha = 0
             
-            let viewNew = UIImageView()
+            view.addSubview(blackBackgroundView)
             
             imageView.alpha = 0
             
@@ -46,14 +49,24 @@ class FriendsPhotosViewController: UIViewController {
             viewNew.clipsToBounds = true
             view.addSubview(viewNew)
             
+            viewNew.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(zoomOut)))
+            
             UIView.animate(withDuration: 0.75) {
                 
                 let height = (self.view.frame.width / startingFrame.width) * startingFrame.height
                 let y = self.view.frame.height / 2 - height / 2
-                viewNew.frame = CGRect(x: 0, y: y, width: self.view.frame.width, height: height)
+                self.viewNew.frame = CGRect(x: 0, y: y, width: self.view.frame.width, height: height)
+                self.blackBackgroundView.alpha = 1
             }
         }
-       
+    }
+    
+    @objc func zoomOut() {
+        if let startingFrame = imageView!.superview?.convert(imageView!.frame, to: nil) {
+        UIView.animate(withDuration: 0.75) {
+            self.viewNew.frame = startingFrame
+            }
+        }
     }
 }
 
