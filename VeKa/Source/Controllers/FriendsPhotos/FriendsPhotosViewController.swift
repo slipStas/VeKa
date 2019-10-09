@@ -14,6 +14,7 @@ class FriendsPhotosViewController: UIViewController {
     let blackBackgroundView = UIView()
     var imageView: UIImageView?
     let nawBar = UIView()
+    let tabBar = UIView()
     
     var photoArray: [UIImage] = []
     
@@ -41,12 +42,17 @@ class FriendsPhotosViewController: UIViewController {
             
             view.addSubview(blackBackgroundView)
             
-            nawBar.frame = CGRect(x: 0, y: 0, width: 1000, height: 44 + 44)
+            nawBar.frame = CGRect(x: 0, y: 0, width: 1000, height: 88)
             nawBar.backgroundColor = .black
             nawBar.alpha = 0
             
             if let keyWindow = UIApplication.shared.windows.last {
+                tabBar.frame = CGRect(x: 0, y: keyWindow.frame.height - 83, width: 1000, height: 83)
+                tabBar.backgroundColor = .black
+                tabBar.alpha = 0
+                
                 keyWindow.addSubview(nawBar)
+                keyWindow.addSubview(tabBar)
             }
             
             imageView.alpha = 0
@@ -67,6 +73,7 @@ class FriendsPhotosViewController: UIViewController {
                 self.viewNew.frame = CGRect(x: 0, y: y, width: self.view.frame.width, height: height)
                 self.blackBackgroundView.alpha = 1
                 self.nawBar.alpha = 1
+                self.tabBar.alpha = 1
             }
         }
     }
@@ -77,10 +84,13 @@ class FriendsPhotosViewController: UIViewController {
                 self.viewNew.frame = startingFrame
                 self.blackBackgroundView.alpha = 0
                 self.nawBar.alpha = 0
+                self.tabBar.alpha = 0
             }) { (didComplete) in
                 self.viewNew.removeFromSuperview()
                 self.blackBackgroundView.removeFromSuperview()
                 self.nawBar.removeFromSuperview()
+                self.tabBar.removeFromSuperview()
+                
                 self.imageView?.alpha = 1
             }
         }
