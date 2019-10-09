@@ -26,6 +26,21 @@ class FriendsPhotosViewController: UIViewController {
         friendsPhotosCollectionView.backgroundColor = backgroundColor
     }
     
+    func animateImageView(imageView: UIImageView) {
+        
+        if let startingFrame = imageView.superview?.convert(imageView.frame, to: nil) {
+            let viewNew = UIView()
+            viewNew.backgroundColor = .red
+            viewNew.frame = startingFrame
+            view.addSubview(viewNew)
+            
+            UIView.animate(withDuration: 0.75) {
+                
+                let height = (self.view.frame.width / startingFrame.width) * startingFrame.height
+            }
+        }
+       
+    }
 }
 
 extension FriendsPhotosViewController: UICollectionViewDataSource {
@@ -38,6 +53,7 @@ extension FriendsPhotosViewController: UICollectionViewDataSource {
         let cell = friendsPhotosCollectionView.dequeueReusableCell(withReuseIdentifier: "friendsPhotosIdentifier", for: indexPath) as! FriendsPhotosCollectionViewCell
         
         cell.friendsPhotos.image = photoArray[indexPath.row]
+        cell.vk = self
         
         return cell
     }

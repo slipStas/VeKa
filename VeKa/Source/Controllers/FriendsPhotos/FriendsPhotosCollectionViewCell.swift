@@ -10,6 +10,8 @@ import UIKit
 
 class FriendsPhotosCollectionViewCell: UICollectionViewCell {
     
+    var vk : FriendsPhotosViewController?
+
     @IBOutlet weak var friendsPhotos: UIImageView!
     
     override func prepareForReuse() {
@@ -26,10 +28,7 @@ class FriendsPhotosCollectionViewCell: UICollectionViewCell {
     
     @objc func animate() {
         
-        let view = UIView()
-        view.backgroundColor = .red
-        view.frame = friendsPhotos.frame
-        addSubview(view)
+        vk?.animateImageView(imageView: friendsPhotos)
         
     }
 }
