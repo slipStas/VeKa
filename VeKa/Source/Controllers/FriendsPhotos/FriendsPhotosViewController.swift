@@ -19,7 +19,7 @@ class FriendsPhotosViewController: UIViewController {
         
         friendsPhotosCollectionView.dataSource = self
         
-        let width = view.frame.width
+        let width = (view.frame.width-20)/3
         let layout = friendsPhotosCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: width, height: width)
                 
@@ -29,12 +29,8 @@ class FriendsPhotosViewController: UIViewController {
 
 extension FriendsPhotosViewController: UICollectionViewDataSource {
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return photoArray.count
-    }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return photoArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -46,10 +42,3 @@ extension FriendsPhotosViewController: UICollectionViewDataSource {
     }
 }
 
-//extension FriendsPhotosViewController: UICollectionViewDelegateFlowLayout {
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        print("33333")
-//        return CGSize(width: view.bounds.width, height: view.bounds.width)
-//    }
-//}
