@@ -13,6 +13,7 @@ class FriendsPhotosViewController: UIViewController {
     let viewNew = UIImageView()
     let blackBackgroundView = UIView()
     var imageView: UIImageView?
+    let nawBar = UIView()
     
     var photoArray: [UIImage] = []
     
@@ -40,6 +41,14 @@ class FriendsPhotosViewController: UIViewController {
             
             view.addSubview(blackBackgroundView)
             
+            nawBar.frame = CGRect(x: 0, y: 0, width: 1000, height: 44 + 44)
+            nawBar.backgroundColor = .black
+            nawBar.alpha = 0
+            
+            if let keyWindow = UIApplication.shared.windows.last {
+                keyWindow.addSubview(nawBar)
+            }
+            
             imageView.alpha = 0
             
             viewNew.isUserInteractionEnabled = true
@@ -57,14 +66,22 @@ class FriendsPhotosViewController: UIViewController {
                 let y = self.view.frame.height / 2 - height / 2
                 self.viewNew.frame = CGRect(x: 0, y: y, width: self.view.frame.width, height: height)
                 self.blackBackgroundView.alpha = 1
+                self.nawBar.alpha = 1
             }
         }
     }
     
     @objc func zoomOut() {
         if let startingFrame = imageView!.superview?.convert(imageView!.frame, to: nil) {
-        UIView.animate(withDuration: 0.75) {
-            self.viewNew.frame = startingFrame
+            UIView.animate(withDuration: 0.75, animations: {
+                self.viewNew.frame = startingFrame
+                self.blackBackgroundView.alpha = 0
+                self.nawBar.alpha = 0
+            }) { (didComplete) in
+                self.viewNew.removeFromSuperview()
+                self.blackBackgroundView.removeFromSuperview()
+                self.nawBar.removeFromSuperview()
+                self.imageView?.alpha = 1
             }
         }
     }
