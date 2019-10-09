@@ -10,6 +10,7 @@ import UIKit
 
 class NewsTableViewCell: UITableViewCell {
 
+    var arrayPhotos: [UIImage] = []
     
     @IBOutlet weak var newsText: UILabel!
     
@@ -20,7 +21,9 @@ class NewsTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        
+        let width = bounds.width
+        let layout = newsCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        layout.itemSize = CGSize(width: width, height: width)
     }
     
     override func prepareForReuse() {

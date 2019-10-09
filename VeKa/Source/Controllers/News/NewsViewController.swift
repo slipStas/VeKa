@@ -21,7 +21,8 @@ class NewsViewController: UIViewController {
         newsTableView.dataSource = self
         newsTableView.delegate = self
         
-        
+        newsTableView.frame.size.width = view.bounds.width
+                
         addNews()
         
     }
@@ -57,8 +58,9 @@ extension NewsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "newsIdentifier", for: indexPath) as! NewsTableViewCell
         
+        cell.arrayPhotos = newsArray[indexPath.row].images
+        
         cell.newsCollectionView.dataSource = self
-        cell.newsCollectionView.delegate = self
         cell.newsCollectionView.reloadData()
         
         cell.newsText.text = newsArray[indexPath.section].newsText
@@ -88,17 +90,9 @@ extension NewsViewController: UITableViewDataSource {
     }
 }
 
-extension NewsViewController: UICollectionViewDelegate {
-    
-}
-
 extension NewsViewController: UICollectionViewDataSource {
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return newsArray.count
-    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(newsArray[section].images.count)
         return newsArray[section].images.count
     }
     
@@ -108,12 +102,5 @@ extension NewsViewController: UICollectionViewDataSource {
         cell.newsCollectionImage.image = newsArray[indexPath.section].images[indexPath.row]
         
         return cell
-    }
-}
-
-extension NewsViewController: UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: view.frame.width)
     }
 }

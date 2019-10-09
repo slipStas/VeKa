@@ -19,10 +19,11 @@ class FriendsPhotosViewController: UIViewController {
         
         friendsPhotosCollectionView.dataSource = self
         
-        let width = (view.frame.width-20)/3
+        let backgroundColor = #colorLiteral(red: 0.5787474513, green: 0.3215198815, blue: 0, alpha: 0.5)
+        let width = (view.frame.width - 20) / 3
         let layout = friendsPhotosCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: width, height: width)
-                
+        friendsPhotosCollectionView.backgroundColor = backgroundColor
     }
     
 }
