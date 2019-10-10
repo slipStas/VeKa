@@ -10,7 +10,7 @@ import UIKit
 
 class FriendsPhotosCollectionViewCell: UICollectionViewCell {
     
-    var vk : FriendsPhotosViewController?
+    var friendsPhotoViewController : FriendsPhotosViewController?
 
     @IBOutlet weak var friendsPhotos: UIImageView!
     
@@ -28,7 +28,7 @@ class FriendsPhotosCollectionViewCell: UICollectionViewCell {
     
     @objc func animate() {
         
-        vk?.animateImageView(imageView: friendsPhotos)
+        friendsPhotoViewController?.animateImageView(imageView: friendsPhotos)
         
     }
 }

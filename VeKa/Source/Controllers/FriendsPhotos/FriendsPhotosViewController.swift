@@ -17,6 +17,7 @@ class FriendsPhotosViewController: UIViewController {
     var imageView: UIImageView?
     let nawBar = UIView()
     let tabBar = UIView()
+    let zoomScroll = UIScrollView()
     
     var photoArray: [UIImage] = []
     
@@ -74,6 +75,11 @@ class FriendsPhotosViewController: UIViewController {
             
             viewNew.addGestureRecognizer(swipeGR)
             
+            let doubleTapGR = UITapGestureRecognizer(target: self, action: #selector(zoomScrollView))
+            doubleTapGR.numberOfTapsRequired = 2
+            
+            viewNew.addGestureRecognizer(doubleTapGR)
+            
             UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
                 
                 let height = (self.view.frame.width / startingFrame.width) * startingFrame.height
@@ -118,6 +124,32 @@ class FriendsPhotosViewController: UIViewController {
             }
         }
     }
+    
+    @objc func zoomScrollView() {
+        
+        let width = viewNew.frame.width
+        let height = viewNew.frame.height
+        let image = UIImageView()
+        
+        let contentInsets = UIEdgeInsets(top: width / 2, left: height / 2, bottom: width / 2, right: height / 2)
+
+        zoomScroll.contentInset = contentInsets
+        zoomScroll.contentSize = CGSize(width: width, height: height)
+        zoomScroll.frame = view.frame
+        
+        image.frame = CGRect(x:0, y: 0, width: width, height: height)
+        image.image = viewNew.image
+        image.isUserInteractionEnabled = true
+        
+        zoomScroll.addSubview(image)
+        view.addSubview(self.zoomScroll)
+        
+        UIView.animate(withDuration: 0.3) {
+            
+            image.frame = CGRect(x: -width / 2, y: -height / 2, width: width * 2, height: height * 2)
+
+        }
+    }
 }
 
 extension FriendsPhotosViewController: UICollectionViewDataSource {
@@ -130,7 +162,7 @@ extension FriendsPhotosViewController: UICollectionViewDataSource {
         let cell = friendsPhotosCollectionView.dequeueReusableCell(withReuseIdentifier: "friendsPhotosIdentifier", for: indexPath) as! FriendsPhotosCollectionViewCell
         
         cell.friendsPhotos.image = photoArray[indexPath.row]
-        cell.vk = self
+        cell.friendsPhotoViewController = self
         
         return cell
     }
