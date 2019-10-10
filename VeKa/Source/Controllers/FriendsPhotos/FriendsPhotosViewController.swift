@@ -84,7 +84,7 @@ class FriendsPhotosViewController: UIViewController {
             
             viewNew.addGestureRecognizer(doubleTapGR)
             
-            UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
+            UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
                 
                 let height = (self.view.frame.width / startingFrame.width) * startingFrame.height
                 let y = self.view.frame.height / 2 - height / 2
@@ -94,7 +94,7 @@ class FriendsPhotosViewController: UIViewController {
                 self.tabBar.alpha = 1
             })
             
-            UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
+            UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
                 
                 let height = (self.view.frame.width / startingFrame.width) * startingFrame.height
                 let y = self.view.frame.height / 2 - height / 2
