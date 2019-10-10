@@ -130,6 +130,7 @@ class FriendsPhotosViewController: UIViewController {
         let width = viewNew.frame.width
         let height = viewNew.frame.height
         let image = UIImageView()
+        let backView = UIView()
         
         let contentInsets = UIEdgeInsets(top: width / 2, left: height / 2, bottom: width / 2, right: height / 2)
 
@@ -141,13 +142,17 @@ class FriendsPhotosViewController: UIViewController {
         image.image = viewNew.image
         image.isUserInteractionEnabled = true
         
+        backView.frame = image.frame
+        backView.backgroundColor = .black
+        
+        zoomScroll.addSubview(backView)
         zoomScroll.addSubview(image)
-        view.addSubview(self.zoomScroll)
+        view.addSubview(zoomScroll)
         
         UIView.animate(withDuration: 0.3) {
             
             image.frame = CGRect(x: -width / 2, y: -height / 2, width: width * 2, height: height * 2)
-
+            self.viewNew.alpha = 0
         }
     }
 }
