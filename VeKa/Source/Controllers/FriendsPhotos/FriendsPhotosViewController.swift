@@ -171,9 +171,12 @@ class FriendsPhotosViewController: UIViewController {
     }
     @objc func zoomOutScrollView() {
         
+        let width = viewNew.frame.width
+        let height = viewNew.frame.height
+        
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
-            self.image.frame = self.viewNew.bounds
-            self.image.center = self.viewNew.center
+            self.image.frame = CGRect(x:0, y: 0, width: width, height: height)
+            self.image.center = self.view.center
             self.zoomScroll.contentInset = .zero
             self.flag = true
                }) { isEnded in
