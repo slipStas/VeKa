@@ -19,6 +19,10 @@ class FriendsPhotosViewController: UIViewController {
     let tabBar = UIView()
     let zoomScroll = UIScrollView()
     
+    var flag = true
+    let image = UIImageView()
+    let backView = UIView()
+    
     var photoArray: [UIImage] = []
     
     @IBOutlet weak var friendsPhotosCollectionView: UICollectionView!
@@ -129,8 +133,6 @@ class FriendsPhotosViewController: UIViewController {
         
         let width = viewNew.frame.width
         let height = viewNew.frame.height
-        let image = UIImageView()
-        let backView = UIView()
         
         let contentInsets = UIEdgeInsets(top: width / 2, left: height / 2, bottom: width / 2, right: height / 2)
 
@@ -149,12 +151,37 @@ class FriendsPhotosViewController: UIViewController {
         zoomScroll.addSubview(image)
         view.addSubview(zoomScroll)
         
-        UIView.animate(withDuration: 0.3) {
-            
-            image.frame = CGRect(x: -width / 2, y: -height / 2, width: width * 2, height: height * 2)
-            self.viewNew.alpha = 0
+        switch flag {
+        case true:
+            UIView.animate(withDuration: 0.3) {
+                
+                self.image.frame = CGRect(x: -width / 2, y: -height / 2, width: width * 2, height: height * 2)
+                self.viewNew.alpha = 0
+                self.flag = false
+            }
+        case false:
+            return
         }
+        
+        let doubleTapGR = UITapGestureRecognizer(target: self, action: #selector(zoomOutScrollView))
+        doubleTapGR.numberOfTapsRequired = 2
+        
+        zoomScroll.addGestureRecognizer(doubleTapGR)
+        
     }
+    @objc func zoomOutScrollView() {
+        
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
+            self.image.frame = self.viewNew.bounds
+            self.image.center = self.viewNew.center
+            self.zoomScroll.contentInset = .zero
+            self.flag = true
+               }) { isEnded in
+                self.viewNew.alpha = 1
+                self.zoomScroll.removeFromSuperview()
+               }
+    }
+    
 }
 
 extension FriendsPhotosViewController: UICollectionViewDataSource {
