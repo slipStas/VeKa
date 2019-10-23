@@ -8,9 +8,10 @@
 
 import UIKit
 
-let circlesCount = 5
 let heightWidthOfSubViews = 10
 let distanceBeetwenSubViews = heightWidthOfSubViews * 3
+var circlesCount = 0
+
 
 class Circle: UIView {
     
@@ -33,10 +34,11 @@ class Circle: UIView {
 class LoadingView: UIView {
     
     var views: [Circle] = []
-    var lastCoordinateX = 0
+    var lastCoordinateX = 10
     
     private func addMyViews() {
         
+        circlesCount = Int(self.frame.width) / (distanceBeetwenSubViews + heightWidthOfSubViews - 10)
         for _ in 0..<circlesCount {
             let view = Circle(frame: CGRect(x: lastCoordinateX + (heightWidthOfSubViews / 2), y: heightWidthOfSubViews / 2, width: heightWidthOfSubViews + 10, height: heightWidthOfSubViews + 10))
             view.tintColor = .black
