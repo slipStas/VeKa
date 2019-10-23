@@ -10,11 +10,6 @@ import UIKit
 
 class LoginFormController: UIViewController {
     
-    /**Устанавливаем логин для входа в приложение */
-    let trueLogin = ""
-    /**Устанавливаем пароль для входа в приложение */
-    let truePassword = ""
-    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var loginLabel: UILabel!
@@ -96,7 +91,7 @@ class LoginFormController: UIViewController {
         let password = passwordTextField.text!
         
         // Проверяем, верны ли они
-        if login == trueLogin && password == truePassword {
+        if login == Session.shared.login && password == Session.shared.password {
             print("успешная авторизация")
             return true
         } else {
