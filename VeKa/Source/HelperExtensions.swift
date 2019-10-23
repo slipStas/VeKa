@@ -87,8 +87,8 @@ extension UIViewController {
                        initialSpringVelocity: 0,
                        options: [],
                        animations: {
+                        cell.transform = CGAffineTransform.identity.scaledBy(x: 3, y: 3)
                         cell.transform = CGAffineTransform.identity.scaledBy(x: 0.4, y: 0.4)
-                        cell.transform = CGAffineTransform.identity.scaledBy(x: 5, y: 5)
                         cell.transform = CGAffineTransform.identity.scaledBy(x: 1, y: 1)
         })
         UIView.animate(withDuration: 0.6, animations: {
