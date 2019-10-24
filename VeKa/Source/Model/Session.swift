@@ -13,8 +13,8 @@ class Session {
     static let shared = Session()
     private init () {}
     
-    let token = "533bacf01e1165b57531ad114461ae8736d6506a3"
-    let userId = 1
+    let token = String()
+    let userId = Int()
     var login = "qwe"
     var password = "123"
     
