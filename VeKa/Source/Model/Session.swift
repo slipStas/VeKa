@@ -15,7 +15,7 @@ class Session {
     
     let token = String()
     let userId = Int()
-    var login = "qwe"
-    var password = "123"
+    var login = "qwe" // for debugging
+    var password = "123" // for debugging
     
 }
