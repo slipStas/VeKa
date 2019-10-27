@@ -43,7 +43,7 @@ extension VkApiViewController: WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
         guard let url = navigationResponse.response.url,
-            url.path == "blank.html" else {
+            url.path == "/blank.html" else {
                 decisionHandler(.allow)
                 return
         }
@@ -59,7 +59,20 @@ extension VkApiViewController: WKNavigationDelegate {
                 
                 return dict
             })
+        print(params!)
         
+        if let token = params?["access_token"] {
+            Session.shared.token = token
+        }
+        if let userId = params?["user_id"] {
+            Session.shared.userId = (Int(userId) ?? nil)!
+        }
+        
+        
+        print("token - \(Session.shared.token)")
+        print("User ID - \(Session.shared.userId)")
+        
+        decisionHandler(.cancel)
     }
     
 }
