@@ -14,7 +14,7 @@ class Session {
     private init () {}
     
     var token = String()
-    var userId = Int()
+    var userId = String()
     var login = "" // for debugging
     var password = "" // for debugging
     
