@@ -35,9 +35,6 @@ class VkApiViewController: UIViewController {
         webView.load(request)
         
         webView.navigationDelegate = self
-        
-        let vkFriends = VkFriends()
-        vkFriends.sendRequest()
     }
 }
 
@@ -75,6 +72,9 @@ extension VkApiViewController: WKNavigationDelegate {
         print("User ID - \(Session.shared.userId)")
         
         decisionHandler(.cancel)
+        
+        let vkFriends = VkFriends()
+        vkFriends.sendRequest()
     }
     
 }
@@ -85,32 +85,47 @@ class VkFriends {
         let token = Session.shared.token              //В момент вызова этого метода данные токена и userId еще не записаны в Session.shared
         let userId = Session.shared.userId            //и по этому urlComponents() не работает если передавать данные из Session.shared
 
-        var urlComponents = URLComponents()
-        urlComponents.scheme = "https"
-        urlComponents.host = "api.vk.com"
-        urlComponents.path = "/method/friends.get"
-        urlComponents.queryItems = [
+        var urlFriends = URLComponents()
+        urlFriends.scheme = "https"
+        urlFriends.host = "api.vk.com"
+        urlFriends.path = "/method/friends.get"
+        urlFriends.queryItems = [
             URLQueryItem(name: "user_id", value: userId),
             URLQueryItem(name: "order", value: "hints"),
             URLQueryItem(name: "access_token", value: token),
             URLQueryItem(name: "v", value: "5.102")
         ]
         
-        let urlFriends = "https://api.vk.com/method/friends.get?user_id=87246210&order=hints&access_token=dfa0df6f08cb47ac804e84202bc232c27b8f166f29bcd947e35292e90d71bc75f519705e9bf1bbedf64f6&v=5.102"
-        let urlPhotos = "https://api.vk.com/method/photos.getAll?user_id=87246210&order=hints&access_token=dfa0df6f08cb47ac804e84202bc232c27b8f166f29bcd947e35292e90d71bc75f519705e9bf1bbedf64f6&v=5.102"
-        let urlGroups = "https://api.vk.com/method/groups.get?user_id=87246210&order=hints&access_token=dfa0df6f08cb47ac804e84202bc232c27b8f166f29bcd947e35292e90d71bc75f519705e9bf1bbedf64f6&v=5.102"
+        var urlPhotos = URLComponents()
+        urlPhotos.scheme = "https"
+        urlPhotos.host = "api.vk.com"
+        urlPhotos.path = "/method/photos.getAll"
+        urlPhotos.queryItems = [
+            URLQueryItem(name: "user_id", value: userId),
+            URLQueryItem(name: "order", value: "hints"),
+            URLQueryItem(name: "access_token", value: token),
+            URLQueryItem(name: "v", value: "5.102")
+        ]
         
-        Alamofire.request(urlComponents.url!).responseJSON { (response) in
+        var urlGroups = URLComponents()
+        urlGroups.scheme = "https"
+        urlGroups.host = "api.vk.com"
+        urlGroups.path = "/method/groups.get"
+        urlGroups.queryItems = [
+            URLQueryItem(name: "user_id", value: userId),
+            URLQueryItem(name: "order", value: "hints"),
+            URLQueryItem(name: "access_token", value: token),
+            URLQueryItem(name: "v", value: "5.102")
+        ]
+        
+        Alamofire.request(urlFriends.url!).responseJSON { (response) in
             print(response.value)
         }
         
-        Alamofire.request(urlFriends).responseJSON { (response) in
+        Alamofire.request(urlPhotos.url!).responseJSON { (response) in
             print(response.value)
         }
-        Alamofire.request(urlPhotos).responseJSON { (response) in
-            print(response.value)
-        }
-        Alamofire.request(urlGroups).responseJSON { (response) in
+        Alamofire.request(urlGroups.url!).responseJSON { (response) in
             print(response.value)
         }
         
