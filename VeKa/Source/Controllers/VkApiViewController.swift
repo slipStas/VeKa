@@ -73,18 +73,24 @@ extension VkApiViewController: WKNavigationDelegate {
         
         decisionHandler(.cancel)
         
-        let vkFriends = VkFriends()
-        vkFriends.sendRequest()
+        let vkFriends = VkRequests()
+        vkFriends.showFriends()
+        vkFriends.getPhotos()
+        vkFriends.getGroups()
     }
     
 }
 
-class VkFriends {
-    func sendRequest() {
+class VkRequests {
+    
+    let token = Session.shared.token
+    let userId = Session.shared.userId
+    
+    /**
+     Send a request to the server to get the friends list
+     */
+    func showFriends() {
         
-        let token = Session.shared.token              //В момент вызова этого метода данные токена и userId еще не записаны в Session.shared
-        let userId = Session.shared.userId            //и по этому urlComponents() не работает если передавать данные из Session.shared
-
         var urlFriends = URLComponents()
         urlFriends.scheme = "https"
         urlFriends.host = "api.vk.com"
@@ -95,6 +101,16 @@ class VkFriends {
             URLQueryItem(name: "access_token", value: token),
             URLQueryItem(name: "v", value: "5.102")
         ]
+        
+        Alamofire.request(urlFriends.url!).responseJSON { (response) in
+            print(response.value ?? "error")
+        }
+    }
+    
+    /**
+    Send a request to the server to get the photos
+    */
+    func getPhotos() {
         
         var urlPhotos = URLComponents()
         urlPhotos.scheme = "https"
@@ -107,6 +123,16 @@ class VkFriends {
             URLQueryItem(name: "v", value: "5.102")
         ]
         
+        Alamofire.request(urlPhotos.url!).responseJSON { (response) in
+            print(response.value ?? "error")
+        }
+    }
+    
+    /**
+    Send a request to the server to get the groups
+    */
+    func getGroups() {
+        
         var urlGroups = URLComponents()
         urlGroups.scheme = "https"
         urlGroups.host = "api.vk.com"
@@ -118,16 +144,8 @@ class VkFriends {
             URLQueryItem(name: "v", value: "5.102")
         ]
         
-        Alamofire.request(urlFriends.url!).responseJSON { (response) in
-            print(response.value)
-        }
-        
-        Alamofire.request(urlPhotos.url!).responseJSON { (response) in
-            print(response.value)
-        }
         Alamofire.request(urlGroups.url!).responseJSON { (response) in
-            print(response.value)
+            print(response.value ?? "error")
         }
-        
     }
 }
