@@ -77,32 +77,33 @@ extension VkApiViewController: WKNavigationDelegate {
         vkFriends.showFriends()
         vkFriends.getPhotos()
         vkFriends.getGroups()
+        vkFriends.groupSearch(search: "iOS")
     }
     
 }
 
 class VkRequests {
     
+    let userID = Session.shared.userId
     let token = Session.shared.token
-    let userId = Session.shared.userId
     
     /**
      Send a request to the server to get the friends list
      */
     func showFriends() {
         
+        let accessParameters: Parameters = ["access_token" : token, "user_id" : userID]
+
         var urlFriends = URLComponents()
         urlFriends.scheme = "https"
         urlFriends.host = "api.vk.com"
         urlFriends.path = "/method/friends.get"
         urlFriends.queryItems = [
-            URLQueryItem(name: "user_id", value: userId),
             URLQueryItem(name: "order", value: "hints"),
-            URLQueryItem(name: "access_token", value: token),
             URLQueryItem(name: "v", value: "5.102")
         ]
         
-        Alamofire.request(urlFriends.url!).responseJSON { (response) in
+        Alamofire.request(urlFriends.url!, method: .get, parameters: accessParameters).responseJSON { (response) in
             print(response.value ?? "error")
         }
     }
@@ -112,18 +113,18 @@ class VkRequests {
     */
     func getPhotos() {
         
+        let accessParameters: Parameters = ["access_token" : token, "user_id" : userID]
+
         var urlPhotos = URLComponents()
         urlPhotos.scheme = "https"
         urlPhotos.host = "api.vk.com"
         urlPhotos.path = "/method/photos.getAll"
         urlPhotos.queryItems = [
-            URLQueryItem(name: "user_id", value: userId),
             URLQueryItem(name: "order", value: "hints"),
-            URLQueryItem(name: "access_token", value: token),
             URLQueryItem(name: "v", value: "5.102")
         ]
         
-        Alamofire.request(urlPhotos.url!).responseJSON { (response) in
+        Alamofire.request(urlPhotos.url!, method: .get, parameters: accessParameters).responseJSON { (response) in
             print(response.value ?? "error")
         }
     }
@@ -133,18 +134,37 @@ class VkRequests {
     */
     func getGroups() {
         
+        let accessParameters: Parameters = ["access_token" : token, "user_id" : userID]
+
         var urlGroups = URLComponents()
         urlGroups.scheme = "https"
         urlGroups.host = "api.vk.com"
         urlGroups.path = "/method/groups.get"
         urlGroups.queryItems = [
-            URLQueryItem(name: "user_id", value: userId),
             URLQueryItem(name: "order", value: "hints"),
-            URLQueryItem(name: "access_token", value: token),
             URLQueryItem(name: "v", value: "5.102")
         ]
         
-        Alamofire.request(urlGroups.url!).responseJSON { (response) in
+        Alamofire.request(urlGroups.url!, method: .get, parameters: accessParameters).responseJSON { (response) in
+            print(response.value ?? "error")
+        }
+    }
+    
+    func groupSearch(search: String) {
+        
+        let accessParameters: Parameters = ["access_token" : token]
+        var urlGroups = URLComponents()
+        urlGroups.scheme = "https"
+        urlGroups.host = "api.vk.com"
+        urlGroups.path = "/method/groups.search"
+        urlGroups.queryItems = [
+            URLQueryItem(name: "q", value: search),
+            URLQueryItem(name: "sort", value: "0"),
+            URLQueryItem(name: "count", value: "5"),
+            URLQueryItem(name: "v", value: "5.102")
+        ]
+        
+        Alamofire.request(urlGroups.url!, method: .get, parameters: accessParameters).responseJSON { (response) in
             print(response.value ?? "error")
         }
     }
