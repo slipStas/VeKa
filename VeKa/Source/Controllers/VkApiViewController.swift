@@ -73,16 +73,19 @@ extension VkApiViewController: WKNavigationDelegate {
         
         decisionHandler(.cancel)
         
-        let vkFriends = VkRequests()
+        let vkFriends = VkFriendsRequests()
+        let vkGroups = VkGroupsRequsts()
+        let vkPhotos = VkPhotosRequests()
+        
         vkFriends.showFriends()
-        vkFriends.getPhotos()
-        vkFriends.getGroups()
-        vkFriends.groupSearch(search: "iOS")
+        vkPhotos.getPhotos()
+        vkGroups.getGroups()
+        vkGroups.groupSearch(search: "iOS")
     }
     
 }
 
-class VkRequests {
+class VkFriendsRequests {
     
     let userID = Session.shared.userId
     let token = Session.shared.token
@@ -107,27 +110,11 @@ class VkRequests {
             print(response.value ?? "error")
         }
     }
-    
-    /**
-    Send a request to the server to get the photos
-    */
-    func getPhotos() {
-        
-        let accessParameters: Parameters = ["access_token" : token, "user_id" : userID]
+}
 
-        var urlPhotos = URLComponents()
-        urlPhotos.scheme = "https"
-        urlPhotos.host = "api.vk.com"
-        urlPhotos.path = "/method/photos.getAll"
-        urlPhotos.queryItems = [
-            URLQueryItem(name: "order", value: "hints"),
-            URLQueryItem(name: "v", value: "5.102")
-        ]
-        
-        Alamofire.request(urlPhotos.url!, method: .get, parameters: accessParameters).responseJSON { (response) in
-            print(response.value ?? "error")
-        }
-    }
+class VkGroupsRequsts {
+    let userID = Session.shared.userId
+    let token = Session.shared.token
     
     /**
     Send a request to the server to get the groups
@@ -165,6 +152,32 @@ class VkRequests {
         ]
         
         Alamofire.request(urlGroups.url!, method: .get, parameters: accessParameters).responseJSON { (response) in
+            print(response.value ?? "error")
+        }
+    }
+}
+
+class VkPhotosRequests {
+    let userID = Session.shared.userId
+    let token = Session.shared.token
+    
+    /**
+    Send a request to the server to get the photos
+    */
+    func getPhotos() {
+        
+        let accessParameters: Parameters = ["access_token" : token, "user_id" : userID]
+
+        var urlPhotos = URLComponents()
+        urlPhotos.scheme = "https"
+        urlPhotos.host = "api.vk.com"
+        urlPhotos.path = "/method/photos.getAll"
+        urlPhotos.queryItems = [
+            URLQueryItem(name: "order", value: "hints"),
+            URLQueryItem(name: "v", value: "5.102")
+        ]
+        
+        Alamofire.request(urlPhotos.url!, method: .get, parameters: accessParameters).responseJSON { (response) in
             print(response.value ?? "error")
         }
     }
