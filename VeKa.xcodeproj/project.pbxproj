@@ -37,6 +37,7 @@
 		8EDEA5852360BC5300BF77DC /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDEA5842360BC5300BF77DC /* Session.swift */; };
 		8EE7A34E233D9AD5008CDE46 /* Header.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EE7A34D233D9AD5008CDE46 /* Header.xib */; };
 		8EE7A350233D9C73008CDE46 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE7A34F233D9C73008CDE46 /* Header.swift */; };
+		8EF06530236A1E0F004E0B8D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF0652F236A1E0F004E0B8D /* TabBarController.swift */; };
 		8EF1192E23297677000B30E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF1192D23297677000B30E3 /* AppDelegate.swift */; };
 		8EF1193323297677000B30E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EF1193123297677000B30E3 /* Main.storyboard */; };
 		8EF119352329767A000B30E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EF119342329767A000B30E3 /* Assets.xcassets */; };
@@ -80,6 +81,7 @@
 		8EDEA5842360BC5300BF77DC /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		8EE7A34D233D9AD5008CDE46 /* Header.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Header.xib; sourceTree = "<group>"; };
 		8EE7A34F233D9C73008CDE46 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		8EF0652F236A1E0F004E0B8D /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		8EF1192A23297677000B30E3 /* VeKa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VeKa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EF1192D23297677000B30E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EF1193223297677000B30E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				8E3EA79B232D663A00F118DB /* FriendInfo */,
 				8E5C69482348072E002C745A /* FriendsPhotos */,
 				8E3EA799232D65D500F118DB /* FriendsList */,
+				8EF0652F236A1E0F004E0B8D /* TabBarController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 				8EF93C282329883600EBEC86 /* LoginFormController.swift in Sources */,
 				8E3EA7A9232D80A900F118DB /* AllGroupsViewController.swift in Sources */,
 				8EB24E31232C0C3600CF3F9C /* FriendsListTableViewCell.swift in Sources */,
+				8EF06530236A1E0F004E0B8D /* TabBarController.swift in Sources */,
 				8E3EA7A4232D802C00F118DB /* MyGroupsTableViewCell.swift in Sources */,
 				8EDB222D23386E8B00185A6C /* LikesView.swift in Sources */,
 				8EF62776233F4A2D00AF1144 /* NewsCollectionViewCell.swift in Sources */,

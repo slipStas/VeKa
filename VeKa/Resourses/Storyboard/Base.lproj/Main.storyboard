@@ -428,7 +428,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="jQ3-Lw-6WW">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="IIs-IH-TQs" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="authorizationOk" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="IIs-IH-TQs" customClass="TabBarController" customModule="VeKa" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="84a-E8-Y51"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OzN-gV-jBS">
@@ -449,7 +449,7 @@
         <!--Друзье-->
         <scene sceneID="Xbe-TE-Uqg">
             <objects>
-                <viewController id="2GK-yk-n5c" customClass="FriendsListViewController" customModule="VeKa" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="friendsListVC" id="2GK-yk-n5c" customClass="FriendsListViewController" customModule="VeKa" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LCM-O3-22r">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

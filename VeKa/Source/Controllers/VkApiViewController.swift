@@ -33,7 +33,6 @@ class VkApiViewController: UIViewController {
         let request = URLRequest(url: urlComponents.url!)
         
         webView.load(request)
-        
         webView.navigationDelegate = self
     }
 }
@@ -73,14 +72,19 @@ extension VkApiViewController: WKNavigationDelegate {
         
         decisionHandler(.cancel)
         
-        let vkFriends = VkFriendsRequests()
-        let vkGroups = VkGroupsRequsts()
-        let vkPhotos = VkPhotosRequests()
-        
-        vkFriends.showFriends()
-        vkPhotos.getPhotos()
-        vkGroups.getGroups()
-        vkGroups.groupSearch(search: "iOS")
+//        let vkFriends = VkFriendsRequests()
+//        let vkGroups = VkGroupsRequsts()
+//        let vkPhotos = VkPhotosRequests()
+//        
+//        vkFriends.showFriends()
+//        vkPhotos.getPhotos()
+//        vkGroups.getGroups()
+//        vkGroups.groupSearch(search: "iOS")
+        if Session.shared.token.count != 0 {
+            if let resultController = storyboard!.instantiateViewController(withIdentifier: "authorizationOk") as? TabBarController {
+                present(resultController, animated: true, completion: nil)
+            }
+        }
     }
     
 }
@@ -102,12 +106,17 @@ class VkFriendsRequests {
         urlFriends.host = "api.vk.com"
         urlFriends.path = "/method/friends.get"
         urlFriends.queryItems = [
+            URLQueryItem(name: "fields", value: "nickname"),
+            URLQueryItem(name: "fields", value: "domain"),
+            URLQueryItem(name: "fields", value: "city"),
+            URLQueryItem(name: "fields", value: "country"),
             URLQueryItem(name: "order", value: "hints"),
             URLQueryItem(name: "v", value: "5.102")
         ]
         
         Alamofire.request(urlFriends.url!, method: .get, parameters: accessParameters).responseJSON { (response) in
             print(response.value ?? "error")
+            print(urlFriends.url!)
         }
     }
 }
