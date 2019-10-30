@@ -10,16 +10,33 @@ import UIKit
 
 class User {
     
-    var name = ""
+    class Name {
+        
+        var firstName = ""
+        var lastName = ""
+        
+        var fullName: String {
+            get {
+               return lastName + " " + firstName
+                
+            }
+        }
+        init(firstName: String, lastName: String) {
+            self.firstName = firstName
+            self.lastName = lastName
+        }
+    }
+    
+    let id = ""
+    var name = Name(firstName: "", lastName: "")
     var avatar = UIImage()
     var likes = Likes(likesCounts: 0, likeStatus: .noLike)
     var photos: [UIImage] = []
     
-    init(name: String, avatar: UIImage, likes: Likes, photos: [UIImage]) {
+    init(name: Name, avatar: UIImage, likes: Likes) {
         self.name = name
         self.avatar = avatar
         self.likes = likes
-        self.photos = photos
     }
     
 }

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class FriendsListViewController: UIViewController {
     
@@ -41,23 +43,51 @@ class FriendsListViewController: UIViewController {
     }
     
     func addUsers() {
-        friendsArray.append(User(name: "Valera", avatar: (UIImage(named: "image_1")!), likes: Likes(likesCounts: 490, likeStatus: .noLike), photos: []))
-        friendsArray.append(User(name: "Valera", avatar: (UIImage(named: "image_4")!), likes: Likes(likesCounts: 8, likeStatus: .noLike), photos: []))
-        friendsArray.append(User(name: "Igor", avatar: (UIImage(named: "image_2")!), likes: Likes(likesCounts: 10, likeStatus: .noLike), photos: []))
-        friendsArray.append(User(name: "Elena", avatar: (UIImage(named: "image_3")!), likes: Likes(likesCounts: 7653, likeStatus: .noLike), photos: []))
-        friendsArray.append(User(name: "Oleg", avatar: (UIImage(named: "image_4")!), likes: Likes(likesCounts: 9719, likeStatus: .noLike), photos: []))
-        friendsArray.append(User(name: "Mikhail", avatar: (UIImage(named: "image_5")!), likes: Likes(likesCounts: 54, likeStatus: .noLike), photos: []))
-        friendsArray.append(User(name: "John", avatar: (UIImage(named: "image_1")!), likes: Likes(likesCounts: 567, likeStatus: .noLike), photos: []))
-        friendsArray.append(User(name: "Stanislav", avatar: (UIImage(named: "image_2")!), likes: Likes(likesCounts: 4568, likeStatus: .noLike), photos: []))
-        friendsArray.append(User(name: "Olga", avatar: (UIImage(named: "image_3")!), likes: Likes(likesCounts: 1, likeStatus: .noLike), photos: []))
-        friendsArray.append(User(name: "Viktor", avatar: (UIImage(named: "image_4")!), likes: Likes(likesCounts: 423, likeStatus: .noLike), photos: []))
-        friendsArray.append(User(name: "Denis", avatar: (UIImage(named: "image_5")!), likes: Likes(likesCounts: 974, likeStatus: .noLike), photos: []))
-        friendsArray.append(User(name: "Alex", avatar: (UIImage(named: "image_1")!), likes: Likes(likesCounts: 1113, likeStatus: .noLike), photos: []))
-        friendsArray.append(User(name: "Alexander", avatar: (UIImage(named: "image_2")!), likes: Likes(likesCounts: 96528, likeStatus: .noLike), photos: []))
-        friendsArray.append(User(name: "Julia", avatar: (UIImage(named: "image_3")!), likes: Likes(likesCounts: 100000, likeStatus: .noLike), photos: []))
-        friendsArray.append(User(name: "Valera", avatar: (UIImage(named: "image_5")!), likes: Likes(likesCounts: 490, likeStatus: .noLike), photos: []))
-        friendsArray.append(User(name: "Pavel", avatar: (UIImage(named: "image_4")!), likes: Likes(likesCounts: 2, likeStatus: .noLike), photos: []))
-        friendsArray.append(User(name: "Anton", avatar: (UIImage(named: "image_5")!), likes: Likes(likesCounts: 89, likeStatus: .noLike), photos: []))
+        let userID = Session.shared.userId
+        let token = Session.shared.token
+        //let accessParameters: Parameters = ["access_token" : token, "user_id" : userID]
+
+        var urlFriends = URLComponents()
+        urlFriends.scheme = "https"
+        urlFriends.host = "api.vk.com"
+        urlFriends.path = "/method/friends.get"
+        urlFriends.queryItems = [
+            URLQueryItem(name: "user_id", value: userID),
+            URLQueryItem(name: "access_token", value: token),
+            URLQueryItem(name: "fields", value: "nickname"),
+            URLQueryItem(name: "fields", value: "city"),
+            URLQueryItem(name: "fields", value: "country"),
+            URLQueryItem(name: "fields", value: "photo_200_orig"),
+            URLQueryItem(name: "order", value: "hints"),
+            URLQueryItem(name: "v", value: "5.102")
+        ]
+        
+        let task = URLSession.shared.dataTask(with: urlFriends.url!) { (data, response, error) in
+            
+            let json = try! JSON(data: data!)
+            for jsonValue in json.array! {
+                self.friendsArray.append(User(name: User.Name(firstName: jsonValue["first_name"].stringValue, lastName: jsonValue["last"].stringValue), avatar: (UIImage(named: "image_1")!), likes: Likes(likesCounts: 490, likeStatus: Likes.LikesStatus.noLike)))
+            }
+            print("33333333333333")
+        }
+        
+//        friendsArray.append(User(name: "Valera", avatar: (UIImage(named: "image_1")!), likes: Likes(likesCounts: 490, likeStatus: .noLike), photos: []))
+//        friendsArray.append(User(name: "Valera", avatar: (UIImage(named: "image_4")!), likes: Likes(likesCounts: 8, likeStatus: .noLike), photos: []))
+//        friendsArray.append(User(name: "Igor", avatar: (UIImage(named: "image_2")!), likes: Likes(likesCounts: 10, likeStatus: .noLike), photos: []))
+//        friendsArray.append(User(name: "Elena", avatar: (UIImage(named: "image_3")!), likes: Likes(likesCounts: 7653, likeStatus: .noLike), photos: []))
+//        friendsArray.append(User(name: "Oleg", avatar: (UIImage(named: "image_4")!), likes: Likes(likesCounts: 9719, likeStatus: .noLike), photos: []))
+//        friendsArray.append(User(name: "Mikhail", avatar: (UIImage(named: "image_5")!), likes: Likes(likesCounts: 54, likeStatus: .noLike), photos: []))
+//        friendsArray.append(User(name: "John", avatar: (UIImage(named: "image_1")!), likes: Likes(likesCounts: 567, likeStatus: .noLike), photos: []))
+//        friendsArray.append(User(name: "Stanislav", avatar: (UIImage(named: "image_2")!), likes: Likes(likesCounts: 4568, likeStatus: .noLike), photos: []))
+//        friendsArray.append(User(name: "Olga", avatar: (UIImage(named: "image_3")!), likes: Likes(likesCounts: 1, likeStatus: .noLike), photos: []))
+//        friendsArray.append(User(name: "Viktor", avatar: (UIImage(named: "image_4")!), likes: Likes(likesCounts: 423, likeStatus: .noLike), photos: []))
+//        friendsArray.append(User(name: "Denis", avatar: (UIImage(named: "image_5")!), likes: Likes(likesCounts: 974, likeStatus: .noLike), photos: []))
+//        friendsArray.append(User(name: "Alex", avatar: (UIImage(named: "image_1")!), likes: Likes(likesCounts: 1113, likeStatus: .noLike), photos: []))
+//        friendsArray.append(User(name: "Alexander", avatar: (UIImage(named: "image_2")!), likes: Likes(likesCounts: 96528, likeStatus: .noLike), photos: []))
+//        friendsArray.append(User(name: "Julia", avatar: (UIImage(named: "image_3")!), likes: Likes(likesCounts: 100000, likeStatus: .noLike), photos: []))
+//        friendsArray.append(User(name: "Valera", avatar: (UIImage(named: "image_5")!), likes: Likes(likesCounts: 490, likeStatus: .noLike), photos: []))
+//        friendsArray.append(User(name: "Pavel", avatar: (UIImage(named: "image_4")!), likes: Likes(likesCounts: 2, likeStatus: .noLike), photos: []))
+//        friendsArray.append(User(name: "Anton", avatar: (UIImage(named: "image_5")!), likes: Likes(likesCounts: 89, likeStatus: .noLike), photos: []))
     }
     
     func addPhotos() {
@@ -118,7 +148,7 @@ extension FriendsListViewController: UITableViewDataSource {
         
         let sectionName: String = self.sections[indexPath.section]
         if let friendsInSection: [User] = self.friendsInSections[sectionName] {
-            cell.friendNameLabel.text = friendsInSection[indexPath.row].name
+            cell.friendNameLabel.text = friendsInSection[indexPath.row].name.fullName
             cell.friendsPhotoImageView.image = friendsInSection[indexPath.row].avatar
         }
         
@@ -150,7 +180,7 @@ extension FriendsListViewController: UITableViewDataSource {
         var isInFilter = true
         
         for friend in friendsArray {
-            if query.count > 0 { isInFilter = (friend.name.lowercased().contains(query.lowercased())) }
+            if query.count > 0 { isInFilter = (friend.name.fullName.lowercased().contains(query.lowercased())) }
             if isInFilter { friendsFiltered.append(friend) }
         }
         
@@ -159,14 +189,14 @@ extension FriendsListViewController: UITableViewDataSource {
     }
     
     func fillSections() {
-        sections = Array(Set(friendsFiltered.map { String(($0.name.first)!) })).sorted()
+        sections = Array(Set(friendsFiltered.map { String(($0.name.fullName.first)!) })).sorted()
     }
     
     func fillSectionsWithFriends() {
         friendsInSections.removeAll()
         
         for friend in friendsFiltered {
-            guard let firstLetter = friend.name.first else { continue }
+            guard let firstLetter = friend.name.fullName.first else { continue }
             
             var friends: [User] = []
             
