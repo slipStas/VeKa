@@ -46,7 +46,6 @@ class FriendsListViewController: UIViewController {
     func addUsers() {
         let userID = Session.shared.userId
         let token = Session.shared.token
-        //let accessParameters: Parameters = ["access_token" : token, "user_id" : userID]
 
         var urlFriends = URLComponents()
         urlFriends.scheme = "https"
@@ -71,13 +70,16 @@ class FriendsListViewController: UIViewController {
             
             for jsonValue in items.arrayValue {
                 self.friendsArray.append(User(json: jsonValue.dictionaryValue))
-                print(User(json: jsonValue.dictionaryValue).name)
+//                print(User(json: jsonValue.dictionaryValue).name)
+            }
+            for i in self.friendsArray {
+                print(i.name)
             }
             print(self.friendsArray.count)
 
         }
         task.resume()
-        self.friendsListTableView.reloadData()
+        
 //        friendsArray.append(User(name: "Valera", avatar: (UIImage(named: "image_1")!), likes: Likes(likesCounts: 490, likeStatus: .noLike), photos: []))
 //        friendsArray.append(User(name: "Valera", avatar: (UIImage(named: "image_4")!), likes: Likes(likesCounts: 8, likeStatus: .noLike), photos: []))
 //        friendsArray.append(User(name: "Igor", avatar: (UIImage(named: "image_2")!), likes: Likes(likesCounts: 10, likeStatus: .noLike), photos: []))
@@ -145,7 +147,8 @@ extension FriendsListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let sectionName: String = self.sections[section]
-        if let friendsInSection: [User] = self.friendsInSections[sectionName] { return friendsInSection.count }
+        if let friendsInSection: [User] = self.friendsInSections[sectionName] {
+            return friendsInSection.count }
         return 0
     }
     
