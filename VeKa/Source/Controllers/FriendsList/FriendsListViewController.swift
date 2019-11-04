@@ -122,7 +122,7 @@ extension FriendsListViewController: UITableViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         
-        //animateAlphaTable(tableView: friendsListTableView)
+        //animateAlphaTable(tableView: friendsListTableView) // it make some warnings
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
