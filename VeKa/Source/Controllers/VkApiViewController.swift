@@ -110,8 +110,6 @@ class VkFriendsRequests {
         ]
         
         Alamofire.request(urlFriends.url!, method: .get, parameters: accessParameters).responseJSON { (response) in
-            print(response.value ?? "error")
-            print(urlFriends.url!)
         }
     }
 }
@@ -137,7 +135,6 @@ class VkGroupsRequsts {
         ]
         
         Alamofire.request(urlGroups.url!, method: .get, parameters: accessParameters).responseJSON { (response) in
-            print(response.value ?? "error")
         }
     }
     
@@ -156,7 +153,6 @@ class VkGroupsRequsts {
         ]
         
         Alamofire.request(urlGroups.url!, method: .get, parameters: accessParameters).responseJSON { (response) in
-            print(response.value ?? "error")
         }
     }
 }
@@ -182,7 +178,6 @@ class VkPhotosRequests {
         ]
         
         Alamofire.request(urlPhotos.url!, method: .get, parameters: accessParameters).responseJSON { (response) in
-            print(response.value ?? "error")
         }
     }
 }

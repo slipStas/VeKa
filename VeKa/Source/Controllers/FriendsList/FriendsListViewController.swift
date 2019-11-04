@@ -33,6 +33,7 @@ class FriendsListViewController: UIViewController {
         addUsers()
         addPhotos()
         
+        friendsListTableView.reloadData()
         friendsListTableView.register(UINib(nibName: "Header", bundle: nil), forHeaderFooterViewReuseIdentifier: "Header")
         
         self.friendsFiltered = self.friendsArray
@@ -65,12 +66,18 @@ class FriendsListViewController: UIViewController {
         let task = URLSession.shared.dataTask(with: urlFriends.url!) { (data, response, error) in
             
             let json = try! JSON(data: data!)
-            for jsonValue in json.array! {
-                self.friendsArray.append(User(name: User.Name(firstName: jsonValue["first_name"].stringValue, lastName: jsonValue["last"].stringValue), avatar: (UIImage(named: "image_1")!), likes: Likes(likesCounts: 490, likeStatus: Likes.LikesStatus.noLike)))
+            let response = json["response"]
+            let items = response["items"]
+            
+            for jsonValue in items.arrayValue {
+                self.friendsArray.append(User(json: jsonValue.dictionaryValue))
+                print(User(json: jsonValue.dictionaryValue).name)
             }
-            print("33333333333333")
+            print(self.friendsArray.count)
+
         }
-        
+        task.resume()
+        self.friendsListTableView.reloadData()
 //        friendsArray.append(User(name: "Valera", avatar: (UIImage(named: "image_1")!), likes: Likes(likesCounts: 490, likeStatus: .noLike), photos: []))
 //        friendsArray.append(User(name: "Valera", avatar: (UIImage(named: "image_4")!), likes: Likes(likesCounts: 8, likeStatus: .noLike), photos: []))
 //        friendsArray.append(User(name: "Igor", avatar: (UIImage(named: "image_2")!), likes: Likes(likesCounts: 10, likeStatus: .noLike), photos: []))
@@ -148,7 +155,7 @@ extension FriendsListViewController: UITableViewDataSource {
         
         let sectionName: String = self.sections[indexPath.section]
         if let friendsInSection: [User] = self.friendsInSections[sectionName] {
-            cell.friendNameLabel.text = friendsInSection[indexPath.row].name.fullName
+            cell.friendNameLabel.text = friendsInSection[indexPath.row].name
             cell.friendsPhotoImageView.image = friendsInSection[indexPath.row].avatar
         }
         
@@ -180,7 +187,7 @@ extension FriendsListViewController: UITableViewDataSource {
         var isInFilter = true
         
         for friend in friendsArray {
-            if query.count > 0 { isInFilter = (friend.name.fullName.lowercased().contains(query.lowercased())) }
+            if query.count > 0 { isInFilter = (friend.name.lowercased().contains(query.lowercased())) }
             if isInFilter { friendsFiltered.append(friend) }
         }
         
@@ -189,14 +196,14 @@ extension FriendsListViewController: UITableViewDataSource {
     }
     
     func fillSections() {
-        sections = Array(Set(friendsFiltered.map { String(($0.name.fullName.first)!) })).sorted()
+        sections = Array(Set(friendsFiltered.map { String(($0.name.first)!) })).sorted()
     }
     
     func fillSectionsWithFriends() {
         friendsInSections.removeAll()
         
         for friend in friendsFiltered {
-            guard let firstLetter = friend.name.fullName.first else { continue }
+            guard let firstLetter = friend.name.first else { continue }
             
             var friends: [User] = []
             

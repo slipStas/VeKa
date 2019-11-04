@@ -34,7 +34,7 @@ extension FriendInfoViewController : UICollectionViewDataSource, UICollectionVie
         let cell = friendInfoCollectionView.dequeueReusableCell(withReuseIdentifier: "friendInfoIdentifire", for: indexPath) as! FriendInfoCollectionViewCell
         
         cell.friendInfoImageView.image = friendInfoList[indexPath.row].avatar
-        cell.nameFriendInfoLabel.text = friendInfoList[indexPath.row].name.fullName
+        cell.nameFriendInfoLabel.text = friendInfoList[indexPath.row].name
         cell.likesView.likesCount.text = String(self.friendInfoList[indexPath.row].likes.likesCounts)
        
         
