@@ -9,16 +9,17 @@
 import UIKit
 
 class OnlineFriendsListTableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+    
+    @IBOutlet weak var friendNameLabel: UILabel!
+    
+    @IBOutlet weak var friendIcon: UIImageView!
+    
+    
+       override func prepareForReuse() {
+           super.prepareForReuse()
+           
+        friendNameLabel.text = nil
+        friendIcon.image = nil
+       }
+  
 }
