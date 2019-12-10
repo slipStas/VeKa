@@ -24,9 +24,7 @@ class FriendsListViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        friendsListTableView.rowHeight = 66
-        
+                
         friendsListTableView.dataSource = self
         friendsListTableView.delegate = self
         
@@ -126,7 +124,7 @@ extension FriendsListViewController: UITableViewDataSource {
             cell.friendNameLabel.text = friendsInSection[indexPath.row].name
             cell.friendsPhotoImageView.image = friendsInSection[indexPath.row].avatar
         }
-        
+        self.friendsListTableView.rowHeight = CGFloat(avatarSettings.tableViewHeight)
         return cell
     }
     

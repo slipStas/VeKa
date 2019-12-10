@@ -48,10 +48,11 @@ extension OnlineFriendsListViewController: UITableViewDataSource {
         
         if let url = NSURL(string: (vkApi.serverFriendList?.response.items[indexPath.row].photo200_Orig) ?? "https://vk.com/images/camera_200.png?ava=1") {
             let data = NSData(contentsOf: url as URL)
+            cell.friendIcon.contentMode = .scaleAspectFit
             cell.friendIcon.image = UIImage(data: data! as Data)
         }
         
-        self.onlineFriendsListTable.rowHeight = cell.friendIcon.frame.height + CGFloat(16)
+        self.onlineFriendsListTable.rowHeight = CGFloat(avatarSettings.tableViewHeight)
 
         return cell
     }
