@@ -24,9 +24,7 @@ class FriendsListViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        friendsListTableView.rowHeight = 66
-        
+                
         friendsListTableView.dataSource = self
         friendsListTableView.delegate = self
         
@@ -44,59 +42,24 @@ class FriendsListViewController: UIViewController {
     }
     
     func addUsers() {
-        let userID = Session.shared.userId
-        let token = Session.shared.token
-
-        var urlFriends = URLComponents()
-        urlFriends.scheme = "https"
-        urlFriends.host = "api.vk.com"
-        urlFriends.path = "/method/friends.get"
-        urlFriends.queryItems = [
-            URLQueryItem(name: "user_id", value: userID),
-            URLQueryItem(name: "access_token", value: token),
-            URLQueryItem(name: "fields", value: "nickname"),
-            URLQueryItem(name: "fields", value: "city"),
-            URLQueryItem(name: "fields", value: "country"),
-            URLQueryItem(name: "fields", value: "photo_200_orig"),
-            URLQueryItem(name: "order", value: "hints"),
-            URLQueryItem(name: "v", value: "5.102")
-        ]
         
-        let task = URLSession.shared.dataTask(with: urlFriends.url!) { (data, response, error) in
-            
-            let json = try! JSON(data: data!)
-            let response = json["response"]
-            let items = response["items"]
-            
-            for jsonValue in items.arrayValue {
-                self.friendsArray.append(User(json: jsonValue.dictionaryValue))
-//                print(User(json: jsonValue.dictionaryValue).name)
-            }
-            for i in self.friendsArray {
-                print(i.name)
-            }
-            print(self.friendsArray.count)
-
-        }
-        task.resume()
-        
-//        friendsArray.append(User(name: "Valera", avatar: (UIImage(named: "image_1")!), likes: Likes(likesCounts: 490, likeStatus: .noLike), photos: []))
-//        friendsArray.append(User(name: "Valera", avatar: (UIImage(named: "image_4")!), likes: Likes(likesCounts: 8, likeStatus: .noLike), photos: []))
-//        friendsArray.append(User(name: "Igor", avatar: (UIImage(named: "image_2")!), likes: Likes(likesCounts: 10, likeStatus: .noLike), photos: []))
-//        friendsArray.append(User(name: "Elena", avatar: (UIImage(named: "image_3")!), likes: Likes(likesCounts: 7653, likeStatus: .noLike), photos: []))
-//        friendsArray.append(User(name: "Oleg", avatar: (UIImage(named: "image_4")!), likes: Likes(likesCounts: 9719, likeStatus: .noLike), photos: []))
-//        friendsArray.append(User(name: "Mikhail", avatar: (UIImage(named: "image_5")!), likes: Likes(likesCounts: 54, likeStatus: .noLike), photos: []))
-//        friendsArray.append(User(name: "John", avatar: (UIImage(named: "image_1")!), likes: Likes(likesCounts: 567, likeStatus: .noLike), photos: []))
-//        friendsArray.append(User(name: "Stanislav", avatar: (UIImage(named: "image_2")!), likes: Likes(likesCounts: 4568, likeStatus: .noLike), photos: []))
-//        friendsArray.append(User(name: "Olga", avatar: (UIImage(named: "image_3")!), likes: Likes(likesCounts: 1, likeStatus: .noLike), photos: []))
-//        friendsArray.append(User(name: "Viktor", avatar: (UIImage(named: "image_4")!), likes: Likes(likesCounts: 423, likeStatus: .noLike), photos: []))
-//        friendsArray.append(User(name: "Denis", avatar: (UIImage(named: "image_5")!), likes: Likes(likesCounts: 974, likeStatus: .noLike), photos: []))
-//        friendsArray.append(User(name: "Alex", avatar: (UIImage(named: "image_1")!), likes: Likes(likesCounts: 1113, likeStatus: .noLike), photos: []))
-//        friendsArray.append(User(name: "Alexander", avatar: (UIImage(named: "image_2")!), likes: Likes(likesCounts: 96528, likeStatus: .noLike), photos: []))
-//        friendsArray.append(User(name: "Julia", avatar: (UIImage(named: "image_3")!), likes: Likes(likesCounts: 100000, likeStatus: .noLike), photos: []))
-//        friendsArray.append(User(name: "Valera", avatar: (UIImage(named: "image_5")!), likes: Likes(likesCounts: 490, likeStatus: .noLike), photos: []))
-//        friendsArray.append(User(name: "Pavel", avatar: (UIImage(named: "image_4")!), likes: Likes(likesCounts: 2, likeStatus: .noLike), photos: []))
-//        friendsArray.append(User(name: "Anton", avatar: (UIImage(named: "image_5")!), likes: Likes(likesCounts: 89, likeStatus: .noLike), photos: []))
+        friendsArray.append(User(name: "Valera", avatar: (UIImage(named: "image_1")!), likes: Likes(likesCounts: 490, likeStatus: .noLike)))
+        friendsArray.append(User(name: "Valera", avatar: (UIImage(named: "image_4")!), likes: Likes(likesCounts: 8, likeStatus: .noLike)))
+        friendsArray.append(User(name: "Igor", avatar: (UIImage(named: "image_2")!), likes: Likes(likesCounts: 10, likeStatus: .noLike)))
+        friendsArray.append(User(name: "Elena", avatar: (UIImage(named: "image_3")!), likes: Likes(likesCounts: 7653, likeStatus: .noLike)))
+        friendsArray.append(User(name: "Oleg", avatar: (UIImage(named: "image_4")!), likes: Likes(likesCounts: 9719, likeStatus: .noLike)))
+        friendsArray.append(User(name: "Mikhail", avatar: (UIImage(named: "image_5")!), likes: Likes(likesCounts: 54, likeStatus: .noLike)))
+        friendsArray.append(User(name: "John", avatar: (UIImage(named: "image_1")!), likes: Likes(likesCounts: 567, likeStatus: .noLike)))
+        friendsArray.append(User(name: "Stanislav", avatar: (UIImage(named: "image_2")!), likes: Likes(likesCounts: 4568, likeStatus: .noLike)))
+        friendsArray.append(User(name: "Olga", avatar: (UIImage(named: "image_3")!), likes: Likes(likesCounts: 1, likeStatus: .noLike)))
+        friendsArray.append(User(name: "Viktor", avatar: (UIImage(named: "image_4")!), likes: Likes(likesCounts: 423, likeStatus: .noLike)))
+        friendsArray.append(User(name: "Denis", avatar: (UIImage(named: "image_5")!), likes: Likes(likesCounts: 974, likeStatus: .noLike)))
+        friendsArray.append(User(name: "Alex", avatar: (UIImage(named: "image_1")!), likes: Likes(likesCounts: 1113, likeStatus: .noLike)))
+        friendsArray.append(User(name: "Alexander", avatar: (UIImage(named: "image_2")!), likes: Likes(likesCounts: 96528, likeStatus: .noLike)))
+        friendsArray.append(User(name: "Julia", avatar: (UIImage(named: "image_3")!), likes: Likes(likesCounts: 100000, likeStatus: .noLike)))
+        friendsArray.append(User(name: "Valera", avatar: (UIImage(named: "image_5")!), likes: Likes(likesCounts: 490, likeStatus: .noLike)))
+        friendsArray.append(User(name: "Pavel", avatar: (UIImage(named: "image_4")!), likes: Likes(likesCounts: 2, likeStatus: .noLike)))
+        friendsArray.append(User(name: "Anton", avatar: (UIImage(named: "image_5")!), likes: Likes(likesCounts: 89, likeStatus: .noLike)))
     }
     
     func addPhotos() {
@@ -161,7 +124,7 @@ extension FriendsListViewController: UITableViewDataSource {
             cell.friendNameLabel.text = friendsInSection[indexPath.row].name
             cell.friendsPhotoImageView.image = friendsInSection[indexPath.row].avatar
         }
-        
+        self.friendsListTableView.rowHeight = CGFloat(avatarSettings.tableViewHeight)
         return cell
     }
     
